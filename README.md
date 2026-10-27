@@ -52,16 +52,7 @@ For one group of corresponding projections:
 5. **Restore the size and mean.** Rescale the transformed differences to their
    original norm, then add back the shared update.
 
-```mermaid
-flowchart LR
-    A[AdamW update proposals] --> B[Group corresponding layers]
-    B --> C[Shared mean]
-    B --> D[Differences across depth]
-    D --> E[Estimate covariance and temper]
-    E --> F[Restore difference norm]
-    C --> G[Recombine and apply]
-    F --> G
-```
+![BDT illustrated with four layers: collect raw updates, subtract their shared mean, then temper and renormalize the differences. The shared mean and difference norm are preserved.](docs/assets/bdt-overview.svg)
 
 The mean update and the total centered norm are preserved, up to numerical
 precision. Individual layers can receive different update magnitudes and
