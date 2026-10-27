@@ -1,9 +1,7 @@
 # Reading the code
 
-Follow the idea from a proposed update to a training step. If you are new to
-BDT, start with the [project introduction](../README.md) and
-[method walkthrough](METHOD.md). This guide connects their concepts to the
-functions that implement them.
+For an introduction to BDT, read the [project introduction](../README.md) and
+[method walkthrough](METHOD.md). The table below maps each operation to its implementation.
 
 | Concept | Implementation |
 | --- | --- |
@@ -54,16 +52,16 @@ cd reproducibility
 Read [coverage](../reproducibility/docs/COVERAGE.md) alongside the results:
 recomputing saved scores is distinct from retraining the models.
 
-## Verification layers
+## Checks
 
 | Command | What it checks |
 | --- | --- |
 | `make verify` | Release hashes, source syntax, provenance bindings, and BCT2 receipts |
 | `make test` | CPU numerical behavior, record validation, data handling, and portable entry points |
-| `make demo` | Mean and centered-norm preservation on a small synthetic example |
+| `make demo` | Preservation of the mean and centered norm on a small synthetic example |
 | `make check` | All three checks above |
 
-The original native-study CPU suites are separate from `make test`. Their
+The original CPU suites for individual studies are separate from `make test`. Their
 commands and the full training requirements are documented in the
 [release README](../reproducibility/README.md). Historical results under
 `validation/` describe earlier runs, not the current GitHub Actions run.

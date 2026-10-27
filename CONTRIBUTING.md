@@ -32,8 +32,8 @@ expect a new output directory for each invocation.
 Run `make check` and describe the behavior changed and the checks performed.
 For changes to a study, also run its native CPU suite as documented in the
 [release README](reproducibility/README.md). CPU checks do not establish a
-full-scale training replication.
+full training replication.
 
-Consult [third-party notices](reproducibility/THIRD_PARTY_NOTICES.md) before
-redistributing source. This repository does not assert a blanket open-source
+Consult [source notices](reproducibility/THIRD_PARTY_NOTICES.md) before
+redistributing source. This repository does not assert a blanket open source
 license for the preserved release.
