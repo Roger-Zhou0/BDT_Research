@@ -1,8 +1,17 @@
 # Reading the code
 
-This repository has two layers: convenient entry points at the root, and the
-hash-verified research release in `reproducibility/`. The latter keeps original
-file layouts because imports, source manifests, and provenance depend on them.
+Follow the idea from a proposed update to a training step. If you are new to
+BDT, start with the [project introduction](../README.md) and
+[method walkthrough](METHOD.md). This guide connects their concepts to the
+functions that implement them.
+
+| Concept | Implementation |
+| --- | --- |
+| Group corresponding updates | `Policy.step` in the CMS1 optimizer policy |
+| Separate the mean and track centered covariance | `OnlineDepthTemper.transform` in the reference operator |
+| Bound relative scaling and restore centered norm | The gains and normalization in that same method |
+| Compare original and scrambled correspondence | `transport` and `match_direction` in CMS1 geometry |
+| Apply proposals and preserve optimizer state | The CMS1 policy and its underlying split AdamW backend |
 
 ## Suggested reading order
 
@@ -58,3 +67,10 @@ The original native-study CPU suites are separate from `make test`. Their
 commands and the full training requirements are documented in the
 [release README](../reproducibility/README.md). Historical results under
 `validation/` describe earlier runs, not the current GitHub Actions run.
+
+## Why the implementation lives under `reproducibility/`
+
+The original source layout is retained because imports, source manifests, and
+experiment provenance depend on it. The demo calls the reference operator
+directly, so the introductory example and the study code share the same
+numerical implementation.

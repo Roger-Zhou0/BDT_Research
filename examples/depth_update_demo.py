@@ -1,4 +1,4 @@
-"""Small-tensor BDT example using the original archived reference operator.
+"""See how BDT changes updates across layers while preserving mean and norm.
 
 Input tensors represent signed AdamW data proposals at corresponding depths.
 This demonstration does not train a neural network or reproduce paper results.
@@ -32,6 +32,12 @@ def main() -> None:
     )
     transform = OnlineDepthTemper(roles=roles, config=config)
 
+    print("BDT: six layers, sixteen update coordinates per layer")
+    print("Steps 1–2 observe raw updates; steps 3–4 ramp up tempering.")
+    print("Cosine measures direction agreement with the raw centered update.")
+    print("Mean error should stay near zero; norm ratio should stay near one.\n")
+    print("step  strength  condition  cosine    mean error  norm ratio")
+
     for step in range(1, 7):
         # Nonuniform layer update scales produce depth-dependent proposal energy.
         update = torch.randn(roles, width, generator=generator)
@@ -49,10 +55,15 @@ def main() -> None:
         if float(common_error) > 1e-5:
             raise AssertionError("Mean update changed")
         print(
-            f"step={step} strength={stats['strength']:.2f} "
-            f"condition={stats['operator_condition']:.3f} "
-            f"centered_norm_ratio={stats['centered_norm_ratio']:.6f}"
+            f"{step:>4}  {stats['strength']:>8.2f}  "
+            f"{stats['operator_condition']:>9.3f}  "
+            f"{stats['raw_update_cosine']:>8.5f}  "
+            f"{float(common_error):>10.2e}  "
+            f"{stats['centered_norm_ratio']:>10.6f}"
         )
+
+    print("\nAll mean and centered-norm checks passed.")
+    print("The synthetic example illustrates update geometry, not training quality.")
 
 
 if __name__ == "__main__":

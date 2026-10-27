@@ -1,84 +1,165 @@
-# Cross-Layer Transformer Optimization
+# Bounded Depth Tempering
 
-**[Quick start](#verification) · [Code guide](docs/CODE_GUIDE.md) · [Reproducibility coverage](reproducibility/docs/COVERAGE.md) · [Contributing](CONTRIBUTING.md)**
+**Exploring how Transformer layers can coordinate their optimizer updates.**
 
-Research code and reproducibility records for **bounded depth tempering (BDT)**, a method for modifying optimizer updates across corresponding Transformer layers. The research question is whether cross-layer parameter correspondence contains useful information for optimization, beyond the magnitude of an update change.
+A Transformer repeats similar building blocks at different depths. Those blocks
+have corresponding weight matrices, but AdamW computes each parameter's update
+from its own gradient history. Could the relationships between layers provide
+useful information for deciding how to update them?
 
-## Method
+**Bounded depth tempering (BDT)** explores that idea. It takes the updates AdamW
+is about to apply, looks for patterns across corresponding layers, and gently
+reshapes how those updates differ across depth. It preserves the average update
+and the total size of the differences. The model's forward architecture stays
+the same.
 
-For each corresponding feed-forward projection across layers, BDT collects the proposed AdamW updates into a depth-by-parameter matrix. It separates the update shared across depths from deviations between layers, then uses an exponential moving estimate of depthwise update statistics to attenuate high-energy directions. The transformed proposal preserves the mean update and the total norm of the centered updates. The network's forward architecture is unchanged.
+This project contains the method, a runnable demonstration, and experiments that
+ask **whether the correspondence between parameters matters**, beyond simply
+changing the size of an optimizer step.
 
-The experiments distinguish **which parameters are matched** across layers, **how their updates are transformed**, and **how update magnitude is distributed**. Correspondence-scrambled controls hold selected properties of the intervention constant; pretrained-layer copying provides a known ancestry relationship for further comparisons.
+[Try it](#try-it) · [How it works](#how-it-works) · [The experiments](#what-the-experiments-ask) · [Inside the code](docs/CODE_GUIDE.md)
 
-## Start here
+## The intuition
 
-| Task | Source |
-| --- | --- |
-| BDT transformation used by the training implementation | [`reproducibility/studies/cms1/fair_depth_lr_bracketing_v2/tempering_reference.py`](reproducibility/studies/cms1/fair_depth_lr_bracketing_v2/tempering_reference.py) |
-| CMS1 optimizer and correspondence-matched controls | [`reproducibility/studies/cms1/correspondence_matched_s1_v1/cms_policy.py`](reproducibility/studies/cms1/correspondence_matched_s1_v1/cms_policy.py) |
-| CMS1 training driver | [`reproducibility/studies/cms1/correspondence_matched_s1_v1/cms_train.py`](reproducibility/studies/cms1/correspondence_matched_s1_v1/cms_train.py) |
-| Pretrained growth experiments (GCT2) | [`reproducibility/studies/gct2/`](reproducibility/studies/gct2/) |
-| Ancestry correspondence experiments (BAC1) | [`reproducibility/studies/bac1/`](reproducibility/studies/bac1/) |
-| Offline evidence and further BCT1/BCT2 analyses | [`reproducibility/repro/`](reproducibility/repro/), [`reproducibility/reference/`](reproducibility/reference/) |
-| Claim-by-claim reproducibility coverage | [`reproducibility/docs/COVERAGE.md`](reproducibility/docs/COVERAGE.md) |
+Imagine six layers, each proposing an update to the same kind of feed-forward
+weight matrix. Put those updates side by side. Some movement is shared across
+all six layers; the rest describes how they move differently.
 
-The `reproducibility/` directory retains the research release, including its pinned scientific source, archived records, and integrity checks. Historical provenance files are deliberately retained rather than silently rewritten or pruned.
+BDT keeps the shared movement. It tracks recurring patterns in the differences
+and reduces the relative influence of directions with more update energy.
+Afterward, it restores the total size of those differences. This lets it change
+how layers move relative to one another without simply shrinking the whole step.
 
-## Verification
+“High energy” means a direction accounts for more squared update magnitude;
+it does not automatically mean that direction is harmful. Whether reshaping
+these directions helps learning is the empirical question.
 
-Use Python 3.13 for the pinned CPU environment on macOS or Linux. The original
-release was validated with Python 3.13.5 on Linux; native studies require POSIX
-file locking.
+## How it works
 
-The archive checks use the Python standard library. From the repository root:
+For one group of corresponding projections:
 
-```bash
-make verify
+1. **Collect the proposals.** Flatten each layer's proposed AdamW update into a
+   row of a matrix. Each column represents a parameter coordinate matched across
+   layers.
+2. **Separate shared movement from differences.** Subtract the mean row. Keep
+   that mean unchanged.
+3. **Track patterns across depth.** Maintain an exponential moving average of
+   normalized, centered update covariance. This describes which combinations of
+   layers tend to move together or apart.
+4. **Temper the differences.** Attenuate directions with larger covariance
+   eigenvalues. A condition bound limits the relative scaling, and a warmup and
+   ramp introduce the transformation gradually.
+5. **Restore the size and mean.** Rescale the transformed differences to their
+   original norm, then add back the shared update.
+
+```mermaid
+flowchart LR
+    A[AdamW update proposals] --> B[Group corresponding layers]
+    B --> C[Shared mean]
+    B --> D[Differences across depth]
+    D --> E[Estimate covariance and temper]
+    E --> F[Restore difference norm]
+    C --> G[Recombine and apply]
+    F --> G
 ```
 
-To run the CPU-only test suite, install the dependencies and run:
+The mean update and the total centered norm are preserved, up to numerical
+precision. Individual layers can receive different update magnitudes and
+directions. Adam's moment estimates remain in their original parameter
+coordinates, and decoupled weight decay is handled separately.
+
+See [the method in detail](docs/METHOD.md) for the equations, correspondence
+assumptions, and a small numerical example.
+
+## Why correspondence matters
+
+The same position in two weight matrices is an obvious way to pair parameters.
+It is not proof that those parameters have learned the same function. Hidden
+features can be represented in different orders, and layers serve different
+roles at different depths.
+
+BDT's cross-layer statistics depend on which coordinates are paired. That makes
+correspondence a testable part of the method:
+
+- **Use the original pairing:** compare matching coordinates across layers.
+- **Scramble the pairing:** change which coordinates are compared, then map the
+  proposed update back. Matched controls also constrain the intervention's
+  geometry so the comparison goes beyond “one update was larger.”
+- **Use known ancestry:** copy pretrained layers, giving parameters a known
+  origin, then compare preserved and reassigned correspondence.
+
+The question is whether a meaningful pairing contributes something that a
+similarly sized transformation with a different pairing does not.
+
+## Try it
+
+Use Python 3.13 on macOS or Linux. From the repository root:
 
 ```bash
 python3.13 -m venv .venv
-source .venv/bin/activate
 make install
-make test
+make demo
 ```
 
-For an **illustrative**, small-tensor invocation of the archived BDT reference operator (not a language-model training run):
+The [demo](examples/depth_update_demo.py) applies the actual BDT reference
+operator to synthetic updates from six layers. It prints the transition from
+warmup to active tempering, the change in update direction, and checks on the
+preserved mean and norm. It runs on CPU without downloading a model or dataset.
+
+The short warmup makes the mechanism visible in six steps. These are synthetic
+updates, so the demo illustrates the transformation rather than measuring
+language-model quality.
+
+## What the experiments ask
+
+The experiments separate three questions: which parameters are paired, how their
+updates are transformed, and how update magnitude is distributed.
+
+| Question | Experiment | Where to explore |
+| --- | --- | --- |
+| Does the pairing matter when the intervention's geometry is matched? | CMS1 compares AdamW, BDT, and a correspondence-scrambled matched control. | [Optimizer policy](reproducibility/studies/cms1/correspondence_matched_s1_v1/cms_policy.py) |
+| What happens when a pretrained model grows by copying layers? | GCT2 studies continuation after stacked copying; FEV1 evaluates the same trained models on another partition. | [Growth study](reproducibility/studies/gct2/README.md) |
+| Does preserving known ancestry matter? | BAC1 compares correspondence choices in a model with copied pretrained layers. | [Ancestry study](reproducibility/studies/bac1/README.md) |
+| How much comes from distributing update magnitude? | BCT1 and BCT2 compare budget choices with a shared direction construction; BCT2 uses four fresh parents. | [Evidence coverage](reproducibility/docs/COVERAGE.md), [BCT2 records](reproducibility/docs/BCT2_RECORDS.md) |
+
+Saved results include improvements in the studied settings. Their interpretation
+depends on the control, training setup, and independent parent models. They do
+not establish that BDT is universally better than AdamW or faster in wall-clock
+time. The small covariance matrix also does not make transforming large update
+matrices computationally free.
+
+You can inspect and recompute the saved comparisons with `make analysis`.
+Outputs go into a new `reproducibility/build/all_records/` directory. The
+[coverage guide](reproducibility/docs/COVERAGE.md) records which results have
+original receipts, compact score records, or displayed-precision evidence.
+
+## Explore the implementation
+
+| Start with | What you will find |
+| --- | --- |
+| [Demo](examples/depth_update_demo.py) | A short, executable introduction to the transformation |
+| [Method guide](docs/METHOD.md) | Equations and the choices behind the operator |
+| [Code guide](docs/CODE_GUIDE.md) | A path from the operator to the optimizer and training drivers |
+| [Reference operator](reproducibility/studies/cms1/fair_depth_lr_bracketing_v2/tempering_reference.py) | Covariance tracking, bounded scaling, and state handling |
+| [Research release](reproducibility/README.md) | Study protocols, saved evidence, and reproduction commands |
+
+The original implementations and evidence live together under
+`reproducibility/` to preserve their source identities. The guides and examples
+provide a shorter path through that material.
+
+## Check the project
 
 ```bash
-python examples/depth_update_demo.py
+make verify   # Source hashes and saved BCT2 receipts; standard library only
+make test     # CPU numerical and record-handling tests
+make check    # Verification, tests, and the demo
 ```
 
-The offline analysis and native-study instructions are in [`reproducibility/README.md`](reproducibility/README.md) and [`reproducibility/docs/NATIVE_STUDIES.md`](reproducibility/docs/NATIVE_STUDIES.md). `make help` lists convenience commands. No default command downloads data, connects to a compute cluster, or launches GPU training.
+The repository includes training implementations and saved results. Full-scale
+training additionally requires external datasets, checkpoints, and compute;
+those assets are not bundled. Passing the CPU tests or recomputing recorded
+scores is distinct from rerunning the training experiments.
 
-## Repository layout
-
-```text
-examples/                 Small, runnable introduction to BDT
-docs/                     Reading guide for the implementation
-reproducibility/
-├── studies/              Original CMS1, GCT2, and BAC1 implementations
-├── native/               Frozen numerical kernels and dependencies
-├── repro/                Analysis and portable training helpers
-├── scripts/              Verification, analysis, and training entry points
-├── tests/                CPU and record-integrity tests
-├── data/                 Compact scores and diagnostics
-├── reference/            Archived evidence and source provenance
-├── validation/           Historical verification records
-└── docs/                 Protocols, coverage, and reproduction instructions
-```
-
-Start with the [code guide](docs/CODE_GUIDE.md) for a short reading order through
-the numerical implementation, optimizer integration, and experiment drivers.
-
-## Evidence and limitations
-
-This repository contains original training implementations, selected source-matched numerical components, saved results, and verification scripts. It is **not** a complete standalone reproduction of all experiments: the original language-model dataset cache, checkpoints, and some historical raw logs are not included. Offline tests and result recomputation validate the packaged software and records; they do not constitute a fresh full-scale training replication.
-
-Training-loss improvements were observed in the studied settings. They are not claims of a generally superior optimizer or faster end-to-end training. Exact experimental coverage and limitations are recorded in [`reproducibility/docs/COVERAGE.md`](reproducibility/docs/COVERAGE.md).
-
-## Source provenance and reuse
-
-The release preserves original source hashes and redaction records. Consult [`reproducibility/THIRD_PARTY_NOTICES.md`](reproducibility/THIRD_PARTY_NOTICES.md) before redistribution. No blanket open-source license is asserted, and preserved historical records should not be edited merely for presentation.
+For development, see [Contributing](CONTRIBUTING.md). For source provenance and
+reuse terms, see [Third-party notices](reproducibility/THIRD_PARTY_NOTICES.md).
+No blanket open-source license is asserted for the preserved research release.
