@@ -54,7 +54,7 @@ back into the covariance estimate at the same step.
 
 ## Bounded directional scaling
 
-Write $`S = V\operatorname{diag}(\lambda)V^T`$. For condition cap $`\kappa \geq 1`$
+Write $`S = V\mathrm{diag}(\lambda)V^T`$. For condition cap $`\kappa \geq 1`$
 and ramp strength $`a \in [0,1]`$, the reference operator uses gains
 
 ```math
@@ -69,7 +69,7 @@ The transformed differences and final proposal are
 
 ```math
 \begin{aligned}
-\widetilde{C} &= H V\operatorname{diag}(g)V^T Z \\
+\widetilde{C} &= H V\mathrm{diag}(g)V^T Z \\
 C' &= \widetilde{C}\frac{\lVert C\rVert_F}{\lVert\widetilde{C}\rVert_F} \\
 U' &= \mathbf{1}\mu + C'
 \end{aligned}
