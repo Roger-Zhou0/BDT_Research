@@ -1,0 +1,7 @@
+{
+  "state": "passed",
+  "tests": 49,
+  "scope": "Synthetic CPU design, inventory and analysis fixtures; not model-training validation",
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "log_sha256": "00dd6dab2e83df54a9f2497595f8a330e14538ebb5199f453111eeab9776dbb8"
+}

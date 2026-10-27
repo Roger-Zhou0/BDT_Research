@@ -1,0 +1,17 @@
+{
+  "archived_cms1_reports": 18,
+  "archived_cms1_runtime_variants": 1,
+  "log_exporter_default_output_ceiling_bytes": 104857600,
+  "log_exporter_default_reserve_bytes": 10737418240,
+  "native_kernels_and_scientific_inputs_unchanged_since_v1": true,
+  "new_gpu_jobs": 0,
+  "new_scientific_evaluations": 0,
+  "original_checkpoints_downloaded": 0,
+  "original_data_source_sha256": "ae0538cd75e94a48640eeefcb3ba420a64ac484fb95120ad011a69b8f604097c",
+  "original_logs_removed_or_modified": 0,
+  "original_operational_logs_exported": 0,
+  "plot_views_regenerated": 8,
+  "raw_token_caches_downloaded": 0,
+  "status": "initial reviewer candidate; release gaps remain in docs/RELEASE_STATUS.md",
+  "version": "candidate_v2"
+}

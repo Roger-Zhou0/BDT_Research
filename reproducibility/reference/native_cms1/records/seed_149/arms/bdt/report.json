@@ -1,0 +1,41 @@
+{
+  "checkpoint_sha": "463b3c38b8550cb1ed0aa9971c9c175810eb756f9abf3e22176749066995fdf0",
+  "method": "bdt",
+  "protocol_sha": "d138b67a854c5750c0782ff1ffa85b3ad1f98f702ee486beb7d134a24f52c899",
+  "report": {
+    "loss": 3.8962529730051756,
+    "partition_start": 2500000,
+    "partition_stop": 3550624,
+    "tokens": 1048576
+  },
+  "result_sha": "cae012cae4f262d96972e7b4cd6f12171903b87c63c921c9c47e2be39a603199",
+  "runtime": {
+    "capability": [
+      9,
+      0
+    ],
+    "cpu_threads": 4,
+    "cuda_runtime": "12.8",
+    "cudnn": 91900,
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": true,
+    "cudnn_sdp": true,
+    "deterministic": true,
+    "device_type": "cuda",
+    "efficient_sdp": true,
+    "flash_sdp": true,
+    "gpu_model": "NVIDIA H200 NVL",
+    "math_sdp": true,
+    "matmul_tf32": false,
+    "numpy": "2.4.6",
+    "python": "3.13.14",
+    "torch": "2.11.0+cu128",
+    "total_memory": 150120759296,
+    "warn_only": false,
+    "workspace": ":4096:8"
+  },
+  "seed": 149,
+  "source_sha": "2644b80c17f1f587d337545c986aeb0a68839f730857c44a39bc0b5658b4955f",
+  "state": "complete",
+  "time": "2026-09-10T15:16:32.240131+00:00"
+}

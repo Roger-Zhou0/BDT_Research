@@ -1,0 +1,27 @@
+{
+  "release": "v5",
+  "reason": "Residual personal account-label aliases were found in six JSON key names across two saved evidence records during an independent post-v4 scan.",
+  "files_changed": [
+    {
+      "member": "reference/manuscript_v20/evidence/September22_Mechanism_Record_Audit.json",
+      "original_public_v4_sha256": "fd358ddad0cdc92f72a4dad8ff9052e720555be5247c7f202c74501858a53d6c",
+      "public_v5_sha256": "8b13aa5587b021cc898f3504320f6dd1a733b971fb0cf5dfb9dd27dbf2bce0cb",
+      "changed_keys": 2,
+      "numeric_values_changed": false
+    },
+    {
+      "member": "reference/manuscript_v20/evidence/oip1/authenticated_completion_metrics.json",
+      "original_public_v4_sha256": "6f64b3e78da2f21d79bf5c3462ec14080705f3ed66897014acf43969de979d17",
+      "public_v5_sha256": "508c3c5d8fd5101926e63c833dc17747247c13f12347c1ec0c6a47cae83192f7",
+      "changed_keys": 4,
+      "numeric_values_changed": false
+    }
+  ],
+  "scientific_numeric_values_changed": false,
+  "timestamps_changed": false,
+  "original_scientific_kernels_changed": false,
+  "scope": "Public evidence-key anonymization only; source provenance remains linked by original/public hashes.",
+  "original_source_and_native_files_compared_to_v4": 143,
+  "original_source_and_native_files_changed": 0,
+  "transformed_json_non_key_content_changed": false
+}

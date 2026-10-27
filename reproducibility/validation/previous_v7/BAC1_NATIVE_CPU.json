@@ -1,0 +1,52 @@
+{
+  "checks": {
+    "adamw_0__adamw_1": {
+      "deliberate_reference_difference": null,
+      "full_optimizer_exact": true,
+      "model_adam_rng_exact": true
+    },
+    "adamw_0__ref_adam": {
+      "deliberate_reference_difference": "unused proposal histories",
+      "full_optimizer_exact": false,
+      "model_adam_rng_exact": true
+    },
+    "bdt_0__bdt_1": {
+      "deliberate_reference_difference": null,
+      "full_optimizer_exact": true,
+      "model_adam_rng_exact": true
+    },
+    "bdt_0__ref_ffn": {
+      "deliberate_reference_difference": "unused proposal histories",
+      "full_optimizer_exact": false,
+      "model_adam_rng_exact": true
+    },
+    "draw0_preserved_0__draw0_preserved_1": {
+      "deliberate_reference_difference": null,
+      "full_optimizer_exact": true,
+      "model_adam_rng_exact": true
+    },
+    "draw0_reassigned_0__draw0_reassigned_1": {
+      "deliberate_reference_difference": null,
+      "full_optimizer_exact": true,
+      "model_adam_rng_exact": true
+    },
+    "first_active_inputs_equal": true,
+    "prefix__prefix_repeat": {
+      "deliberate_reference_difference": null,
+      "full_optimizer_exact": true,
+      "model_adam_rng_exact": true
+    },
+    "prefix__ref_prefix": {
+      "deliberate_reference_difference": "unused proposal histories",
+      "full_optimizer_exact": false,
+      "model_adam_rng_exact": true
+    }
+  },
+  "device": "cpu",
+  "numpy": "2.3.5",
+  "scope": "Actual frozen-backend tiny-model reference/repeat/interruption/resume; not full-size CUDA or language-model efficacy",
+  "source": "9f107e13f7407a302b4159645dee9d9a04dc82c9e54fefd39750fec45c6b6e7f",
+  "state": "passed",
+  "time": "2026-09-24T09:15:45.503691+00:00",
+  "torch": "2.10.0+cpu"
+}

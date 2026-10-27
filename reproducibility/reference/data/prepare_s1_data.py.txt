@@ -1,0 +1,149 @@
+#!/usr/bin/env python3
+"""Prepare a deterministic uint16 GPT-2-token cache from streamed FineWeb-Edu."""
+from __future__ import annotations
+
+import argparse
+import json
+import os
+import time
+from pathlib import Path
+
+import numpy as np
+
+
+def parse_args():
+    p = argparse.ArgumentParser()
+    p.add_argument("--output-dir", default="data/v6_fineweb_edu")
+    p.add_argument("--dataset", default="HuggingFaceFW/fineweb-edu")
+    p.add_argument("--dataset-config", default="sample-10BT")
+    p.add_argument("--revision", default="main")
+    p.add_argument("--tokenizer", default="gpt2")
+    p.add_argument("--train-tokens", type=int, default=100_000_000)
+    p.add_argument("--val-tokens", type=int, default=5_000_000)
+    p.add_argument("--shuffle-seed", type=int, default=20260828)
+    p.add_argument("--shuffle-buffer", type=int, default=10_000)
+    p.add_argument("--text-batch", type=int, default=64)
+    return p.parse_args()
+
+
+def main():
+    args = parse_args()
+    try:
+        from datasets import load_dataset
+        from transformers import AutoTokenizer
+    except ImportError as exc:
+        raise SystemExit("Install dependencies first: pip install datasets transformers") from exc
+
+    out = Path(args.output_dir)
+    out.mkdir(parents=True, exist_ok=True)
+    meta_path = out / "metadata.json"
+    train_path = out / "train.bin"
+    val_path = out / "val.bin"
+    if meta_path.exists() and train_path.exists() and val_path.exists():
+        meta = json.loads(meta_path.read_text())
+        if (
+            meta.get("train_tokens") == args.train_tokens
+            and meta.get("val_tokens") == args.val_tokens
+            and meta.get("tokenizer") == args.tokenizer
+        ):
+            print("Data cache already complete:", out)
+            print(json.dumps(meta, indent=2))
+            return
+
+    tok = AutoTokenizer.from_pretrained(args.tokenizer, use_fast=True)
+    if tok.vocab_size > np.iinfo(np.uint16).max:
+        raise RuntimeError("Tokenizer vocabulary does not fit uint16")
+    eos = tok.eos_token_id
+    if eos is None:
+        raise RuntimeError("Tokenizer needs eos_token_id")
+
+    print("Streaming", args.dataset, args.dataset_config)
+    ds = load_dataset(
+        args.dataset,
+        name=args.dataset_config,
+        split="train",
+        streaming=True,
+        revision=args.revision,
+    )
+    ds = ds.shuffle(seed=args.shuffle_seed, buffer_size=args.shuffle_buffer)
+
+    val = np.memmap(val_path, dtype=np.uint16, mode="w+", shape=(args.val_tokens,))
+    train = np.memmap(train_path, dtype=np.uint16, mode="w+", shape=(args.train_tokens,))
+    val_pos = 0
+    train_pos = 0
+    docs = 0
+    started = time.time()
+    batch = []
+
+    def consume(texts):
+        nonlocal val_pos, train_pos, docs
+        encoded = tok(texts, add_special_tokens=False, truncation=False)["input_ids"]
+        for ids in encoded:
+            docs += 1
+            seq = ids + [eos]
+            # Keep validation and training document-disjoint. If the final
+            # validation document crosses the token target, discard its tail
+            # rather than leaking that same document into training.
+            if val_pos < args.val_tokens:
+                n = min(len(seq), args.val_tokens - val_pos)
+                val[val_pos : val_pos + n] = np.asarray(seq[:n], dtype=np.uint16)
+                val_pos += n
+                continue
+            if train_pos < args.train_tokens:
+                n = min(len(seq), args.train_tokens - train_pos)
+                train[train_pos : train_pos + n] = np.asarray(seq[:n], dtype=np.uint16)
+                train_pos += n
+            if docs % 1000 == 0:
+                elapsed = max(time.time() - started, 1e-6)
+                total = val_pos + train_pos
+                print(
+                    f"docs={docs:,} val={val_pos:,}/{args.val_tokens:,} "
+                    f"train={train_pos:,}/{args.train_tokens:,} "
+                    f"rate={total/elapsed:,.0f} tok/s",
+                    flush=True,
+                )
+            if val_pos >= args.val_tokens and train_pos >= args.train_tokens:
+                return True
+        return False
+
+    done = False
+    for row in ds:
+        text = row.get("text")
+        if not text:
+            continue
+        batch.append(text)
+        if len(batch) >= args.text_batch:
+            done = consume(batch)
+            batch = []
+            if done:
+                break
+    if not done and batch:
+        done = consume(batch)
+    if not done:
+        raise RuntimeError("Dataset stream ended before token targets were filled")
+
+    val.flush()
+    train.flush()
+    meta = {
+        "dataset": args.dataset,
+        "dataset_config": args.dataset_config,
+        "revision": args.revision,
+        "tokenizer": args.tokenizer,
+        "tokenizer_vocab_size": tok.vocab_size,
+        "eos_token_id": eos,
+        "train_tokens": args.train_tokens,
+        "val_tokens": args.val_tokens,
+        "shuffle_seed": args.shuffle_seed,
+        "shuffle_buffer": args.shuffle_buffer,
+        "documents_consumed": docs,
+        "dtype": "uint16",
+    }
+    tmp = meta_path.with_suffix(".tmp")
+    tmp.write_text(json.dumps(meta, indent=2, sort_keys=True))
+    os.replace(tmp, meta_path)
+    print("Saved:", out)
+    print(json.dumps(meta, indent=2))
+
+
+if __name__ == "__main__":
+    main()

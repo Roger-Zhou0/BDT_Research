@@ -1,0 +1,18 @@
+{
+  "release": "v6",
+  "reason": "Independent post-v5 review found one institution-specific notebook-platform name in a descriptive public evidence scope string. This could weaken anonymous review despite account aliases already being removed.",
+  "file_changed": "reference/manuscript_v20/evidence/oip1/authenticated_completion_metrics.json",
+  "original_public_v5_sha256": "508c3c5d8fd5101926e63c833dc17747247c13f12347c1ec0c6a47cae83192f7",
+  "public_v6_sha256": "461b7de0c509fbc95c039ae86069247559a9f9d56f62d81280657a12fc59cd4e",
+  "original_private_sha256": "0bcfa4d5ae13289f753d82433db43381653ac201aac574c0af7cc037ec56fdc8",
+  "change": {
+    "old_private_platform_marker_removed": true,
+    "replacement": "notebook-environment",
+    "numeric_values_changed": false,
+    "timestamps_changed": false
+  },
+  "origin_binding_updated": true,
+  "scientific_source_changed": false,
+  "scientific_efficacy_rerun": false,
+  "scope": "Public descriptive identity-only anonymization; no numerical or scientific-source change."
+}

@@ -1,0 +1,109 @@
+{
+  "checks": {
+    "all_56_receipts_match_sealed_checkpoints_kernel_and_gate_bindings": true,
+    "device_gate_backward_calls": 0,
+    "device_gate_forward_evaluation_calls": 30,
+    "exports_identical_between_accounts": true,
+    "full_size_inference_gates": 6,
+    "original_native_prior_report_validators_passed_on_both_accounts": true,
+    "paired_arithmetic_matches_native_summaries": true,
+    "passed_boolean_device_checks": 54,
+    "same_checkpoint_scores_agree_across_studies": true,
+    "scores_match_receipts": true,
+    "t_quantiles_independently_checked_with_scipy": true
+  },
+  "closure_finished_at": "2026-09-23T18:20:33.302728+00:00",
+  "cohort": {
+    "independent_replications_across_studies": false,
+    "parents": [
+      946201,
+      946202,
+      946203,
+      946204
+    ],
+    "reused": true
+  },
+  "distributed_report_sha256": {
+    "AGT1": "c57a3947665e3c1366016f53d6fa53619e50e954cea143971f825e6741e45440",
+    "ART1": "da19b987551f6b6576a166557d221c27ded481b96d52e83ff189be0d33d67b28",
+    "BCT1": "a0b96953c9bb0772cbf23681636860124759a39cfa386b67de59940c106aa70f",
+    "FRT1": "4ea2251668b801389f55b289654075303321d5793810b5ede54a1e341c6092de"
+  },
+  "evaluation_kernel_sha256": "f4397ff1a8c6801104f09346f4bd369022e8472badfb992e3f34e1b16650491e",
+  "execution_mode": "DRC2 distributed local evaluation; native centralized finalizer not invoked unmodified",
+  "gsc1": {
+    "arm": "degraded_gs",
+    "charged_replay_steps": [
+      1801,
+      1802,
+      1803,
+      1804,
+      1805,
+      1806,
+      1807
+    ],
+    "checked_at": "2026-09-23T18:28:10.845895+00:00",
+    "completed_endpoints": 3,
+    "fatal": null,
+    "gpu_uuid": "GPU-b2ff4d07-297d-a5e3-49eb-09c4797664c7",
+    "host": "jupyter-account_b--good",
+    "invocation": 3,
+    "logged_phase": 1825,
+    "maximum_invocations": 3,
+    "new_cutoff": "2026-09-24T06:00:00-05:00",
+    "new_full_gpu_and_prefix_gates_verified": true,
+    "old_cutoff": "2026-09-23T18:00:00-05:00",
+    "parent": 946202,
+    "proved_phase": 1827,
+    "replay_explanation": "1801-1806 matched retained proofs exactly; 1807 had previously been reserved without a proof, so its recovery was also charged as replay.",
+    "scientific_protocol_file_or_work_budget_changed": false,
+    "scientific_source_sha256": "e07c97cdc1475199c412bda5d10aca2d42225f437f701f50e6a82eea6b27b544",
+    "state": "science",
+    "target_updates": 22400,
+    "total_endpoints": 8,
+    "unique_scientific_proofs": 10027,
+    "worker": {
+      "alive": true,
+      "pid": 271,
+      "start": "307506479"
+    }
+  },
+  "local_verification_executor_sha256": "ac9a7519e5258e0474818d57195aee4c9cf2dd5358ba33479b93fe0573f8d3c5",
+  "native_compatible_exports_sha256_both_accounts": {
+    "AGT1": "51bfee8462c0cf1b621c72e5a7855dcd330347b513de589809290c30bb89a9b8",
+    "ART1": "8aaa87d740d5c526070cf62109e9e28b2a3045de3590f4fcab5e4a6a1051327a",
+    "BCT1": "ecbb55923b667f7127a4db23f69ef5a75944b591e7e330779b6e2868e6c0fc79",
+    "FRT1": "8e81b6f7fa901675621ddcaddd4cbb9cffb00f05c17b0714457b0dea2200df1d"
+  },
+  "native_exports_checked_at": {
+    "account_b": "2026-09-23T18:22:18.176613+00:00",
+    "account_a": "2026-09-23T18:21:59.073263+00:00"
+  },
+  "native_sources": {
+    "AGT1_FRT1": "908b003e453c3b417a5eb7deaaf7d8cd368419a32481f4f8029800f2a80bfccb",
+    "ART1": "b49100583f7f9ad980997144367a505dcd610c2a7ce5d8e41a6c3798711ae43b",
+    "BCT1": "c63c877701dc3feb22b4b7e0bf01166beba3775e39cbc9603b487363e669f3fa"
+  },
+  "packet_scope": "Digest-verified score extraction, recalculation code/results and an inspection summary. Original raw report/attestation/gate files are retained at the source evidence location, not reproduced in full in this packet.",
+  "raw_evidence_location": "PROJECT_ROOT/ResearchAgent/shared/results/distributed_report_closure_20260923/v2",
+  "report_partition": {
+    "context": 512,
+    "device": "NVIDIA H200 NVL",
+    "microbatch": 16,
+    "offset": 2500000,
+    "precision": "bf16",
+    "sequences": 2048,
+    "stop": 3550624,
+    "target_tokens": 1048576
+  },
+  "reported_cells": {
+    "AGT1": 12,
+    "ART1": 24,
+    "BCT1": 16,
+    "FRT1": 4
+  },
+  "reporting_executor_sha256": "6a39c4658f110ed0975da1831c232c7b9fdce4629199a3360d041e60fc354a62",
+  "scores_canonical_sha256": "af1eceb024cafd222dc355e93cb060c782691d8b19293c2a879ddb093adbd3ec",
+  "status": "complete_and_audited",
+  "unique_checkpoint_cells": 40
+}

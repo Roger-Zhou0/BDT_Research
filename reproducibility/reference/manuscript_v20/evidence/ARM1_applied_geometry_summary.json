@@ -1,0 +1,50 @@
+{
+  "post_ramp_phases": [
+    400,
+    1000,
+    2000,
+    3000
+  ],
+  "rows": [
+    {
+      "seed": 159,
+      "arm": "preserved_unforced",
+      "records": 12,
+      "angle_ratio_median": 0.9561511674349839,
+      "angle_ratio_min": 0.9541272359691405,
+      "angle_ratio_max": 0.9595001944520929,
+      "displacement_ratio_median": 0.956252439527085,
+      "max_centered_norm_relative_error": 2.0186852189851834e-11
+    },
+    {
+      "seed": 159,
+      "arm": "reassigned_unforced",
+      "records": 12,
+      "angle_ratio_median": 0.03266481450216829,
+      "angle_ratio_min": 0.012246896831889821,
+      "angle_ratio_max": 0.057717212414357136,
+      "displacement_ratio_median": 0.032710870099527445,
+      "max_centered_norm_relative_error": 2.4841240175987878e-11
+    },
+    {
+      "seed": 160,
+      "arm": "preserved_unforced",
+      "records": 12,
+      "angle_ratio_median": 0.9562556546140457,
+      "angle_ratio_min": 0.9547552519587037,
+      "angle_ratio_max": 0.9593334298673025,
+      "displacement_ratio_median": 0.9563545591949829,
+      "max_centered_norm_relative_error": 1.1795231458222588e-11
+    },
+    {
+      "seed": 160,
+      "arm": "reassigned_unforced",
+      "records": 12,
+      "angle_ratio_median": 0.030492016649585632,
+      "angle_ratio_min": 0.00969066532526275,
+      "angle_ratio_max": 0.05799857921959536,
+      "displacement_ratio_median": 0.0305282502954906,
+      "max_centered_norm_relative_error": 1.8452350758479952e-11
+    }
+  ]
+}

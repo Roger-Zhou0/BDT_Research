@@ -1,0 +1,75 @@
+{
+  "format": "portable_bct1_v1_NOT_native_operational_checkpoint",
+  "mode": "CPU_SYNTHETIC_SMOKE",
+  "seed": 127,
+  "parameters": 227040,
+  "parent_updates": 4,
+  "prefix_updates": 200,
+  "continuation_end_phase": 420,
+  "growth": {
+    "mapped_parameters": 86,
+    "weights_exact": true,
+    "named_moments_exact": true,
+    "independent_parameter_storage": true,
+    "independent_moment_storage": true,
+    "parent_age": 4,
+    "grown_age": 4,
+    "phase": 0,
+    "next_global_data_step": 5,
+    "covariance_depth_dimension": 11,
+    "both_covariance_histories_zero": true,
+    "rng_preserved": true
+  },
+  "endpoints": {
+    "bdt_budget_gs": {
+      "phase": 420,
+      "identity": "b2b53aef1052a187392e919936dd0e9266773d153e633fecbbe6ec031a986074",
+      "checkpoint_sha256": "2c3a0b7f748b12863db178ea1878fa06473b06bbbcc3d13361424335b664fa74"
+    },
+    "structured_budget_gs": {
+      "phase": 420,
+      "identity": "60a93c627e802b1fc270f0352b1625a7b80cce1b9c67167dc3b298fcbc1aa987",
+      "checkpoint_sha256": "8bc1583c645b21f0dc7cb919de5147fa67cadc61787d959df4e32b2e5570a9cb"
+    }
+  },
+  "resume_checks": {
+    "bdt_budget_gs": {
+      "from_phase": 310,
+      "to_phase": 420,
+      "exact_model_optimizer_match": true,
+      "exact_trace_match": true
+    },
+    "structured_budget_gs": {
+      "from_phase": 310,
+      "to_phase": 420,
+      "exact_model_optimizer_match": true,
+      "exact_trace_match": true
+    }
+  },
+  "same_first_fork_batch": true,
+  "cache": {
+    "kind": "synthetic token IDs, not paper evidence"
+  },
+  "seconds": 34.953878551000344,
+  "runtime": {
+    "torch": "2.10.0+cpu",
+    "numpy": "2.3.5",
+    "device": "cpu",
+    "threads": 1,
+    "deterministic": true,
+    "warn_only": false,
+    "workspace": ":4096:8",
+    "cudnn_deterministic": true,
+    "cudnn_benchmark": false,
+    "matmul_tf32": false
+  },
+  "paper_efficacy_evaluations": 0,
+  "global_REPORT_barrier_released": false,
+  "code_identity": {
+    "kernel_manifest": "5cd790e6ab5c979836d41054f89637a84cc90c4280856d2d908cc4398262f84e",
+    "portable_training": "8ce4f6b3b1784ac07966b14baad83fafad44802ae2aaef9f654c1fc875f3f4bd",
+    "import_adapter": "858b04a1d56f818dc159498e846c05e4dc3b47258cb54527c9b265c85210ceef",
+    "training_helpers": "fe44115a9040ad4d928dbbfe3ef3911d3696d4ea4897bf002805ca243901a533",
+    "protocol": "777c42a6fb3c4290c825251154c192bd6e209711dcaeaae536d0566d2bd00cc2"
+  }
+}

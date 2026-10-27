@@ -1,0 +1,86 @@
+{
+  "betas": [
+    0.9,
+    0.95
+  ],
+  "budget": "equal NEW trial counts, model/token budgets, development seeds and evaluation schedule; not equal lifetime research effort or guaranteed GPU-hours",
+  "context_length": 512,
+  "development_seeds": [
+    127,
+    128
+  ],
+  "edge_lrs": [
+    0.0001,
+    0.0012
+  ],
+  "epsilon": 1e-08,
+  "evaluation": {
+    "context": 512,
+    "dev_offset": 0,
+    "limitation": "existing validation cache used in earlier research; not a new untouched corpus",
+    "report_offset": 2500000,
+    "reporting_access": "reporting-stage terminal evaluation only, after selection.lock.json",
+    "sequences": 2048,
+    "stride": 513
+  },
+  "extension": "if ANY first-grid winner is at either boundary, ALL methods receive BOTH edge LRs on BOTH dev seeds; at most one extension",
+  "final_boundary": "stop before reporting if ANY selected LR remains at the expanded outer boundary",
+  "grad_accum": 4,
+  "grad_clip": 1.0,
+  "gs": {
+    "alpha": 0.1,
+    "boundary": "half neighbor weight; symmetric row-stochastic tridiagonal",
+    "onset": 1,
+    "optimizer_input": "data-only AdamW proposals; decoupled weight decay unchanged",
+    "scope": "Proj: all homologous private FFN and round-attention linear weights",
+    "source": "arXiv:2606.30813v1 Eq.2, Algorithm 1; local reimplementation, not released author code",
+    "variant": "Standard"
+  },
+  "inference": "paired seeds; 95% t intervals descriptive; 97.5% two-sided intervals for two primary contrasts (Bonferroni); six complete pairs, mean<0, >=5 wins, simultaneous upper<0",
+  "initial_lrs": [
+    0.0002,
+    0.0003,
+    0.0004,
+    0.0006,
+    0.0008
+  ],
+  "initialization": "paired from identical freshly constructed weights and RNG; no shared update-200 prefix",
+  "invalid_recipe": "a recipe needs finite terminal DEV loss on BOTH seeds",
+  "methods": [
+    "adamw",
+    "temper_cap3",
+    "gs_window"
+  ],
+  "micro_batch": 16,
+  "min_lr_ratio": 0.1,
+  "model": "124m explicit-cloned S1; E9 geometry",
+  "numerical_failure": "a numerically divergent trial counts as exhausted; do not replace or silently drop its seed",
+  "precision": "bf16",
+  "primary": [
+    "temper_cap3 minus adamw reporting loss at update 3000",
+    "temper_cap3 minus gs_window reporting loss at update 3000"
+  ],
+  "reporting_seeds": [
+    129,
+    130,
+    131,
+    132,
+    133,
+    134
+  ],
+  "scope": "comparison of the fixed published alpha=0.1 Standard-Proj GS recipe under equal LR-search budget, not all GS variants or general optimizer superiority",
+  "selection": "smallest mean terminal DEV loss over both development seeds, independently per method",
+  "steps": 3000,
+  "temper": {
+    "beta": 0.9,
+    "cadence": 10,
+    "cap": 3.0,
+    "onset": 200,
+    "ramp": 200,
+    "scope": "private FFN gate/up/down only; original norm-restored rule"
+  },
+  "tokens_per_step": 32768,
+  "version": "fair_depth_optimizer_v1",
+  "warmup": 200,
+  "weight_decay": 0.1
+}

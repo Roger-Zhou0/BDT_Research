@@ -1,0 +1,91 @@
+"""Audit the retained diagnostic extract and regenerate numerical summaries.
+Uses only packaged records. No model loading, training, evaluation, or network I/O.
+Original full-precision snapshot audit is separately retained in SAVED_SNAPSHOT_AUDIT.json.
+"""
+from pathlib import Path
+import csv, hashlib, json, math, statistics
+ROOT = Path(__file__).resolve().parents[1]
+EVIDENCE = ROOT / "evidence/budget_interpretability"
+
+def check():
+    raw = (EVIDENCE/"plot_data_compact.json").read_bytes()
+    expected = "996a8bf80aa746c9aa53d9cf359e244f0b6c8fa2c2efdd93ab84a0930daea93b"
+    assert hashlib.sha256(raw).hexdigest() == expected
+    d = json.loads(raw)
+    audit = json.loads((EVIDENCE/"SAVED_SNAPSHOT_AUDIT.json").read_text())
+    assert audit["state"] == "passed" and audit["records"] == 240
+    assert audit["input_hashes"]["plot_data_compact.json"] == expected
+    assert d["full_precision_source_sha256"] == audit["input_hashes"]["BUDGET_DIAGNOSTICS.json"]
+    assert d["native_source"] == audit["source"] == \
+        "c63c877701dc3feb22b4b7e0bf01166beba3775e39cbc9603b487363e669f3fa"
+    assert d["checked"]["new_checkpoint_payload_audit"] is False
+    assert all(v for k,v in d["checked"].items() if k!="new_checkpoint_payload_audit")
+    assert all(audit["input_hashes"][n]==h for n,h in d["snapshot_hashes"].items())
+    assert d["seeds"] == [946201,946202,946203,946204]
+    assert d["branches"] == ["bdt_budget_gs","structured_budget_gs"]
+    assert d["phases"] == [201,210,250,300,310,400,420,1000,2000,3000]
+    assert d["projections"] == ["gate","up","down"]
+
+    rows = []
+    max_rho_error = 0.
+    for si,seed in enumerate(d["seeds"]):
+        for bi,branch in enumerate(d["branches"]):
+            assert len(d["values"][si][bi]) == 10
+            for ti,phase in enumerate(d["phases"]):
+                rhos = 2.**min(1.,max(0.,(phase-200)/200))
+                for pi,proj in enumerate(d["projections"]):
+                    qf,qs,rsaved = d["values"][si][bi][ti][pi]
+                    assert 0<qf<1 and 0<qs<1
+                    qr = qs/(rhos*rhos*(1-qs)+qs)
+                    re = rhos*math.sqrt(qf*(1-qs)/((1-qf)*qs))
+                    # Independently use inferred raw odds.
+                    re2 = math.sqrt(qf/(1-qf)*(1-qr)/qr)
+                    assert abs(re-re2) < 2e-14
+                    reconstructed = re*re*qr/(1-qr+re*re*qr)
+                    assert abs(reconstructed-qf) < 5e-15
+                    max_rho_error=max(max_rho_error,abs(re-rsaved))
+                    rows.append(dict(seed=seed,branch_state=branch,phase=phase,projection=proj,
+                                     qD_full=qf,qD_structured=qs,qD_raw_inferred=qr,
+                                     rho_structured=rhos,rho_effective_full=re))
+    assert len(rows)==240 and max_rho_error < 1e-8
+    assert all(r["qD_full"]>r["qD_structured"] for r in rows if r["phase"]==400)
+    assert all(r["qD_full"]<r["qD_structured"] for r in rows if r["phase"]==3000)
+    # The raw-referenced coefficient remains >1 even at the final retained phase.
+    assert all(r["rho_effective_full"]>1 for r in rows)
+    summaries = []
+    for branch in d["branches"]:
+        for phase in d["phases"]:
+            for proj in d["projections"]:
+                group=[r for r in rows if (r["branch_state"],r["phase"],r["projection"])==(branch,phase,proj)]
+                assert len(group)==4
+                x=dict(branch_state=branch,phase=phase,projection=proj)
+                for key in ["qD_full","qD_structured","qD_raw_inferred","rho_effective_full"]:
+                    vals=[r[key] for r in group]
+                    x[key]={"mean":statistics.mean(vals),"min":min(vals),"max":max(vals)}
+                summaries.append(x)
+    # Every mean printed in the table is checked, rather than trusting a hand-edited row.
+    table=(ROOT/"tables/budget_profile_means.tex").read_text()
+    for r in summaries:
+        if r["phase"] in [400,3000]:
+            for key in ["qD_full","qD_structured","qD_raw_inferred","rho_effective_full"]:
+                assert f'{r[key]["mean"]:.6f}' in table
+    with (EVIDENCE/"budget_diagnostics.csv").open("w",newline="") as f:
+        w=csv.DictWriter(f,fieldnames=list(rows[0]))
+        w.writeheader();w.writerows(rows)
+    out={
+      "state":"passed","records":240,"parents":4,"branch_state_families":2,
+      "plot_payload_sha256":expected,"retained_phases":d["phases"],
+      "max_rho_reconstruction_error_from_rounded_extract":max_rho_error,
+      "all_24_same_state_comparisons_full_above_structured_at400":True,
+      "all_24_same_state_comparisons_full_below_structured_at3000":True,
+      "all_retained_effective_coefficients_above_one":True,
+      "interpolation_is_not_measurement":True,"adaptivity_necessity_tested":False,
+      "new_model_evaluations":0,"new_training_updates":0,
+      "scope":"Retrospective retained-record geometry, not another loss comparison or a fresh-parent result.",
+      "summaries":summaries}
+    (EVIDENCE/"RECOMPUTATION.json").write_text(json.dumps(out,sort_keys=True,indent=2)+"\n")
+    return out
+
+if __name__=="__main__":
+    result=check()
+    print(json.dumps({k:v for k,v in result.items() if k!="summaries"},indent=2))

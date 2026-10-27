@@ -1,0 +1,25 @@
+{
+  "environment": {
+    "historical_study": "CMS1",
+    "contracts_checked_in_archive": 18,
+    "current_package_versions": {
+      "python": "3.13.5",
+      "numpy": "2.3.5",
+      "torch": "2.10.0+cpu"
+    },
+    "recorded_package_versions": {
+      "python": "3.13.14",
+      "numpy": "2.4.6",
+      "torch": "2.11.0+cu128"
+    },
+    "package_version_matches": {
+      "python": false,
+      "numpy": false,
+      "torch": false
+    },
+    "all_package_versions_match": false,
+    "gpu_environment_verified": false,
+    "environment_modified": false,
+    "boundary": "Recorded contract fields, not a complete environment lock or install-availability check. No CUDA context or training is started."
+  }
+}

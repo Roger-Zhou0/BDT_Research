@@ -1,0 +1,291 @@
+{
+  "comparisons": [
+    {
+      "comparison": "CMS1 BDT - AdamW",
+      "n": 6,
+      "mean": -0.0026969052851200104,
+      "confidence": 0.975,
+      "ci": [
+        -0.00421548369145432,
+        -0.0011783268787857013
+      ],
+      "printed_mean": -0.002697,
+      "printed_ci": [
+        -0.004215,
+        -0.001178
+      ],
+      "tolerance": 5.01e-07,
+      "passed": true,
+      "source_kind": "packaged records; not new training"
+    },
+    {
+      "comparison": "CMS1 BDT - matched",
+      "n": 6,
+      "mean": -0.006098807168503602,
+      "confidence": 0.975,
+      "ci": [
+        -0.008102028143171347,
+        -0.004095586193835857
+      ],
+      "printed_mean": -0.006099,
+      "printed_ci": [
+        -0.008102,
+        -0.004096
+      ],
+      "tolerance": 5.01e-07,
+      "passed": true,
+      "source_kind": "packaged records; not new training"
+    },
+    {
+      "comparison": "GCT2 REPORT BDT - AdamW",
+      "n": 6,
+      "mean": -0.0022038559739788375,
+      "confidence": 0.975,
+      "ci": [
+        -0.0022889412803488328,
+        -0.002118770667608842
+      ],
+      "printed_mean": -0.002204,
+      "printed_ci": [
+        -0.002289,
+        -0.002119
+      ],
+      "tolerance": 5.01e-07,
+      "passed": true,
+      "source_kind": "packaged records; not new training"
+    },
+    {
+      "comparison": "GCT2 REPORT BDT - matched",
+      "n": 6,
+      "mean": -0.0031478296344478927,
+      "confidence": 0.975,
+      "ci": [
+        -0.0032290489460601057,
+        -0.0030666103228356796
+      ],
+      "printed_mean": -0.003148,
+      "printed_ci": [
+        -0.003229,
+        -0.003067
+      ],
+      "tolerance": 5.01e-07,
+      "passed": true,
+      "source_kind": "packaged records; not new training"
+    },
+    {
+      "comparison": "GCT2 FEV1 BDT - AdamW",
+      "n": 6,
+      "mean": -0.0022191195224365856,
+      "confidence": 0.975,
+      "ci": [
+        -0.002270194948811172,
+        -0.002168044096061999
+      ],
+      "printed_mean": -0.002219,
+      "printed_ci": [
+        -0.00227,
+        -0.002168
+      ],
+      "tolerance": 5.01e-07,
+      "passed": true,
+      "source_kind": "packaged records; not new training"
+    },
+    {
+      "comparison": "GCT2 FEV1 BDT - matched",
+      "n": 6,
+      "mean": -0.0032149826465399656,
+      "confidence": 0.975,
+      "ci": [
+        -0.0033348146858542846,
+        -0.0030951506072256466
+      ],
+      "printed_mean": -0.003215,
+      "printed_ci": [
+        -0.003335,
+        -0.003095
+      ],
+      "tolerance": 5.01e-07,
+      "passed": true,
+      "source_kind": "packaged records; not new training"
+    },
+    {
+      "comparison": "BAC1 reassigned - preserved",
+      "n": 6,
+      "mean": 0.0033002886921167374,
+      "confidence": 0.95,
+      "ci": [
+        0.002971574611868282,
+        0.0036290027723651927
+      ],
+      "printed_mean": 0.0033,
+      "printed_ci": [
+        0.002972,
+        0.003629
+      ],
+      "tolerance": 5.01e-07,
+      "passed": true,
+      "source_kind": "packaged records; not new training"
+    },
+    {
+      "comparison": "AGT1 reassigned - preserved",
+      "n": 4,
+      "mean": 0.008230128791183233,
+      "confidence": 0.975,
+      "ci": [
+        0.007825390230511318,
+        0.008634867351855148
+      ],
+      "printed_mean": 0.00823013,
+      "printed_ci": [
+        0.00782539,
+        0.00863487
+      ],
+      "tolerance": 5.1e-09,
+      "passed": true,
+      "source_kind": "packaged records; not new training"
+    },
+    {
+      "comparison": "AGT1 preserved - AdamW",
+      "n": 4,
+      "mean": -0.006139748264104128,
+      "confidence": 0.975,
+      "ci": [
+        -0.0065535400956251155,
+        -0.00572595643258314
+      ],
+      "printed_mean": -0.00613975,
+      "printed_ci": [
+        -0.00655354,
+        -0.00572596
+      ],
+      "tolerance": 5.1e-09,
+      "passed": true,
+      "source_kind": "packaged records; not new training"
+    },
+    {
+      "comparison": "FRT1 fixed - AdamW",
+      "n": 4,
+      "mean": -0.005608562380075455,
+      "confidence": 0.95,
+      "ci": [
+        -0.005768655113489938,
+        -0.005448469646660971
+      ],
+      "printed_mean": -0.00560856,
+      "printed_ci": [
+        -0.00576866,
+        -0.00544847
+      ],
+      "tolerance": 5.1e-09,
+      "passed": true,
+      "source_kind": "packaged records; not new training"
+    },
+    {
+      "comparison": "ART1 assembled - fixed",
+      "n": 4,
+      "mean": -0.0011986494064331055,
+      "confidence": 0.975,
+      "ci": [
+        -0.0014483254938533535,
+        -0.0009489733190128576
+      ],
+      "printed_mean": -0.00119865,
+      "printed_ci": [
+        -0.00144833,
+        -0.00094897
+      ],
+      "tolerance": 5.1e-09,
+      "passed": true,
+      "source_kind": "packaged records; not new training"
+    },
+    {
+      "comparison": "ART1 assembled - combined",
+      "n": 4,
+      "mean": 0.0005089845508337021,
+      "confidence": 0.975,
+      "ci": [
+        0.00035009677975007456,
+        0.0006678723219173296
+      ],
+      "printed_mean": 0.00050898,
+      "printed_ci": [
+        0.0003501,
+        0.00066787
+      ],
+      "tolerance": 5.1e-09,
+      "passed": true,
+      "source_kind": "packaged records; not new training"
+    },
+    {
+      "comparison": "BCT1 full - structured",
+      "n": 4,
+      "mean": -0.0006181267090141773,
+      "confidence": 0.95,
+      "ci": [
+        -0.0007722915174528484,
+        -0.0004639619005755063
+      ],
+      "printed_mean": -0.000618,
+      "printed_ci": [
+        -0.000772,
+        -0.000464
+      ],
+      "tolerance": 5.01e-07,
+      "passed": true,
+      "source_kind": "packaged records; not new training"
+    },
+    {
+      "comparison": "BCT1 full - combined",
+      "n": 4,
+      "mean": 9.598862379789352e-05,
+      "confidence": 0.95,
+      "ci": [
+        7.37024308041258e-05,
+        0.00011827481679166124
+      ],
+      "printed_mean": 9.599e-05,
+      "printed_ci": [
+        7.37e-05,
+        0.00011827
+      ],
+      "tolerance": 5.1e-09,
+      "passed": true,
+      "source_kind": "packaged records; not new training"
+    },
+    {
+      "comparison": "BCT2 fresh full - structured",
+      "n": 4,
+      "mean": -0.0005939332768321037,
+      "confidence": 0.95,
+      "ci": [
+        -0.0006332087165214199,
+        -0.0005546578371427876
+      ],
+      "printed_mean": -0.000593933277,
+      "printed_ci": [
+        -0.000633208717,
+        -0.000554657837
+      ],
+      "tolerance": 5.1e-13,
+      "passed": true,
+      "source_kind": "packaged records; not new training"
+    }
+  ],
+  "passed": true,
+  "count": 15,
+  "allocation": {
+    "records": 240,
+    "unique_cells": 240,
+    "phase_signs": {
+      "400": {
+        "count": 24,
+        "every_expected_relative_sign": true
+      },
+      "3000": {
+        "count": 24,
+        "every_expected_relative_sign": true
+      }
+    }
+  },
+  "BCT2": "Four fresh parents, exact recovered final report and eight original receipts; not pooled with BCT1."
+}

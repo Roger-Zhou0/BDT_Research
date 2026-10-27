@@ -1,0 +1,188 @@
+{
+  "accounts": [
+    "account_b"
+  ],
+  "accumulation": 4,
+  "adam_offset": 7630,
+  "advancement": "User-authorized parallel confirmation: finish/report all fixed fresh families regardless of remaining BAA1 outcome; no adaptive seeds, draws, sample size or stopping.",
+  "arm_order": {
+    "175": [
+      "adamw",
+      "bdt",
+      "draw0_preserved",
+      "draw0_reassigned"
+    ],
+    "176": [
+      "adamw",
+      "bdt",
+      "draw0_reassigned",
+      "draw0_preserved"
+    ],
+    "177": [
+      "adamw",
+      "draw0_preserved",
+      "bdt",
+      "draw0_reassigned"
+    ],
+    "178": [
+      "adamw",
+      "draw0_preserved",
+      "draw0_reassigned",
+      "bdt"
+    ],
+    "179": [
+      "adamw",
+      "draw0_reassigned",
+      "bdt",
+      "draw0_preserved"
+    ],
+    "180": [
+      "adamw",
+      "draw0_reassigned",
+      "draw0_preserved",
+      "bdt"
+    ]
+  },
+  "arms": [
+    "adamw",
+    "bdt",
+    "draw0_preserved",
+    "draw0_reassigned"
+  ],
+  "betas": [
+    0.9,
+    0.95
+  ],
+  "cache": "S1-B",
+  "cache_sha256": {
+    "metadata.json": "64d9e563d8b12517cfe123560d39ab4f579ef9c4ec5482e215c20cb4f4108feb",
+    "train.bin": "760fe8d0a55959dc322643fa4ac856e542e11bd59ac84c2f48f6e00a3d587ce6",
+    "val.bin": "5dd2caeb46e3c237e6c9291d5964c548ae004cd87b3c29f01188b444af2aff0f"
+  },
+  "cap": 3.0,
+  "chart_namespace": "Inherited BAA1 SHA256(parent,draw,label); actual confirmation uses draw0 only, one fixed draw per fresh parent.",
+  "claims": "Ancestry-specific correspondence prediction at fixed chart multiplicities and matched own-state geometry; not semantic neuron alignment or a new optimizer gain.",
+  "clip": 1.0,
+  "context": 512,
+  "covariance_beta": 0.9,
+  "d_model": 768,
+  "date": "2026-09-12",
+  "depth": 12,
+  "disk_free_gib": 128,
+  "endpoint": {
+    "offset": 2500000,
+    "partition": "REPORT",
+    "sequences": 2048,
+    "tokens_scored": 1048576
+  },
+  "eps": 1e-08,
+  "evaluation_lane": "B-good",
+  "ffn_hidden": 2048,
+  "fresh_seeds": [
+    175,
+    176,
+    177,
+    178,
+    179,
+    180
+  ],
+  "gate_end": 420,
+  "gate_interrupt": 310,
+  "gate_seed": 127,
+  "gpu_free_mib": 32768,
+  "groups": [
+    "gate",
+    "up",
+    "down"
+  ],
+  "inference": "Six fresh independent parent-plus-fixed-draw families; one primary reassigned-minus-preserved REPORT contrast. No pooling with BAA1/PCT1 or extra draws as independent parents.",
+  "kind": "ancestry_confirmation",
+  "lane_seeds": {
+    "B-default": [
+      176,
+      178,
+      180
+    ],
+    "B-good": [
+      175,
+      177,
+      179
+    ]
+  },
+  "learning_rate": 0.0006,
+  "microbatch": 16,
+  "minimum_lr_ratio": 0.1,
+  "n_heads": 12,
+  "no_auto_extension": true,
+  "observation_every": 10,
+  "onset": 200,
+  "oom_failure_limit": 3,
+  "parameters": 123551232,
+  "parent_lr": 0.0008,
+  "parent_updates": 7630,
+  "post_lr": 0.0006,
+  "post_updates": 3000,
+  "precision": "bf16",
+  "prefix_updates": 200,
+  "prerequisite_sources": {
+    "balanced_ancestry_assignment_v1": {
+      "protocol": "950e2106d23e8538a4fb4f2c65cb63361318c3b1c893cd805929bf738cff30c1",
+      "source": "a8954018316a2bf3f9ac0fb0a3006e8fb27cbe7edeba8b6764ac379ae2561da3"
+    }
+  },
+  "primary": "Reassigned-minus-preserved final REPORT loss over the six parent-plus-draw units, positive predicted; two-sided paired 95% Student-t interval.",
+  "ramp": 200,
+  "release_default": "Engineering only. --science is a separate explicit release after all gates.",
+  "report_policy": "All 24 endpoints locked before any scientific REPORT; single prespecified paired 95% t interval; secondary contrasts descriptive.",
+  "seed_reservation": "Candidate labels only until live registry collision checks pass; refuse, never auto-renumber.",
+  "seeds": [
+    175,
+    176,
+    177,
+    178,
+    179,
+    180
+  ],
+  "short": "bac1",
+  "temporal_windows": [
+    [
+      201,
+      220
+    ],
+    [
+      391,
+      410
+    ],
+    [
+      991,
+      1010
+    ],
+    [
+      1991,
+      2010
+    ],
+    [
+      2981,
+      3000
+    ]
+  ],
+  "unused_shadow_policy": "Both original BAA1 chart draws and the original GCT shadow are retained symmetrically for reference continuity; draw1 is not an applied confirmation arm.",
+  "version": "ancestry_confirmation_v1",
+  "vocab_size": 50257,
+  "wait_hours": 72,
+  "warmup": 200,
+  "weight_decay": 0.1,
+  "work_updates_12layer": 68400,
+  "work_updates_6layer": 45780,
+  "release_policy_revision": "parallel_v1_2026-09-12; replaces unlaunched global positive-outcome admission only",
+  "local_predecessor_seeds": {
+    "B-good": [
+      160
+    ],
+    "B-default": [
+      159
+    ]
+  },
+  "prerequisite_policy": "Unchanged BAA1 source/protocol and completed local lane required. No global efficacy outcome used. All physical GPU, runtime, cache and process admission checks retained.",
+  "design_history": "Parent160 positive BAA1 evidence known before preparation. User requested parallel release before the whole development result; BAA1/PCT1 parents excluded from confirmation."
+}

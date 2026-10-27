@@ -1,0 +1,75 @@
+{
+  "cache": {
+    "kind": "synthetic token IDs, not paper evidence"
+  },
+  "code_identity": {
+    "import_adapter": "858b04a1d56f818dc159498e846c05e4dc3b47258cb54527c9b265c85210ceef",
+    "kernel_manifest": "5cd790e6ab5c979836d41054f89637a84cc90c4280856d2d908cc4398262f84e",
+    "portable_training": "8ce4f6b3b1784ac07966b14baad83fafad44802ae2aaef9f654c1fc875f3f4bd",
+    "protocol": "777c42a6fb3c4290c825251154c192bd6e209711dcaeaae536d0566d2bd00cc2",
+    "training_helpers": "fe44115a9040ad4d928dbbfe3ef3911d3696d4ea4897bf002805ca243901a533"
+  },
+  "continuation_end_phase": 420,
+  "endpoints": {
+    "bdt_budget_gs": {
+      "checkpoint_sha256": "3d38628c6985985a1711cf83564ba072f1877a10ea73cb4654de272134b225e4",
+      "identity": "c2236a863e750b8cc8b682d2433e4a32bd7987beed81881ceb5ed61f95ad7dcb",
+      "phase": 420
+    },
+    "structured_budget_gs": {
+      "checkpoint_sha256": "20589d90c2b944a6f5dd403658b05e05520f6e6b3cd52c9e1ef2aec2df6d776d",
+      "identity": "95d993630038a67d62964367b097c85860e59fd9020b34d1dc6fb2458e41cecf",
+      "phase": 420
+    }
+  },
+  "format": "portable_bct1_v1_NOT_native_operational_checkpoint",
+  "global_REPORT_barrier_released": false,
+  "growth": {
+    "both_covariance_histories_zero": true,
+    "covariance_depth_dimension": 11,
+    "grown_age": 4,
+    "independent_moment_storage": true,
+    "independent_parameter_storage": true,
+    "mapped_parameters": 86,
+    "named_moments_exact": true,
+    "next_global_data_step": 5,
+    "parent_age": 4,
+    "phase": 0,
+    "rng_preserved": true,
+    "weights_exact": true
+  },
+  "mode": "CPU_SYNTHETIC_SMOKE",
+  "paper_efficacy_evaluations": 0,
+  "parameters": 227040,
+  "parent_updates": 4,
+  "prefix_updates": 200,
+  "resume_checks": {
+    "bdt_budget_gs": {
+      "exact_model_optimizer_match": true,
+      "exact_trace_match": true,
+      "from_phase": 310,
+      "to_phase": 420
+    },
+    "structured_budget_gs": {
+      "exact_model_optimizer_match": true,
+      "exact_trace_match": true,
+      "from_phase": 310,
+      "to_phase": 420
+    }
+  },
+  "runtime": {
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": true,
+    "deterministic": true,
+    "device": "cpu",
+    "matmul_tf32": false,
+    "numpy": "2.3.5",
+    "threads": 1,
+    "torch": "2.10.0+cpu",
+    "warn_only": false,
+    "workspace": ":4096:8"
+  },
+  "same_first_fork_batch": true,
+  "seconds": 23.746287689999917,
+  "seed": 127
+}

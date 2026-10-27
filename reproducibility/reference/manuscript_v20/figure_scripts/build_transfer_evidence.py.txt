@@ -1,0 +1,94 @@
+"""Recompute fixed REPORT tables and diagnostic summaries; no model/evaluation I/O."""
+from pathlib import Path
+import json,hashlib,math,statistics,sys,importlib.util
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+from scipy.stats import t
+R=Path(__file__).resolve().parents[1]
+E=R/'evidence/final_report_20260923'
+# Original compact input bytes are pinned independently of generated tables.
+for folder in [E,R/'evidence/oip1']:
+    manifest=json.loads((folder/'EDITORIAL_INPUT_MANIFEST.json').read_text())
+    for rel,expected_hash in manifest.items():
+        assert not Path(rel).is_absolute() and '..' not in Path(rel).parts
+        assert hashlib.sha256((folder/rel).read_bytes()).hexdigest()==expected_hash,rel
+scores=json.loads((E/'scores.json').read_text())
+sha=hashlib.sha256(json.dumps(scores,sort_keys=True,separators=(',',':')).encode()).hexdigest()
+# The authenticated compact packet uses standard-library canonical serialization.
+expected='af1eceb024cafd222dc355e93cb060c782691d8b19293c2a879ddb093adbd3ec'
+rawsha=hashlib.sha256(json.dumps(scores,sort_keys=True,separators=(',',':')).encode()).hexdigest()
+if rawsha!=expected:
+    rawsha=hashlib.sha256(json.dumps(scores,sort_keys=True,allow_nan=False).encode()).hexdigest()
+assert rawsha==expected,('score payload identity',rawsha)
+SEEDS=['946201','946202','946203','946204']
+assert all(set(v)==set(SEEDS) for v in scores.values())
+def ci(stage,a,b,level=.95):
+    v=[scores[stage][s][a]-scores[stage][s][b] for s in SEEDS]
+    mean=statistics.mean(v);se=statistics.stdev(v)/2;half=t.ppf((1+level)/2,3)*se
+    return dict(per_parent=dict(zip(SEEDS,v)),mean=mean,se=se,lower=mean-half,upper=mean+half,confidence=level)
+def write(name,rows):
+    (R/'tables'/name).write_text('\n'.join(rows)+'\n')
+rows=[]
+for s in SEEDS:
+    v=scores['frt'][s]
+    rows.append(s+' & '+' & '.join(f'{v[a]:.8f}' for a in ['adamw','draw0_preserved','draw0_reassigned','fixed_true_double'])+r'\\')
+write('adjacent_report_scores.tex',rows)
+rows=[]
+for s in SEEDS:
+    v=scores['art'][s];rows.append(s+' & '+' & '.join(f'{v[a]:.8f}' for a in ['adamw','fixed','difference','attention','assembled','combined'])+r'\\')
+write('art_report_scores.tex',rows)
+rows=[]
+for s in SEEDS:
+    v=scores['bct'][s];rows.append(s+' & '+' & '.join(f'{v[a]:.8f}' for a in ['bdt_budget_gs','structured_budget_gs','combined','assembled'])+r'\\')
+write('bct_report_scores.tex',rows)
+contrasts={}
+plans={
+'adjacent': [('agt',r'Reassigned $-$ preserved','draw0_reassigned','draw0_preserved',.975),('agt',r'Preserved $-$ AdamW','draw0_preserved','adamw',.975),('frt',r'Fixed rule $-$ AdamW','fixed_true_double','adamw',.95)],
+'art': [('art',r'Assembled $-$ fixed','assembled','fixed',.975),('art',r'Assembled $-$ combined','assembled','combined',.975),('art',r'Difference-refined $-$ fixed','difference','fixed',.95),('art',r'Attention-refined $-$ fixed','attention','fixed',.95),('art',r'Assembled $-$ difference-refined','assembled','difference',.95),('art',r'Assembled $-$ attention-refined','assembled','attention',.95),('art',r'Assembled $-$ AdamW','assembled','adamw',.95)],
+'bct': [('bct',r'Full budgets $-$ structured budgets','bdt_budget_gs','structured_budget_gs',.95),('bct',r'Full budgets $-$ combined','bdt_budget_gs','combined',.95),('bct',r'Structured budgets $-$ combined','structured_budget_gs','combined',.95),('bct',r'Full budgets $-$ assembled','bdt_budget_gs','assembled',.95),('bct',r'Structured budgets $-$ assembled','structured_budget_gs','assembled',.95)]}
+for key,rowspec in plans.items():
+    rows=[]
+    for stage,label,a,b,level in rowspec:
+        val=ci(stage,a,b,level);contrasts[stage+':'+a+'-'+b]=val
+        rows.append(label+f" & ${val['mean']:+.8f}$ & $[{val['lower']:+.8f},{val['upper']:+.8f}]$ & {level*100:g}"+r'\%\\')
+    write(key+'_report_contrasts.tex',rows)
+# Check overlap is shared states, not additional replications.
+for s in SEEDS:
+    assert scores['frt'][s]['adamw']==scores['art'][s]['adamw']==scores['agt'][s]['adamw']
+    assert scores['frt'][s]['fixed_true_double']==scores['art'][s]['fixed']
+    for a in ['combined','assembled']:assert scores['art'][s][a]==scores['bct'][s][a]
+# Display the four paired observations without an inferential error bar.
+fig,ax=plt.subplots(figsize=(5.8,2.65))
+for s,marker in zip(SEEDS,['o','s','^','D']):
+    row=scores['bct'][s];base=row['combined']
+    y=[1000*(row[a]-base) for a in ['structured_budget_gs','bdt_budget_gs']]
+    ax.plot([0,1],y,marker=marker,linewidth=1.35,markersize=5,label=s)
+ax.axhline(0,linestyle=':',linewidth=.8)
+ax.set_xticks([0,1],['Structured sector budgets','Full-BDT sector budgets'])
+ax.set_xlim(-.08,1.45)
+ax.set_ylim(-.055,1.0)
+ax.set_ylabel(r'REPORT $-$ combined BDT'+'\n'+r'($10^{-3}$ nats/token)',fontsize=10)
+ax.tick_params(labelsize=9);ax.spines[['top','right']].set_visible(False)
+ax.legend(frameon=False,title='Reused parent',fontsize=8.5,title_fontsize=8.5,loc='upper right')
+fig.subplots_adjust(left=.17,right=.99,top=.96,bottom=.17)
+fig.savefig(R/'figures/bct_budget_transfer.pdf')
+plt.close(fig)
+# OIP1 uses a compact, authenticated diagnostic extraction, not its obsolete run statuses.
+oip=json.loads((R/'evidence/oip1/authenticated_completion_metrics.json').read_text())['OIP1']
+assert oip['state']=='complete' and oip['backward_calls']==512 and oip['model_updates']==0
+assert oip['validation_evaluations']==0 and len(oip['rows'])==16
+assert oip['record_checks']['success_binds_analysis'] and oip['record_checks']['pair_receipt_hashes_match']==256
+lookup={(r['state'],r['condition']):r for r in oip['rows']}
+labels={'retained_adaptive':r'$m$/adaptive','zero_adaptive':r'$0$/adaptive','retained_scalar':r'$m$/scalar','zero_scalar':r'$0$/scalar'}
+rows=[]
+for state in ['159_200','160_200','159_3000','160_3000']:
+    for i,c in enumerate(labels):
+        x=lookup[state,c]
+        rows.append((state.replace('_',r' / ') if i==0 else '')+' & '+labels[c]+' & '+f"{x['signal_total_residual_cosine_mean']:.6f} & {x['noise_total_residual_cosine_mean']:.6f} & {100*x['signal_matched_difference_over_total_correction_mean']:.3f} & {x['SN_normalized_matrix_distance_mean']:.6f}"+r'\\')
+    if state!='160_3000':rows.append(r'\midrule')
+write('oip_all_state_metrics.tex',rows)
+validation={'state':'passed','score_payload_sha256':rawsha,'parent_units':4,'report_cells':56,'distinct_endpoint_cells':40,'new_evaluations':0,
+ 'contrasts':contrasts,'OIP1_rows':16,'OIP1_parent_units':2,'source_scope':'Authenticated final REPORT score extraction and OIP1 completion-metric extraction; no fresh model evaluation or tensor replay.'}
+(R/'evidence/NEW_EVIDENCE_RECOMPUTATION.json').write_text(json.dumps(validation,sort_keys=True,indent=2)+'\n')
+print('Regenerated REPORT tables, paired intervals, BCT1 figure and OIP1 descriptive tables.')

@@ -1,0 +1,122 @@
+"""Regenerate standalone vector plots from recorded inputs; no PDF page crops.
+Inherited endpoints retain their source display precision. ARM1 geometry uses
+unrounded saved records. No new loss evaluation or training is performed.
+"""
+from pathlib import Path
+import json, statistics
+import numpy as np
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+from scipy.stats import t
+ROOT=Path(__file__).resolve().parents[1]
+OUT=ROOT/'figures'
+T=json.loads((ROOT/'evidence/inherited_display_tables.json').read_text())['tables']
+
+def canvas(width=5.8,height=2.4):
+    fig=plt.figure(figsize=(width,height),layout='constrained')
+    ax=fig.add_subplot(111)
+    ax.spines[['top','right']].set_visible(False)
+    ax.tick_params(labelsize=9)
+    return fig,ax
+
+def save(fig,name):
+    fig.savefig(OUT/(name+'.pdf'),bbox_inches='tight',metadata={'Title':name,'Author':'Anonymous authors'})
+    plt.close(fig)
+
+# BAC1: parent-plus-fixed-draw units, no pooled uncertainty across arms.
+a=np.array(T['bac1_all_endpoints'],float);fig,ax=canvas(height=1.85)
+for col,offset,marker,label in [(2,-.17,'o','Canonical BDT'),(3,0,'s','Preserved'),(4,.17,'^','Reassigned')]:
+    ax.plot(a[:,0]+offset,1000*(a[:,col]-a[:,1]),linestyle='none',marker=marker,markersize=5,label=label)
+ax.axhline(0,linestyle=':',linewidth=.8)
+ax.set(xticks=a[:,0],xlabel='Fresh pretrained parent',ylabel='REPORT − AdamW\n(10⁻³ nats/token)',ylim=(-2.75,1.8))
+ax.legend(loc='upper center',bbox_to_anchor=(.5,1.26),ncol=3,frameon=False,fontsize=8.5)
+save(fig,'bac1_balanced')
+
+# PCT1 graded development: each curve is a fixed parent/draw, not a replicate.
+fig,ax=canvas(height=2.0)
+for r in T['pct1_all_endpoints']:
+    seed,adam,_,draw,*ys=map(float,r)
+    ax.plot([0,3,6],1000*(np.array(ys)-adam),marker='o' if int(seed)==159 else 's',
+            linestyle='-' if int(draw)==0 else '--',markersize=4,label=f'Parent {int(seed)}, draw {int(draw)}')
+ax.axhline(0,linestyle=':',linewidth=.8)
+ax.set(xticks=[0,3,6],xlabel='Broken ancestry pairs',ylabel='DEV − AdamW\n(10⁻³ nats/token)')
+ax.legend(frameon=False,ncol=2,fontsize=8,loc='upper center',bbox_to_anchor=(.5,1.30))
+save(fig,'pct1_graded')
+
+# CMS1 paired effects: exact displayed mean/adjusted intervals are in the paper.
+a=np.array(T['cms1_per_seed'],float);fig,ax=canvas(height=2.65)
+y=np.arange(6,0,-1)
+for col,offset,marker,label,mean,lo,hi in [(4,.12,'o','BDT − AdamW',-.002696905,-.004215484,-.001178327),
+        (5,-.12,'s','BDT − matched',-.006098807,-.008102028,-.004095586)]:
+    ax.plot(1000*a[:,col],y+offset,linestyle='none',marker=marker,markersize=4,label=label)
+    ax.errorbar([1000*mean],[offset],xerr=[[1000*(mean-lo)],[1000*(hi-mean)]],fmt=marker,capsize=3,markersize=5)
+ax.axvline(0,linestyle=':',linewidth=.8)
+ax.set(yticks=list(y)+[0],yticklabels=[str(int(v)) for v in a[:,0]]+['Mean'],
+       xlabel='BDT − comparator (10⁻³ nats/token)',ylabel='Training seed',xlim=(-9.7,.35))
+ax.legend(frameon=False,ncol=2,fontsize=8,loc='upper center',bbox_to_anchor=(.5,1.2))
+save(fig,'cms1_contrasts')
+
+# Same GCT2 models, two evaluations; no additional independent parents.
+g=np.array(T['gct2_all_endpoints'],float);f=np.array(T['fev1_all_endpoints'],float)
+fig,ax=canvas(height=2.6);y=np.arange(6,0,-1)
+for arr,col,offset,m,label in [(g,4,.24,'o','REPORT: BDT − AdamW'),(g,5,.08,'s','REPORT: BDT − matched'),
+         (f,4,-.08,'^','Documents: BDT − AdamW'),(f,5,-.24,'D','Documents: BDT − matched')]:
+    ax.plot(1000*arr[:,col],y+offset,linestyle='none',marker=m,markersize=4,label=label)
+ax.axvline(0,linestyle=':',linewidth=.8)
+ax.set(yticks=y,yticklabels=[str(int(v)) for v in g[:,0]],xlabel='BDT − comparator (10⁻³ nats/token)',ylabel='Pretrained parent',xlim=(-3.7,.1))
+ax.legend(frameon=False,ncol=2,fontsize=7.7,loc='upper center',bbox_to_anchor=(.5,1.27))
+save(fig,'gct2_fev1_contrasts')
+
+# BCR1 selected recipe, one paired interval.
+a=np.array(T['bcr1_all_endpoints'],float);fig,ax=canvas(height=2.3);y=np.arange(6,0,-1)
+ax.plot(1000*a[:,3],y,'o',markersize=4)
+mean,lo,hi=-.002637862849,-.002787860402,-.002487865295
+ax.errorbar([1000*mean],[0],xerr=[[1000*(mean-lo)],[1000*(hi-mean)]],fmt='D',capsize=3,markersize=5)
+ax.axvline(0,linestyle=':',linewidth=.8)
+ax.set(yticks=list(y)+[0],yticklabels=[str(int(v)) for v in a[:,0]]+['Mean'],xlabel='Combined BDT − AdamW (10⁻³ nats/token)',ylabel='Fresh pretrained parent',xlim=(-3,.1))
+save(fig,'bcr1_paired')
+
+# ODC: two separately analyzed cohorts in one axes; linked within-seed conditions.
+fig,ax=canvas(height=2.0);seen=set()
+for cohort in ['A','B']:
+    rows=[r for r in T['odc_all_endpoints'] if r[0]==cohort]
+    for seed in sorted({r[1] for r in rows},key=int):
+        pair=[next(r for r in rows if r[1]==seed and r[2]==c) for c in ['independent','cloned']]
+        for col,marker,name in [(4,'o','BDT, cap 2'),(5,'s','Modified FFN GS')]:
+            vals=[1000*(float(r[col])-float(r[3])) for r in pair]
+            x=[0,1] if cohort=='A' else [3,4]
+            ax.plot(x,vals,marker=marker,linestyle='-' if col==4 else '--',linewidth=.8,markersize=3,
+                    label=name if name not in seen else None)
+            seen.add(name)
+ax.axhline(0,linestyle=':',linewidth=.8)
+ax.set(xticks=[0,1,3,4],xticklabels=['Independent\nA: 4 seeds','Cloned','Independent\nB: 2 seeds','Cloned'],ylabel='Treatment − AdamW\n(10⁻³ nats/token)')
+ax.legend(frameon=False,ncol=2,fontsize=8,loc='upper center',bbox_to_anchor=(.5,1.24))
+save(fig,'odc_interactions')
+
+# ARM1 post-ramp ratios: per-phase median across three projection groups.
+d=json.loads((ROOT/'evidence/ARM1_applied_geometry.json').read_text())
+fig,ax=canvas(height=2.15)
+for a in d['arms']:
+    phases=[400,1000,2000,3000]
+    vals=[statistics.median(r[2]/r[3] for r in a['samples'] if r[0]==ph) for ph in phases]
+    label=f"{a['seed']}: "+('preserved' if a['arm'].startswith('preserved') else 'reassigned')
+    ax.plot(phases,vals,marker='o' if a['seed']==159 else 's',linestyle='-' if a['arm'].startswith('preserved') else '--',markersize=4,label=label)
+ax.axhline(1,linestyle=':',linewidth=.8)
+ax.set(yscale='log',xticks=[400,1000,2000,3000],xlabel='Post-growth update (recorded phases only)',ylabel='Unforced / canonical\ncentered angle',ylim=(.008,1.3))
+ax.legend(frameon=False,ncol=2,fontsize=8,loc='upper center',bbox_to_anchor=(.5,1.28))
+save(fig,'arm1_angle_ratios')
+
+fig,ax=canvas(height=2.0)
+for seed in [159,160]:
+    p=next(a for a in d['arms'] if a['seed']==seed and a['arm']=='preserved_unforced')
+    r=next(a for a in d['arms'] if a['seed']==seed and a['arm']=='reassigned_unforced')
+    assert [v[0] for v in p['dev_curve']]==[v[0] for v in r['dev_curve']]
+    phases=[v[0] for v in p['dev_curve']]
+    vals=[1000*(rr[1]-pp[1]) for pp,rr in zip(p['dev_curve'],r['dev_curve'])]
+    ax.plot(phases,vals,marker='o' if seed==159 else 's',markersize=4,label=f'Parent {seed}')
+ax.axhline(0,linestyle=':',linewidth=.8)
+ax.set(xticks=[400,1000,2000,3000],xlabel='Post-growth update',ylabel='Reassigned − preserved\n(10⁻³ nats/token)',ylim=(-.15,3.55))
+ax.legend(frameon=False,ncol=2,fontsize=8)
+save(fig,'arm1_unforced_curve')
+print('Regenerated eight standalone vector plots from the recorded inputs.')

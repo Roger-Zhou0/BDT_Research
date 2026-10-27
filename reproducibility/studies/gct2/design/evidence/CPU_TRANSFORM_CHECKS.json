@@ -1,0 +1,64 @@
+{
+  "state": "CPU_TRANSFORM_CHECKS_PASSED",
+  "time": "2026-09-10T21:07:38.478845-05:00",
+  "torch": "2.6.0",
+  "device": "cpu",
+  "reference_sha256": "d1bd72d9ccd18019aea83551b838d5915f727a0a7b6a0a2fd1006fb1c47969f1",
+  "candidate_sha256": "ef3616d538a806cd01fe8941742f62beb2167e53c87b74f10fbd6f75d50c4ab5",
+  "cases": [
+    {
+      "case": "fp32_1000",
+      "steps": 1000,
+      "exact_proposals": true,
+      "exact_temper_state": true,
+      "required_reports_equal": true,
+      "global_rng_unchanged": true
+    },
+    {
+      "case": "fp64_420",
+      "steps": 420,
+      "exact_proposals": true,
+      "exact_temper_state": true,
+      "required_reports_equal": true,
+      "global_rng_unchanged": true
+    },
+    {
+      "case": "full_reporting_420",
+      "steps": 420,
+      "exact_proposals": true,
+      "exact_temper_state": true,
+      "required_reports_equal": true,
+      "global_rng_unchanged": true
+    },
+    {
+      "case": "inactive_420",
+      "steps": 420,
+      "exact_proposals": true,
+      "exact_temper_state": true,
+      "required_reports_equal": true,
+      "global_rng_unchanged": true
+    },
+    {
+      "case": "zero_common_420",
+      "steps": 420,
+      "exact_proposals": true,
+      "exact_temper_state": true,
+      "required_reports_equal": true,
+      "global_rng_unchanged": true
+    },
+    {
+      "case": "resume_310_to_420",
+      "steps": 420,
+      "exact_proposals": true,
+      "exact_temper_state": true,
+      "required_reports_equal": true,
+      "global_rng_unchanged": true
+    }
+  ],
+  "nonfinite_refusal": true,
+  "wrong_order_shape_refusal": true,
+  "reference_unchanged": true,
+  "scope": "Small proposal-stack tests only; not full-model CUDA equivalence, saved-file crash recovery, or performance evidence.",
+  "evidence_origin": "Exact numerical transcription of the connected-Mac CPU check; original JSON retained in ResearchAgent.",
+  "original_record": "PROJECT_ROOT/ResearchAgent/shared/results/GCT2_BCO1_design_20260910/candidate_cpu/CPU_TRANSFORM_CHECKS.json"
+}

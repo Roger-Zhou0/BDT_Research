@@ -1,0 +1,126 @@
+{
+  "account": "account_b",
+  "accumulation": 4,
+  "actual_scientific_optimizer_updates": 51600,
+  "arms": [
+    "adamw",
+    "bdt",
+    "scrambled_matched"
+  ],
+  "automatic_extensions": false,
+  "bdt": {
+    "cap": 3.0,
+    "covariance_beta": 0.9,
+    "observation_every": 10,
+    "ramp": 200,
+    "warmup": 200
+  },
+  "beta1": 0.9,
+  "beta2": 0.95,
+  "cache": "S1-B",
+  "checkpoint_every": 250,
+  "constructive": "Final REPORT loss BDT minus AdamW",
+  "context": 512,
+  "date": "2026-09-10",
+  "degenerate": "Canonical sine <=1e-7: use exact raw proposal and log numerical-zero event. Otherwise scrambled orthogonal norm/raw-centered norm <=1e-7: STOP; no random fallback or seed replacement",
+  "dev": {
+    "context": 512,
+    "offset": 0,
+    "sequences": 2048
+  },
+  "endpoint": {
+    "context": 512,
+    "evaluate": "only after all 18 continuations complete; same established REPORT partition, not newly unseen data",
+    "offset": 2500000,
+    "sequences": 2048
+  },
+  "eps": 1e-08,
+  "execution_amendment": "New strict-execution cohort; does not overwrite or retroactively confirm earlier non-deterministic REPORT runs",
+  "failure": "Stop on invariant/nonfinite/source/control mismatch. OOM: at most 3 same-recipe attempts from last committed checkpoint; never change batch size. Interrupted runs require explicit --resume",
+  "gate": {
+    "active_end": 420,
+    "active_runs": 8,
+    "max_optimizer_updates": 2160,
+    "parent_updates": 200,
+    "parents": 2,
+    "tests": "reference Adam warmup equality, active-policy repeatability, exact saved-state resume, frozen Adam/BDT equivalence, matched-strength invariants and transport"
+  },
+  "gate_seed": 127,
+  "geometry": {
+    "angle_absolute_tolerance": 5e-06,
+    "common_relative_tolerance": 1e-05,
+    "displacement_absolute_tolerance": 2e-06,
+    "displacement_relative_tolerance": 0.0002,
+    "minimum_candidate_sine": 1e-07,
+    "norm_relative_tolerance": 1e-05,
+    "zero_angle_sine": 1e-07
+  },
+  "gradient_clip": 1.0,
+  "inference": "All six endpoints, mean, SD, paired Student-t 95% CIs; also Bonferroni simultaneous 97.5% CIs for the two comparisons. No equivalence claim or adaptive sample size",
+  "lr_warmup": 200,
+  "microbatch": 16,
+  "min_lr_ratio": 0.1,
+  "model": "explicit-cloned S1",
+  "numerics": "Frozen BDT and proposal covariance in FP32; diagnostic geometry and reductions in FP64, matched proposal cast back to FP32",
+  "order": {
+    "147": [
+      "adamw",
+      "bdt",
+      "scrambled_matched"
+    ],
+    "148": [
+      "bdt",
+      "scrambled_matched",
+      "adamw"
+    ],
+    "149": [
+      "scrambled_matched",
+      "adamw",
+      "bdt"
+    ],
+    "150": [
+      "scrambled_matched",
+      "bdt",
+      "adamw"
+    ],
+    "151": [
+      "bdt",
+      "adamw",
+      "scrambled_matched"
+    ],
+    "152": [
+      "adamw",
+      "scrambled_matched",
+      "bdt"
+    ]
+  },
+  "parameters": 123550560,
+  "parent": "One immutable update-200 model, named Adam state, RNG, canonical and scrambled covariance histories, and permutations per seed",
+  "peak_lr": 0.0012,
+  "permutation": "Independent hidden-unit permutation per depth, consistent gate/up rows and down columns; local CPU generator seeded by SHA256, not training RNG",
+  "precision": "bf16",
+  "prefix_updates": 200,
+  "primary": "Final REPORT loss BDT minus scrambled_matched, paired by six training seeds",
+  "seeds": [
+    147,
+    148,
+    149,
+    150,
+    151,
+    152
+  ],
+  "shadows": "All arms compute both operators and the matched control at their OWN state; only the applied private-FFN proposal differs",
+  "strict_execution": {
+    "attention": "automatic backend selection",
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": true,
+    "deterministic_algorithms": true,
+    "matmul_tf32": false,
+    "warn_only": false,
+    "workspace": ":4096:8"
+  },
+  "tokens_per_update": 32768,
+  "total_updates": 3000,
+  "version": "correspondence_matched_s1_v1",
+  "weight_decay": 0.1
+}

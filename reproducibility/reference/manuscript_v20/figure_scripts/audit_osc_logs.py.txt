@@ -1,0 +1,51 @@
+"""Read the two original OSC1 logs and verify the supplied manipulation summary.
+
+No training imports, device access, checkpoint loading, or evaluation. Raw logs
+are not shipped; their expected byte digests are in the evidence summary.
+"""
+from pathlib import Path
+import argparse, hashlib, json, math, statistics
+ROOT=Path(__file__).resolve().parents[1]
+def summary(v):
+    v=sorted(float(x) for x in v)
+    if not v or not all(math.isfinite(x) for x in v):raise ValueError('Missing/nonfinite diagnostics')
+    return dict(n=len(v),min=v[0],mean=statistics.mean(v),median=statistics.median(v),max=v[-1])
+def main():
+    ap=argparse.ArgumentParser();ap.add_argument('--log',type=Path,action='append',required=True)
+    ap.add_argument('--output',type=Path,required=True);a=ap.parse_args()
+    target=json.loads((ROOT/'evidence/osc1/logged_geometry_summary.json').read_text())
+    expected={r['file']:r for r in target['source_logs']}
+    if len(a.log)!=2 or {p.name for p in a.log}!=set(expected):raise ValueError('Both exact original/resume logs required')
+    events={}
+    for p in a.log:
+        raw=p.read_bytes();e=expected[p.name]
+        if len(raw)!=e['bytes'] or hashlib.sha256(raw).hexdigest()!=e['sha256']:raise ValueError('Source log bytes differ: '+str(p))
+        for line in raw.decode().splitlines():
+            try:r=json.loads(line)
+            except ValueError:continue
+            if not isinstance(r,dict) or r.get('state')!='training' or 'geometry' not in r:continue
+            key=(r['seed'],r['arm'],r['phase'])
+            if key in events and events[key]['geometry']!=r['geometry']:raise ValueError('Replayed diagnostic disagrees')
+            events[key]=r
+    out={}
+    for arm in ['signal_matched','noise_matched']:
+        fields={k:[] for k in target['post_ramp_summary'][arm]}
+        selected=[r for r in events.values() if r['arm']==arm and r['phase']>=400]
+        for seed in [159,160]:
+            phases=sorted(r['phase'] for r in selected if r['seed']==seed)
+            if phases!=list(range(400,3001,25)):raise ValueError('Incomplete post-ramp phase coverage')
+        for r in selected:
+            if set(r['geometry'])!={'gate','up','down'}:raise ValueError('Unexpected projection set')
+            for row in r['geometry'].values():
+                m=row['matching'];c=m['direction_cosine_with_canonical'];th=m['target_angle']
+                if m.get('zero_angle') or not(-1<=c<=1):raise ValueError('Unexpected degenerate matching')
+                if row['candidate']['positive_rank']!=11:raise ValueError('Rank differs from recorded summary')
+                fields['cosine'].append(c);fields['amp'].append(m['amplification'])
+                fields['neg_mass_fraction'].append(row['candidate']['negative_mass_fraction']);fields['angle'].append(th)
+                fields['matched_diff_over_reference_correction'].append(math.cos(th/2)*math.sqrt(max(0,2*(1-c))))
+                fields['matched_diff_over_raw_norm'].append(math.sin(th)*math.sqrt(max(0,2*(1-c))))
+        out[arm]={k:summary(v) for k,v in fields.items()}
+        if out[arm]!=target['post_ramp_summary'][arm]:raise ValueError('Computed summary differs')
+    result=dict(state='original_logs_and_all_pooled_summaries_verified',unique_training_log_records=len(events),post_ramp_summary=out,independent_training_parents=2,new_gradients=0,new_evaluations=0)
+    a.output.parent.mkdir(parents=True,exist_ok=True);a.output.write_text(json.dumps(result,indent=2)+'\n');print(a.output)
+if __name__=='__main__':main()

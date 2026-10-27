@@ -1,0 +1,26 @@
+{
+  "hashes": {
+    "metadata.json": "64d9e563d8b12517cfe123560d39ab4f579ef9c4ec5482e215c20cb4f4108feb",
+    "train.bin": "760fe8d0a55959dc322643fa4ac856e542e11bd59ac84c2f48f6e00a3d587ce6",
+    "val.bin": "5dd2caeb46e3c237e6c9291d5964c548ae004cd87b3c29f01188b444af2aff0f"
+  },
+  "label": "S1-B",
+  "path": "PROJECT_ROOT/recurrent-graph/recurrent_graph_s1_124m/data_s1/fineweb_edu_3b",
+  "stat": {
+    "metadata.json": {
+      "inode": 5165296523349197854,
+      "mtime_ns": 1788327636773609283,
+      "size": 346
+    },
+    "train.bin": {
+      "inode": 6845943003989610740,
+      "mtime_ns": 1788327636760346812,
+      "size": 6000000000
+    },
+    "val.bin": {
+      "inode": 14801766657499078253,
+      "mtime_ns": 1788325560675864000,
+      "size": 10000000
+    }
+  }
+}

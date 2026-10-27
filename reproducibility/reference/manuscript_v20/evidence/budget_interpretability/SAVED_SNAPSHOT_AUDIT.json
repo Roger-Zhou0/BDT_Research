@@ -1,0 +1,41 @@
+{
+  "branch_state_families": 2,
+  "checked_at": "2026-09-24T01:47:07.954124+00:00",
+  "input_hashes": {
+    "BUDGET_DIAGNOSTICS.json": "a0d178b077f90ee0398c2dc415bbd9834681f79a59074f34f0b58965fe433056",
+    "account_b_good.json": "a5fd6f539f5ebc9575b52004f1078315ac068077fd7d5ef872059c1895fe2189",
+    "plot_data_compact.json": "996a8bf80aa746c9aa53d9cf359e244f0b6c8fa2c2efdd93ab84a0930daea93b",
+    "account_a.json": "e228f1922da0fc2691c0ffee2561c5b4bd28894829a671afeb00265b41126198"
+  },
+  "max_abs_errors": {
+    "applied_assigned_source_q": 0.0,
+    "full_q_recalculation": 0.0,
+    "inferred_raw_q_recalculation": 0.0,
+    "plot_rounding": 4.986042689836268e-10,
+    "rho_recalculation": 0.0,
+    "structured_independent_logged_q": 9.037449444360135e-08,
+    "structured_q_recalculation": 0.0
+  },
+  "parents": 4,
+  "projection_groups": [
+    "gate",
+    "up",
+    "down"
+  ],
+  "records": 240,
+  "retained_phases": [
+    201,
+    210,
+    250,
+    300,
+    310,
+    400,
+    420,
+    1000,
+    2000,
+    3000
+  ],
+  "scope": "Read-only recomputation from existing original snapshot records; no checkpoint-tensor replay, gradients, evaluations, or active-study access.",
+  "source": "c63c877701dc3feb22b4b7e0bf01166beba3775e39cbc9603b487363e669f3fa",
+  "state": "passed"
+}

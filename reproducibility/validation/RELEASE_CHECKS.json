@@ -1,0 +1,192 @@
+{
+  "BCT2_record_checks": 119,
+  "bounded_command_invocations": 15,
+  "commands": [
+    {
+      "command": [
+        "python",
+        "scripts/check_package.py"
+      ],
+      "name": "package",
+      "returncode": 0,
+      "seconds": 1.369
+    },
+    {
+      "command": [
+        "python",
+        "scripts/native_study.py",
+        "--study",
+        "cms1",
+        "--action",
+        "plan"
+      ],
+      "name": "cms1_plan",
+      "returncode": 0,
+      "seconds": 0.716
+    },
+    {
+      "command": [
+        "python",
+        "scripts/native_study.py",
+        "--study",
+        "gct2",
+        "--action",
+        "plan"
+      ],
+      "name": "gct2_plan",
+      "returncode": 0,
+      "seconds": 0.716
+    },
+    {
+      "command": [
+        "python",
+        "scripts/native_study.py",
+        "--study",
+        "bac1",
+        "--action",
+        "plan"
+      ],
+      "name": "bac1_plan",
+      "returncode": 0,
+      "seconds": 0.716
+    },
+    {
+      "command": [
+        "python",
+        "scripts/reproduce_all.py",
+        "--out",
+        "<external-check-directory>/records"
+      ],
+      "name": "records",
+      "returncode": 0,
+      "seconds": 1.418
+    },
+    {
+      "command": [
+        "python",
+        "scripts/verify_bct2.py",
+        "--out",
+        "<external-check-directory>/bct2_records"
+      ],
+      "name": "bct2_records",
+      "returncode": 0,
+      "seconds": 0.716
+    },
+    {
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "name": "unit_tests",
+      "returncode": 0,
+      "seconds": 7.687
+    },
+    {
+      "command": [
+        "python",
+        "scripts/smoke_training.py",
+        "--out",
+        "<external-check-directory>/bct1_smoke"
+      ],
+      "name": "bct1_smoke",
+      "returncode": 0,
+      "seconds": 30.077
+    },
+    {
+      "command": [
+        "python",
+        "scripts/native_study.py",
+        "--study",
+        "cms1",
+        "--action",
+        "cpu-test",
+        "--out",
+        "<external-check-directory>/cms1_cpu"
+      ],
+      "name": "cms1_cpu",
+      "returncode": 0,
+      "seconds": 12.875
+    },
+    {
+      "command": [
+        "python",
+        "scripts/native_study.py",
+        "--study",
+        "gct2",
+        "--action",
+        "cpu-test",
+        "--out",
+        "<external-check-directory>/gct2_cpu"
+      ],
+      "name": "gct2_cpu",
+      "returncode": 0,
+      "seconds": 55.172
+    },
+    {
+      "command": [
+        "python",
+        "scripts/native_study.py",
+        "--study",
+        "bac1",
+        "--action",
+        "cpu-test",
+        "--out",
+        "<external-check-directory>/bac1_cpu"
+      ],
+      "name": "bac1_cpu",
+      "returncode": 0,
+      "seconds": 87.105
+    },
+    {
+      "command": [
+        "python",
+        "scripts/reproduce_appendix.py",
+        "--out",
+        "<external-check-directory>/appendix"
+      ],
+      "name": "appendix",
+      "returncode": 0,
+      "seconds": 8.24
+    },
+    {
+      "command": [
+        "python",
+        "scripts/plot_results.py",
+        "--out",
+        "<external-check-directory>/plots"
+      ],
+      "name": "plots",
+      "returncode": 0,
+      "seconds": 2.477
+    },
+    {
+      "command": [
+        "python",
+        "scripts/check_data_environment.py"
+      ],
+      "name": "data_environment",
+      "returncode": 0,
+      "seconds": 0.716
+    },
+    {
+      "command": [
+        "python",
+        "scripts/check_package.py"
+      ],
+      "name": "package_after",
+      "returncode": 0,
+      "seconds": 1.369
+    }
+  ],
+  "completed_utc": "2026-09-26T07:50:20.443948+00:00",
+  "independent_arithmetic_comparisons": 15,
+  "packaging_unit_tests": 135,
+  "passed": true,
+  "release": "v8",
+  "scope": "Checks of staged v8 code and evidence. Final ZIP extraction checks are recorded separately in the author delivery report. No scientific training or GPU evaluation rerun."
+}

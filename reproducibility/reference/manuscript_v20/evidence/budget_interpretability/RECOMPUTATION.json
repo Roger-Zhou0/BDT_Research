@@ -1,0 +1,1530 @@
+{
+  "adaptivity_necessity_tested": false,
+  "all_24_same_state_comparisons_full_above_structured_at400": true,
+  "all_24_same_state_comparisons_full_below_structured_at3000": true,
+  "all_retained_effective_coefficients_above_one": true,
+  "branch_state_families": 2,
+  "interpolation_is_not_measurement": true,
+  "max_rho_reconstruction_error_from_rounded_extract": 6.291282828030376e-09,
+  "new_model_evaluations": 0,
+  "new_training_updates": 0,
+  "parents": 4,
+  "plot_payload_sha256": "996a8bf80aa746c9aa53d9cf359e244f0b6c8fa2c2efdd93ab84a0930daea93b",
+  "records": 240,
+  "retained_phases": [
+    201,
+    210,
+    250,
+    300,
+    310,
+    400,
+    420,
+    1000,
+    2000,
+    3000
+  ],
+  "scope": "Retrospective retained-record geometry, not another loss comparison or a fresh-parent result.",
+  "state": "passed",
+  "summaries": [
+    {
+      "branch_state": "bdt_budget_gs",
+      "phase": 201,
+      "projection": "gate",
+      "qD_full": {
+        "max": 0.10688274,
+        "mean": 0.105829143,
+        "min": 0.10415075
+      },
+      "qD_raw_inferred": {
+        "max": 0.1038245577408851,
+        "mean": 0.10275622352185619,
+        "min": 0.10108783363272887
+      },
+      "qD_structured": {
+        "max": 0.10447127,
+        "mean": 0.10339704,
+        "min": 0.101719434
+      },
+      "rho_effective_full": {
+        "max": 1.0167704549461256,
+        "mean": 1.0165865039962174,
+        "min": 1.0163563914624851
+      }
+    },
+    {
+      "branch_state": "bdt_budget_gs",
+      "phase": 201,
+      "projection": "up",
+      "qD_full": {
+        "max": 0.107666024,
+        "mean": 0.10623147675,
+        "min": 0.104388989
+      },
+      "qD_raw_inferred": {
+        "max": 0.10465037821178634,
+        "mean": 0.10321413901757101,
+        "min": 0.10138544518084827
+      },
+      "qD_structured": {
+        "max": 0.10530163,
+        "mean": 0.10385747825,
+        "min": 0.102018694
+      },
+      "rho_effective_full": {
+        "max": 1.0164893463936224,
+        "mean": 1.0162250001330144,
+        "min": 1.0159878745309727
+      }
+    },
+    {
+      "branch_state": "bdt_budget_gs",
+      "phase": 201,
+      "projection": "down",
+      "qD_full": {
+        "max": 0.092054577,
+        "mean": 0.09013558625,
+        "min": 0.08791529
+      },
+      "qD_raw_inferred": {
+        "max": 0.08930060800804716,
+        "mean": 0.08740415998519661,
+        "min": 0.0852273979366849
+      },
+      "qD_structured": {
+        "max": 0.089865924,
+        "mean": 0.08795861375,
+        "min": 0.085769357
+      },
+      "rho_effective_full": {
+        "max": 1.0172191759804392,
+        "mean": 1.0170307512710635,
+        "min": 1.0168412057159568
+      }
+    },
+    {
+      "branch_state": "bdt_budget_gs",
+      "phase": 210,
+      "projection": "gate",
+      "qD_full": {
+        "max": 0.131591538,
+        "mean": 0.13086762175,
+        "min": 0.129670002
+      },
+      "qD_raw_inferred": {
+        "max": 0.10299295492832104,
+        "mean": 0.10226363341459899,
+        "min": 0.10100313762134763
+      },
+      "qD_structured": {
+        "max": 0.109575119,
+        "mean": 0.10880479825,
+        "min": 0.107473371
+      },
+      "rho_effective_full": {
+        "max": 1.1515676014117944,
+        "mean": 1.1497143004982882,
+        "min": 1.1474075487372106
+      }
+    },
+    {
+      "branch_state": "bdt_budget_gs",
+      "phase": 210,
+      "projection": "up",
+      "qD_full": {
+        "max": 0.130916045,
+        "mean": 0.130335208,
+        "min": 0.129169655
+      },
+      "qD_raw_inferred": {
+        "max": 0.10316706242999026,
+        "mean": 0.10234556493782287,
+        "min": 0.10112074635277321
+      },
+      "qD_structured": {
+        "max": 0.109758992,
+        "mean": 0.10889133475,
+        "min": 0.107597612
+      },
+      "rho_effective_full": {
+        "max": 1.14881924913848,
+        "mean": 1.1465115866047335,
+        "min": 1.144088782844735
+      }
+    },
+    {
+      "branch_state": "bdt_budget_gs",
+      "phase": 210,
+      "projection": "down",
+      "qD_full": {
+        "max": 0.112490788,
+        "mean": 0.11123751525,
+        "min": 0.109623206
+      },
+      "qD_raw_inferred": {
+        "max": 0.08707170202488151,
+        "mean": 0.0858086453178272,
+        "min": 0.08436603110637043
+      },
+      "qD_structured": {
+        "max": 0.092741557,
+        "mean": 0.0914044095,
+        "min": 0.089877046
+      },
+      "rho_effective_full": {
+        "max": 1.156459443380536,
+        "mean": 1.1547596940978482,
+        "min": 1.1527944112295045
+      }
+    },
+    {
+      "branch_state": "bdt_budget_gs",
+      "phase": 250,
+      "projection": "gate",
+      "qD_full": {
+        "max": 0.21310864,
+        "mean": 0.21187803175,
+        "min": 0.210706156
+      },
+      "qD_raw_inferred": {
+        "max": 0.10140583842143774,
+        "mean": 0.10064286984062784,
+        "min": 0.09955622901986383
+      },
+      "qD_structured": {
+        "max": 0.137628605,
+        "mean": 0.1366343045,
+        "min": 0.135217723
+      },
+      "rho_effective_full": {
+        "max": 1.5557078063556182,
+        "mean": 1.5499789828704478,
+        "min": 1.5432264250054326
+      }
+    },
+    {
+      "branch_state": "bdt_budget_gs",
+      "phase": 250,
+      "projection": "up",
+      "qD_full": {
+        "max": 0.209327804,
+        "mean": 0.20837427825,
+        "min": 0.207798117
+      },
+      "qD_raw_inferred": {
+        "max": 0.10059923495424791,
+        "mean": 0.0998770337656022,
+        "min": 0.09901079962376363
+      },
+      "qD_structured": {
+        "max": 0.13657767,
+        "mean": 0.135635933,
+        "min": 0.134506103
+      },
+      "rho_effective_full": {
+        "max": 1.5470852157069999,
+        "mean": 1.5402334065054037,
+        "min": 1.5339252656509237
+      }
+    },
+    {
+      "branch_state": "bdt_budget_gs",
+      "phase": 250,
+      "projection": "down",
+      "qD_full": {
+        "max": 0.184857349,
+        "mean": 0.1835059455,
+        "min": 0.181764478
+      },
+      "qD_raw_inferred": {
+        "max": 0.08371797838351291,
+        "mean": 0.0826542133277269,
+        "min": 0.08135715260165773
+      },
+      "qD_structured": {
+        "max": 0.114427098,
+        "mean": 0.11302086725,
+        "min": 0.111305479
+      },
+      "rho_effective_full": {
+        "max": 1.5845279647196129,
+        "mean": 1.5793994497342112,
+        "min": 1.573846768247991
+      }
+    },
+    {
+      "branch_state": "bdt_budget_gs",
+      "phase": 300,
+      "projection": "gate",
+      "qD_full": {
+        "max": 0.280731614,
+        "mean": 0.279032546,
+        "min": 0.277599177
+      },
+      "qD_raw_inferred": {
+        "max": 0.10215565129591042,
+        "mean": 0.10088373434770552,
+        "min": 0.09932620411605285
+      },
+      "qD_structured": {
+        "max": 0.185374273,
+        "mean": 0.18327616275,
+        "min": 0.180703787
+      },
+      "rho_effective_full": {
+        "max": 1.8666883435681383,
+        "mean": 1.8572869085218873,
+        "min": 1.8502466530657327
+      }
+    },
+    {
+      "branch_state": "bdt_budget_gs",
+      "phase": 300,
+      "projection": "up",
+      "qD_full": {
+        "max": 0.274722867,
+        "mean": 0.27297675925,
+        "min": 0.271541774
+      },
+      "qD_raw_inferred": {
+        "max": 0.10068307153150788,
+        "mean": 0.09909491762918779,
+        "min": 0.09764482991881947
+      },
+      "qD_structured": {
+        "max": 0.182946525,
+        "mean": 0.1803192,
+        "min": 0.177916986
+      },
+      "rho_effective_full": {
+        "max": 1.8561018540136203,
+        "mean": 1.8476331862011421,
+        "min": 1.8393889315392846
+      }
+    },
+    {
+      "branch_state": "bdt_budget_gs",
+      "phase": 300,
+      "projection": "down",
+      "qD_full": {
+        "max": 0.2491812,
+        "mean": 0.24536020549999998,
+        "min": 0.242372691
+      },
+      "qD_raw_inferred": {
+        "max": 0.08300987542175849,
+        "mean": 0.08101545048006546,
+        "min": 0.07928357221233558
+      },
+      "qD_structured": {
+        "max": 0.153294771,
+        "mean": 0.149884826,
+        "min": 0.14691889
+      },
+      "rho_effective_full": {
+        "max": 1.9274599968518025,
+        "mean": 1.9205443872731163,
+        "min": 1.9146766034627873
+      }
+    },
+    {
+      "branch_state": "bdt_budget_gs",
+      "phase": 310,
+      "projection": "gate",
+      "qD_full": {
+        "max": 0.291779762,
+        "mean": 0.29006444725,
+        "min": 0.288408514
+      },
+      "qD_raw_inferred": {
+        "max": 0.10241599119435059,
+        "mean": 0.10117754209821334,
+        "min": 0.09997464280768073
+      },
+      "qD_structured": {
+        "max": 0.19651781,
+        "mean": 0.194386569,
+        "min": 0.192313916
+      },
+      "rho_effective_full": {
+        "max": 1.9139770923869583,
+        "mean": 1.9052024562165624,
+        "min": 1.8978604417860885
+      }
+    },
+    {
+      "branch_state": "bdt_budget_gs",
+      "phase": 310,
+      "projection": "up",
+      "qD_full": {
+        "max": 0.284991377,
+        "mean": 0.2833708175,
+        "min": 0.281376127
+      },
+      "qD_raw_inferred": {
+        "max": 0.10053748171356451,
+        "mean": 0.09904277393367113,
+        "min": 0.0978103887756535
+      },
+      "qD_structured": {
+        "max": 0.193284967,
+        "mean": 0.190702016,
+        "min": 0.188569513
+      },
+      "rho_effective_full": {
+        "max": 1.9050966203178978,
+        "mean": 1.8966274596813122,
+        "min": 1.888372877304095
+      }
+    },
+    {
+      "branch_state": "bdt_budget_gs",
+      "phase": 310,
+      "projection": "down",
+      "qD_full": {
+        "max": 0.257234139,
+        "mean": 0.2553495105,
+        "min": 0.252913951
+      },
+      "qD_raw_inferred": {
+        "max": 0.08190083635724711,
+        "mean": 0.08078787077956805,
+        "min": 0.07933866709130279
+      },
+      "qD_structured": {
+        "max": 0.160524016,
+        "mean": 0.15852551125,
+        "min": 0.155919932
+      },
+      "rho_effective_full": {
+        "max": 1.9820225058352285,
+        "mean": 1.9753200742690946,
+        "min": 1.9688702899161037
+      }
+    },
+    {
+      "branch_state": "bdt_budget_gs",
+      "phase": 400,
+      "projection": "gate",
+      "qD_full": {
+        "max": 0.369761009,
+        "mean": 0.36754655525,
+        "min": 0.365045
+      },
+      "qD_raw_inferred": {
+        "max": 0.10732266881141876,
+        "mean": 0.10592017472617067,
+        "min": 0.10456537911650901
+      },
+      "qD_structured": {
+        "max": 0.324736055,
+        "mean": 0.32150951725,
+        "min": 0.318385283
+      },
+      "rho_effective_full": {
+        "max": 2.226515603428982,
+        "mean": 2.21489039411369,
+        "min": 2.209069827024042
+      }
+    },
+    {
+      "branch_state": "bdt_budget_gs",
+      "phase": 400,
+      "projection": "up",
+      "qD_full": {
+        "max": 0.361174714,
+        "mean": 0.35910627625,
+        "min": 0.356859016
+      },
+      "qD_raw_inferred": {
+        "max": 0.10370646024722174,
+        "mean": 0.10214759967291398,
+        "min": 0.10055491575732166
+      },
+      "qD_structured": {
+        "max": 0.316390595,
+        "mean": 0.31274208449999996,
+        "min": 0.309004038
+      },
+      "rho_effective_full": {
+        "max": 2.230844335380764,
+        "mean": 2.2193344801595827,
+        "min": 2.2104965800579115
+      }
+    },
+    {
+      "branch_state": "bdt_budget_gs",
+      "phase": 400,
+      "projection": "down",
+      "qD_full": {
+        "max": 0.332873549,
+        "mean": 0.33079561025,
+        "min": 0.328383991
+      },
+      "qD_raw_inferred": {
+        "max": 0.0836842208954024,
+        "mean": 0.08255476146069474,
+        "min": 0.08104934381422571
+      },
+      "qD_structured": {
+        "max": 0.267564183,
+        "mean": 0.2646632415,
+        "min": 0.260787426
+      },
+      "rho_effective_full": {
+        "max": 2.3545169058050592,
+        "mean": 2.343876523661136,
+        "min": 2.3372053654099716
+      }
+    },
+    {
+      "branch_state": "bdt_budget_gs",
+      "phase": 420,
+      "projection": "gate",
+      "qD_full": {
+        "max": 0.372308533,
+        "mean": 0.37134715175,
+        "min": 0.370521165
+      },
+      "qD_raw_inferred": {
+        "max": 0.10850448038687102,
+        "mean": 0.10761550700850692,
+        "min": 0.10655116314162884
+      },
+      "qD_structured": {
+        "max": 0.327433814,
+        "mean": 0.32540334575,
+        "min": 0.322967094
+      },
+      "rho_effective_full": {
+        "max": 2.2236511943255617,
+        "mean": 2.213243533528288,
+        "min": 2.2075681992903577
+      }
+    },
+    {
+      "branch_state": "bdt_budget_gs",
+      "phase": 420,
+      "projection": "up",
+      "qD_full": {
+        "max": 0.364144902,
+        "mean": 0.3627541595,
+        "min": 0.361913491
+      },
+      "qD_raw_inferred": {
+        "max": 0.10476058260698343,
+        "mean": 0.10354849986333964,
+        "min": 0.10247212712070924
+      },
+      "qD_structured": {
+        "max": 0.318837518,
+        "mean": 0.31601939275,
+        "min": 0.313510305
+      },
+      "rho_effective_full": {
+        "max": 2.229954698738773,
+        "mean": 2.21999611020638,
+        "min": 2.212221881879603
+      }
+    },
+    {
+      "branch_state": "bdt_budget_gs",
+      "phase": 420,
+      "projection": "down",
+      "qD_full": {
+        "max": 0.334317963,
+        "mean": 0.3334173665,
+        "min": 0.331754514
+      },
+      "qD_raw_inferred": {
+        "max": 0.08403499117909419,
+        "mean": 0.08335310264597255,
+        "min": 0.08215171113546124
+      },
+      "qD_structured": {
+        "max": 0.268459891,
+        "mean": 0.26671411749999996,
+        "min": 0.263633111
+      },
+      "rho_effective_full": {
+        "max": 2.355144442931113,
+        "mean": 2.345394714566982,
+        "min": 2.338850432408542
+      }
+    },
+    {
+      "branch_state": "bdt_budget_gs",
+      "phase": 1000,
+      "projection": "gate",
+      "qD_full": {
+        "max": 0.425265248,
+        "mean": 0.42430638375,
+        "min": 0.422618259
+      },
+      "qD_raw_inferred": {
+        "max": 0.14961598283313962,
+        "mean": 0.14888115902434512,
+        "min": 0.1477134846927856
+      },
+      "qD_structured": {
+        "max": 0.413061931,
+        "mean": 0.41165753225,
+        "min": 0.409422338
+      },
+      "rho_effective_full": {
+        "max": 2.0563518586870644,
+        "mean": 2.052683323629039,
+        "min": 2.04930148758338
+      }
+    },
+    {
+      "branch_state": "bdt_budget_gs",
+      "phase": 1000,
+      "projection": "up",
+      "qD_full": {
+        "max": 0.416722508,
+        "mean": 0.41550502175,
+        "min": 0.414061619
+      },
+      "qD_raw_inferred": {
+        "max": 0.14164799950248938,
+        "mean": 0.14047605993176002,
+        "min": 0.13949789197069695
+      },
+      "qD_structured": {
+        "max": 0.397624046,
+        "mean": 0.39530703850000004,
+        "min": 0.393369091
+      },
+      "rho_effective_full": {
+        "max": 2.090251089962052,
+        "mean": 2.0855916516324386,
+        "min": 2.0807186473728505
+      }
+    },
+    {
+      "branch_state": "bdt_budget_gs",
+      "phase": 1000,
+      "projection": "down",
+      "qD_full": {
+        "max": 0.386642633,
+        "mean": 0.38521001825,
+        "min": 0.384136336
+      },
+      "qD_raw_inferred": {
+        "max": 0.11465599315968683,
+        "mean": 0.11356074390539936,
+        "min": 0.11297042626022652
+      },
+      "qD_structured": {
+        "max": 0.341246205,
+        "mean": 0.33881244125,
+        "min": 0.337499364
+      },
+      "rho_effective_full": {
+        "max": 2.216233366000182,
+        "mean": 2.211565949060118,
+        "min": 2.2062550786668185
+      }
+    },
+    {
+      "branch_state": "bdt_budget_gs",
+      "phase": 2000,
+      "projection": "gate",
+      "qD_full": {
+        "max": 0.453636429,
+        "mean": 0.45324697725,
+        "min": 0.452654002
+      },
+      "qD_raw_inferred": {
+        "max": 0.1915431006174385,
+        "mean": 0.1907933479713742,
+        "min": 0.19039331065996043
+      },
+      "qD_structured": {
+        "max": 0.48657319,
+        "mean": 0.485361259,
+        "min": 0.484714212
+      },
+      "rho_effective_full": {
+        "max": 1.8785995159884887,
+        "mean": 1.8750846805816928,
+        "min": 1.8720104694410458
+      }
+    },
+    {
+      "branch_state": "bdt_budget_gs",
+      "phase": 2000,
+      "projection": "up",
+      "qD_full": {
+        "max": 0.446855907,
+        "mean": 0.446116077,
+        "min": 0.445330306
+      },
+      "qD_raw_inferred": {
+        "max": 0.181016728180433,
+        "mean": 0.1799720411132304,
+        "min": 0.17923930310592057
+      },
+      "qD_structured": {
+        "max": 0.469243917,
+        "mean": 0.46748368975,
+        "min": 0.466247553
+      },
+      "rho_effective_full": {
+        "max": 1.9198765907630422,
+        "mean": 1.9157038507150284,
+        "min": 1.9118013867204429
+      }
+    },
+    {
+      "branch_state": "bdt_budget_gs",
+      "phase": 2000,
+      "projection": "down",
+      "qD_full": {
+        "max": 0.418548849,
+        "mean": 0.41728123275,
+        "min": 0.416377506
+      },
+      "qD_raw_inferred": {
+        "max": 0.1491953859240721,
+        "mean": 0.1477972635971184,
+        "min": 0.14725295544906494
+      },
+      "qD_structured": {
+        "max": 0.412259775,
+        "mean": 0.409580613,
+        "min": 0.408536986
+      },
+      "rho_effective_full": {
+        "max": 2.035642656725894,
+        "mean": 2.032014888195272,
+        "min": 2.026066430479001
+      }
+    },
+    {
+      "branch_state": "bdt_budget_gs",
+      "phase": 3000,
+      "projection": "gate",
+      "qD_full": {
+        "max": 0.461973242,
+        "mean": 0.45994409475,
+        "min": 0.458723628
+      },
+      "qD_raw_inferred": {
+        "max": 0.2077005736874133,
+        "mean": 0.20552350705062938,
+        "min": 0.20426320744538493
+      },
+      "qD_structured": {
+        "max": 0.511860892,
+        "mean": 0.50853712425,
+        "min": 0.506608437
+      },
+      "rho_effective_full": {
+        "max": 1.8189835760980677,
+        "mean": 1.8144606262027834,
+        "min": 1.8098071339914448
+      }
+    },
+    {
+      "branch_state": "bdt_budget_gs",
+      "phase": 3000,
+      "projection": "up",
+      "qD_full": {
+        "max": 0.454523474,
+        "mean": 0.45322754875,
+        "min": 0.451875849
+      },
+      "qD_raw_inferred": {
+        "max": 0.19536452919485806,
+        "mean": 0.1936359627272765,
+        "min": 0.1921483433795965
+      },
+      "qD_structured": {
+        "max": 0.492693573,
+        "mean": 0.48993212725,
+        "min": 0.487548477
+      },
+      "rho_effective_full": {
+        "max": 1.8617338021193421,
+        "mean": 1.8579395003018189,
+        "min": 1.8525368477348074
+      }
+    },
+    {
+      "branch_state": "bdt_budget_gs",
+      "phase": 3000,
+      "projection": "down",
+      "qD_full": {
+        "max": 0.426842856,
+        "mean": 0.425881313,
+        "min": 0.425223491
+      },
+      "qD_raw_inferred": {
+        "max": 0.16270835659962624,
+        "mean": 0.1613024578042032,
+        "min": 0.16052666372878738
+      },
+      "qD_structured": {
+        "max": 0.437351295,
+        "mean": 0.43480207849999997,
+        "min": 0.433393174
+      },
+      "rho_effective_full": {
+        "max": 1.9675990221157003,
+        "mean": 1.9639442843157755,
+        "min": 1.957629958712248
+      }
+    },
+    {
+      "branch_state": "structured_budget_gs",
+      "phase": 201,
+      "projection": "gate",
+      "qD_full": {
+        "max": 0.10688274,
+        "mean": 0.105829143,
+        "min": 0.10415075
+      },
+      "qD_raw_inferred": {
+        "max": 0.1038245577408851,
+        "mean": 0.10275622352185619,
+        "min": 0.10108783363272887
+      },
+      "qD_structured": {
+        "max": 0.10447127,
+        "mean": 0.10339704,
+        "min": 0.101719434
+      },
+      "rho_effective_full": {
+        "max": 1.0167704549461256,
+        "mean": 1.0165865039962174,
+        "min": 1.0163563914624851
+      }
+    },
+    {
+      "branch_state": "structured_budget_gs",
+      "phase": 201,
+      "projection": "up",
+      "qD_full": {
+        "max": 0.107666024,
+        "mean": 0.10623147675,
+        "min": 0.104388989
+      },
+      "qD_raw_inferred": {
+        "max": 0.10465037821178634,
+        "mean": 0.10321413901757101,
+        "min": 0.10138544518084827
+      },
+      "qD_structured": {
+        "max": 0.10530163,
+        "mean": 0.10385747825,
+        "min": 0.102018694
+      },
+      "rho_effective_full": {
+        "max": 1.0164893463936224,
+        "mean": 1.0162250001330144,
+        "min": 1.0159878745309727
+      }
+    },
+    {
+      "branch_state": "structured_budget_gs",
+      "phase": 201,
+      "projection": "down",
+      "qD_full": {
+        "max": 0.092054577,
+        "mean": 0.09013558625,
+        "min": 0.08791529
+      },
+      "qD_raw_inferred": {
+        "max": 0.08930060800804716,
+        "mean": 0.08740415998519661,
+        "min": 0.0852273979366849
+      },
+      "qD_structured": {
+        "max": 0.089865924,
+        "mean": 0.08795861375,
+        "min": 0.085769357
+      },
+      "rho_effective_full": {
+        "max": 1.0172191759804392,
+        "mean": 1.0170307512710635,
+        "min": 1.0168412057159568
+      }
+    },
+    {
+      "branch_state": "structured_budget_gs",
+      "phase": 210,
+      "projection": "gate",
+      "qD_full": {
+        "max": 0.131579003,
+        "mean": 0.130855112,
+        "min": 0.129658887
+      },
+      "qD_raw_inferred": {
+        "max": 0.10298539126904463,
+        "mean": 0.10225353435189775,
+        "min": 0.10099412590201781
+      },
+      "qD_structured": {
+        "max": 0.109567131,
+        "mean": 0.1087941315,
+        "min": 0.107463851
+      },
+      "rho_effective_full": {
+        "max": 1.1515680379118582,
+        "mean": 1.1497143154808136,
+        "min": 1.1474066788424366
+      }
+    },
+    {
+      "branch_state": "structured_budget_gs",
+      "phase": 210,
+      "projection": "up",
+      "qD_full": {
+        "max": 0.130908923,
+        "mean": 0.13033580925,
+        "min": 0.129172646
+      },
+      "qD_raw_inferred": {
+        "max": 0.10317394451512264,
+        "mean": 0.10234631486112812,
+        "min": 0.10112328425659241
+      },
+      "qD_structured": {
+        "max": 0.10976626,
+        "mean": 0.10889212675,
+        "min": 0.107600293
+      },
+      "rho_effective_full": {
+        "max": 1.1488194439433554,
+        "mean": 1.14651000300469,
+        "min": 1.1440853112031404
+      }
+    },
+    {
+      "branch_state": "structured_budget_gs",
+      "phase": 210,
+      "projection": "down",
+      "qD_full": {
+        "max": 0.112506485,
+        "mean": 0.11124231125,
+        "min": 0.109628658
+      },
+      "qD_raw_inferred": {
+        "max": 0.08708452487446837,
+        "mean": 0.08581256514861577,
+        "min": 0.08437033647540301
+      },
+      "qD_structured": {
+        "max": 0.09275513,
+        "mean": 0.091408559,
+        "min": 0.089881605
+      },
+      "rho_effective_full": {
+        "max": 1.1564598535599813,
+        "mean": 1.1547589278355463,
+        "min": 1.1527920563664151
+      }
+    },
+    {
+      "branch_state": "structured_budget_gs",
+      "phase": 250,
+      "projection": "gate",
+      "qD_full": {
+        "max": 0.212397567,
+        "mean": 0.21117408,
+        "min": 0.210045216
+      },
+      "qD_raw_inferred": {
+        "max": 0.10102787878715751,
+        "mean": 0.10026577067027231,
+        "min": 0.09916084536664142
+      },
+      "qD_structured": {
+        "max": 0.13713624,
+        "mean": 0.1361427565,
+        "min": 0.134701898
+      },
+      "rho_effective_full": {
+        "max": 1.5556793941372986,
+        "mean": 1.5499427844722997,
+        "min": 1.5431432037084754
+      }
+    },
+    {
+      "branch_state": "structured_budget_gs",
+      "phase": 250,
+      "projection": "up",
+      "qD_full": {
+        "max": 0.209209737,
+        "mean": 0.20829615825,
+        "min": 0.207687522
+      },
+      "qD_raw_inferred": {
+        "max": 0.10064612104401528,
+        "mean": 0.09988393130006283,
+        "min": 0.09903559871647503
+      },
+      "qD_structured": {
+        "max": 0.136638777,
+        "mean": 0.135644923,
+        "min": 0.134538465
+      },
+      "rho_effective_full": {
+        "max": 1.5468194290238872,
+        "mean": 1.5398102420040347,
+        "min": 1.5334702484959806
+      }
+    },
+    {
+      "branch_state": "structured_budget_gs",
+      "phase": 250,
+      "projection": "down",
+      "qD_full": {
+        "max": 0.185279215,
+        "mean": 0.18381467325,
+        "min": 0.182139814
+      },
+      "qD_raw_inferred": {
+        "max": 0.08396880833905361,
+        "mean": 0.0828396893843992,
+        "min": 0.08157580207553894
+      },
+      "qD_structured": {
+        "max": 0.114758413,
+        "mean": 0.11326606125,
+        "min": 0.111594838
+      },
+      "rho_effective_full": {
+        "max": 1.584368250062921,
+        "mean": 1.5790974725392897,
+        "min": 1.5734843550283857
+      }
+    },
+    {
+      "branch_state": "structured_budget_gs",
+      "phase": 300,
+      "projection": "gate",
+      "qD_full": {
+        "max": 0.278333588,
+        "mean": 0.27648902875000003,
+        "min": 0.275049771
+      },
+      "qD_raw_inferred": {
+        "max": 0.10105727152701018,
+        "mean": 0.09972370768019584,
+        "min": 0.09817331048542761
+      },
+      "qD_structured": {
+        "max": 0.18356406,
+        "mean": 0.181359741,
+        "min": 0.178793838
+      },
+      "rho_effective_full": {
+        "max": 1.8668798671335491,
+        "mean": 1.8574532051524182,
+        "min": 1.8502364928625392
+      }
+    },
+    {
+      "branch_state": "structured_budget_gs",
+      "phase": 300,
+      "projection": "up",
+      "qD_full": {
+        "max": 0.273868718,
+        "mean": 0.27184348675000003,
+        "min": 0.270391785
+      },
+      "qD_raw_inferred": {
+        "max": 0.10049444797359561,
+        "mean": 0.09875068627020063,
+        "min": 0.09734937573697913
+      },
+      "qD_structured": {
+        "max": 0.182635084,
+        "mean": 0.1797489425,
+        "min": 0.177426402
+      },
+      "rho_effective_full": {
+        "max": 1.8541532142889954,
+        "mean": 1.8459247286631384,
+        "min": 1.8373611564717942
+      }
+    },
+    {
+      "branch_state": "structured_budget_gs",
+      "phase": 300,
+      "projection": "down",
+      "qD_full": {
+        "max": 0.249804558,
+        "mean": 0.24557952375,
+        "min": 0.242593511
+      },
+      "qD_raw_inferred": {
+        "max": 0.08340012833687069,
+        "mean": 0.0812172523387983,
+        "min": 0.07948724383984274
+      },
+      "qD_structured": {
+        "max": 0.153959975,
+        "mean": 0.15022974425,
+        "min": 0.147268519
+      },
+      "rho_effective_full": {
+        "max": 1.9259334032152908,
+        "mean": 1.9190936958264084,
+        "min": 1.9130199767750773
+      }
+    },
+    {
+      "branch_state": "structured_budget_gs",
+      "phase": 310,
+      "projection": "gate",
+      "qD_full": {
+        "max": 0.288912717,
+        "mean": 0.28710862725,
+        "min": 0.285662389
+      },
+      "qD_raw_inferred": {
+        "max": 0.10111472286812487,
+        "mean": 0.09983568833034141,
+        "min": 0.09860215859457398
+      },
+      "qD_structured": {
+        "max": 0.194279702,
+        "mean": 0.19207260275,
+        "min": 0.189941296
+      },
+      "rho_effective_full": {
+        "max": 1.9144116427094962,
+        "mean": 1.9056307402300838,
+        "min": 1.8981796738160754
+      }
+    },
+    {
+      "branch_state": "structured_budget_gs",
+      "phase": 310,
+      "projection": "up",
+      "qD_full": {
+        "max": 0.283653435,
+        "mean": 0.28182167275000003,
+        "min": 0.280002856
+      },
+      "qD_raw_inferred": {
+        "max": 0.10015602305741576,
+        "mean": 0.0985298699093506,
+        "min": 0.09729847297391529
+      },
+      "qD_structured": {
+        "max": 0.192626969,
+        "mean": 0.18981426,
+        "min": 0.187681402
+      },
+      "rho_effective_full": {
+        "max": 1.9030829641156048,
+        "mean": 1.894852191556587,
+        "min": 1.8861555398937093
+      }
+    },
+    {
+      "branch_state": "structured_budget_gs",
+      "phase": 310,
+      "projection": "down",
+      "qD_full": {
+        "max": 0.257444394,
+        "mean": 0.2553657885,
+        "min": 0.252815839
+      },
+      "qD_raw_inferred": {
+        "max": 0.08212999639277865,
+        "mean": 0.0809181467360344,
+        "min": 0.07942566537048858
+      },
+      "qD_structured": {
+        "max": 0.160934603,
+        "mean": 0.1587593295,
+        "min": 0.156076669
+      },
+      "rho_effective_full": {
+        "max": 1.9803288368502185,
+        "mean": 1.97368052578956,
+        "min": 1.9669878551267512
+      }
+    },
+    {
+      "branch_state": "structured_budget_gs",
+      "phase": 400,
+      "projection": "gate",
+      "qD_full": {
+        "max": 0.363501385,
+        "mean": 0.36103604975000003,
+        "min": 0.358618965
+      },
+      "qD_raw_inferred": {
+        "max": 0.10419138884385784,
+        "mean": 0.10271247021075805,
+        "min": 0.10126014750693571
+      },
+      "qD_structured": {
+        "max": 0.317517719,
+        "mean": 0.314065711,
+        "min": 0.310666257
+      },
+      "rho_effective_full": {
+        "max": 2.233705467739584,
+        "mean": 2.2217958745592,
+        "min": 2.2158788198353965
+      }
+    },
+    {
+      "branch_state": "structured_budget_gs",
+      "phase": 400,
+      "projection": "up",
+      "qD_full": {
+        "max": 0.355863952,
+        "mean": 0.35349343499999997,
+        "min": 0.351328076
+      },
+      "qD_raw_inferred": {
+        "max": 0.10143953843482392,
+        "mean": 0.09973680103645095,
+        "min": 0.09806990622026956
+      },
+      "qD_structured": {
+        "max": 0.311088218,
+        "mean": 0.307060008,
+        "min": 0.3031036
+      },
+      "rho_effective_full": {
+        "max": 2.2331152492966364,
+        "mean": 2.221666255010934,
+        "min": 2.2121940338870423
+      }
+    },
+    {
+      "branch_state": "structured_budget_gs",
+      "phase": 400,
+      "projection": "down",
+      "qD_full": {
+        "max": 0.329851023,
+        "mean": 0.32739112575,
+        "min": 0.324584259
+      },
+      "qD_raw_inferred": {
+        "max": 0.08262322814991305,
+        "mean": 0.08134539877177302,
+        "min": 0.07970294323599701
+      },
+      "qD_structured": {
+        "max": 0.264845694,
+        "mean": 0.261545547,
+        "min": 0.25729118
+      },
+      "rho_effective_full": {
+        "max": 2.355618602239589,
+        "mean": 2.344658389410249,
+        "min": 2.3377390334569528
+      }
+    },
+    {
+      "branch_state": "structured_budget_gs",
+      "phase": 420,
+      "projection": "gate",
+      "qD_full": {
+        "max": 0.365838262,
+        "mean": 0.36460742075,
+        "min": 0.363815185
+      },
+      "qD_raw_inferred": {
+        "max": 0.10514886029908836,
+        "mean": 0.10415223141046628,
+        "min": 0.1029233615547473
+      },
+      "qD_structured": {
+        "max": 0.319735858,
+        "mean": 0.31742342925,
+        "min": 0.314565141
+      },
+      "rho_effective_full": {
+        "max": 2.2325775530650183,
+        "mean": 2.22168447271301,
+        "min": 2.2157341829272665
+      }
+    },
+    {
+      "branch_state": "structured_budget_gs",
+      "phase": 420,
+      "projection": "up",
+      "qD_full": {
+        "max": 0.358325551,
+        "mean": 0.35673513525,
+        "min": 0.355659603
+      },
+      "qD_raw_inferred": {
+        "max": 0.10213767432128296,
+        "mean": 0.10082323171312477,
+        "min": 0.0995667210606559
+      },
+      "qD_structured": {
+        "max": 0.312727055,
+        "mean": 0.30963257175,
+        "min": 0.306665769
+      },
+      "rho_effective_full": {
+        "max": 2.234231938340477,
+        "mean": 2.2239782520093807,
+        "min": 2.2156104641028067
+      }
+    },
+    {
+      "branch_state": "structured_budget_gs",
+      "phase": 420,
+      "projection": "down",
+      "qD_full": {
+        "max": 0.330702183,
+        "mean": 0.32958589025,
+        "min": 0.327513408
+      },
+      "qD_raw_inferred": {
+        "max": 0.08273212135172252,
+        "mean": 0.0819107789664675,
+        "min": 0.0805617071826918
+      },
+      "qD_structured": {
+        "max": 0.26512534,
+        "mean": 0.26300835075,
+        "min": 0.25952379
+      },
+      "rho_effective_full": {
+        "max": 2.35759765271298,
+        "mean": 2.347446710484963,
+        "min": 2.340560325988717
+      }
+    },
+    {
+      "branch_state": "structured_budget_gs",
+      "phase": 1000,
+      "projection": "gate",
+      "qD_full": {
+        "max": 0.41789553,
+        "mean": 0.41698997725,
+        "min": 0.415352695
+      },
+      "qD_raw_inferred": {
+        "max": 0.1424297752215671,
+        "mean": 0.14148904829375833,
+        "min": 0.14046761138448235
+      },
+      "qD_structured": {
+        "max": 0.399161607,
+        "mean": 0.39730851975,
+        "min": 0.395292898
+      },
+      "rho_effective_full": {
+        "max": 2.0888639730768013,
+        "mean": 2.0832418560882218,
+        "min": 2.0790639506697843
+      }
+    },
+    {
+      "branch_state": "structured_budget_gs",
+      "phase": 1000,
+      "projection": "up",
+      "qD_full": {
+        "max": 0.409913399,
+        "mean": 0.40835261925,
+        "min": 0.406944424
+      },
+      "qD_raw_inferred": {
+        "max": 0.13520865457765344,
+        "mean": 0.13382222381518627,
+        "min": 0.13295228803417974
+      },
+      "qD_structured": {
+        "max": 0.384764249,
+        "mean": 0.3819455275,
+        "min": 0.380174102
+      },
+      "rho_effective_full": {
+        "max": 2.120222893564774,
+        "mean": 2.113640267938455,
+        "min": 2.1078592225054327
+      }
+    },
+    {
+      "branch_state": "structured_budget_gs",
+      "phase": 1000,
+      "projection": "down",
+      "qD_full": {
+        "max": 0.381918455,
+        "mean": 0.3802671725,
+        "min": 0.379160403
+      },
+      "qD_raw_inferred": {
+        "max": 0.11102270010915456,
+        "mean": 0.10981322338416477,
+        "min": 0.10892533374211123
+      },
+      "qD_structured": {
+        "max": 0.333134369,
+        "mean": 0.33040117825,
+        "min": 0.328391028
+      },
+      "rho_effective_full": {
+        "max": 2.236715052573353,
+        "mean": 2.230291220605603,
+        "min": 2.2243436131131715
+      }
+    },
+    {
+      "branch_state": "structured_budget_gs",
+      "phase": 2000,
+      "projection": "gate",
+      "qD_full": {
+        "max": 0.449417198,
+        "mean": 0.4488354665,
+        "min": 0.44826322
+      },
+      "qD_raw_inferred": {
+        "max": 0.18487102782171333,
+        "mean": 0.18385377842188708,
+        "min": 0.1834669916054911
+      },
+      "qD_structured": {
+        "max": 0.47567084,
+        "mean": 0.473982801,
+        "min": 0.473340754
+      },
+      "rho_effective_full": {
+        "max": 1.904489074180074,
+        "mean": 1.9013063572098794,
+        "min": 1.8971088932542846
+      }
+    },
+    {
+      "branch_state": "structured_budget_gs",
+      "phase": 2000,
+      "projection": "up",
+      "qD_full": {
+        "max": 0.442677141,
+        "mean": 0.44175299975,
+        "min": 0.440998317
+      },
+      "qD_raw_inferred": {
+        "max": 0.17493270855258733,
+        "mean": 0.17365708971162094,
+        "min": 0.17309308433693474
+      },
+      "qD_structured": {
+        "max": 0.458900639,
+        "mean": 0.456698614,
+        "min": 0.45572421
+      },
+      "rho_effective_full": {
+        "max": 1.9443314084697607,
+        "mean": 1.940496507460242,
+        "min": 1.9355272721180172
+      }
+    },
+    {
+      "branch_state": "structured_budget_gs",
+      "phase": 2000,
+      "projection": "down",
+      "qD_full": {
+        "max": 0.416307922,
+        "mean": 0.414888254,
+        "min": 0.413699923
+      },
+      "qD_raw_inferred": {
+        "max": 0.14643367016268183,
+        "mean": 0.14485458106076007,
+        "min": 0.1441370692877502
+      },
+      "qD_structured": {
+        "max": 0.406957736,
+        "mean": 0.40389519525,
+        "min": 0.402501931
+      },
+      "rho_effective_full": {
+        "max": 2.0494097154189053,
+        "mean": 2.0459964980842917,
+        "min": 2.0389829867406863
+      }
+    },
+    {
+      "branch_state": "structured_budget_gs",
+      "phase": 3000,
+      "projection": "gate",
+      "qD_full": {
+        "max": 0.458666011,
+        "mean": 0.4564303925,
+        "min": 0.454908723
+      },
+      "qD_raw_inferred": {
+        "max": 0.20153298892408314,
+        "mean": 0.19906495904530927,
+        "min": 0.19786741152994985
+      },
+      "qD_structured": {
+        "max": 0.50238843,
+        "mean": 0.4985299215,
+        "min": 0.496654453
+      },
+      "rho_effective_full": {
+        "max": 1.8425000001362293,
+        "mean": 1.8380918025973967,
+        "min": 1.8321922720832347
+      }
+    },
+    {
+      "branch_state": "structured_budget_gs",
+      "phase": 3000,
+      "projection": "up",
+      "qD_full": {
+        "max": 0.451157823,
+        "mean": 0.44964236550000003,
+        "min": 0.448328008
+      },
+      "qD_raw_inferred": {
+        "max": 0.18970882747643406,
+        "mean": 0.18772046732819758,
+        "min": 0.186312143419623
+      },
+      "qD_structured": {
+        "max": 0.48360366,
+        "mean": 0.48035624825,
+        "min": 0.478049367
+      },
+      "rho_effective_full": {
+        "max": 1.8839345198781485,
+        "mean": 1.8802398103272704,
+        "min": 1.8737743556731432
+      }
+    },
+    {
+      "branch_state": "structured_budget_gs",
+      "phase": 3000,
+      "projection": "down",
+      "qD_full": {
+        "max": 0.425152396,
+        "mean": 0.424015996,
+        "min": 0.423130869
+      },
+      "qD_raw_inferred": {
+        "max": 0.1604370658756917,
+        "mean": 0.15882308446992177,
+        "min": 0.15805484034201384
+      },
+      "qD_structured": {
+        "max": 0.433229874,
+        "mean": 0.430274587,
+        "min": 0.428866217
+      },
+      "rho_effective_full": {
+        "max": 1.978194143683714,
+        "mean": 1.9745925232528345,
+        "min": 1.9672983404689892
+      }
+    }
+  ]
+}

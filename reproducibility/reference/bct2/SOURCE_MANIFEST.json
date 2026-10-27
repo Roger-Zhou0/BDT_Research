@@ -1,0 +1,15 @@
+{
+  "bct2/__init__.py": "46b4f88b47ee35c8a8a0323ff0cefe140acc133f7ad629da3962ba6d1b617d50",
+  "bct2/__main__.py": "5fc04f6713b3fcdfe4cc94f7a9cb15c33e3d8d8318c030311d8bdf97b3a9268a",
+  "bct2/backend.py": "c07634af6a2becb12b94a1ee3001e3caaa3fe587d7f3917a5254b0120f47ebd6",
+  "bct2/finalize.py": "32313473a932655c1501aa60db9b838c034a0c55b1a695d5a08ad72b836c10ab",
+  "bct2/gates.py": "11b5809e6d5b218bbf36bf459dfddb55ed6251f847a7682b8e498c65bf739262",
+  "bct2/io.py": "6f5d35509b82e351b4ca78ff2e8be9c98268fadfddd60d23508b274de6152518",
+  "bct2/ledger.py": "86d254858a6c417a4b157476befcab9494cd5b01b8d1288a1d184890e0b46afb",
+  "bct2/runtime.py": "c65113618f8fc4e6ee6a08dfd3c6656955ce4638ea97b1e3a6ea7d99ded584ff",
+  "bct2/train.py": "31471a8722ae44ec3200b0d923806d7bf1a9253b857d275a2f58cfde46f1f60c",
+  "build_manifest.py": "44147cc78ca6a33f87aad416d94ba8e8ed6877ca0737ef8a2d2320bd2f8941c0",
+  "cpu_gate.py": "09461bca06fa99adf9cccb26c68ab40a19d8743c8267600b8367753ca4b7b62d",
+  "protocol.json": "73d4afd78b3076ed9ca6d648fb3e20a490baa5e623b3978e761ded954374c527",
+  "tests/test_contracts.py": "a3ea969cd02703d1fb7d576a01c60e24513b901c77dc65d68de5ef9a3aaf9033"
+}

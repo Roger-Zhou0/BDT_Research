@@ -1,0 +1,53 @@
+{
+  "design_time_inventory": {
+    "live_top_level_read_time": "2026-09-10T20:53:09.357248-05:00",
+    "entries": [
+      {
+        "account": "A",
+        "top_level_entries": 43,
+        "candidate_name_hits": [],
+        "response_sha256": "e330ec25447c57fec899c712c1ad27d9f56c6a632e2aa815fa1f7dc4c28eba8b"
+      },
+      {
+        "account": "B",
+        "top_level_entries": 114,
+        "candidate_name_hits": [],
+        "response_sha256": "2c6993e7067fbed2f4d58e29638fbcd9b08e0899f8a736c00714249343894c80"
+      }
+    ],
+    "archived_checks": [
+      {
+        "scope": "ODC_inspection_20260910T211855Z",
+        "json_files": 157,
+        "candidate_hits": []
+      },
+      {
+        "scope": "gct1_validation_20260910",
+        "json_files": 10,
+        "candidate_hits": []
+      }
+    ],
+    "candidate_seeds": [
+      161,
+      162,
+      163,
+      164,
+      165,
+      166
+    ],
+    "complete_recursive_target_audit": false,
+    "reservation": false,
+    "required_before_execution": "Complete live target-project inventory and shared registration lock; no silent replacement"
+  },
+  "last_scheduler_record_read": {
+    "read_at": "2026-09-10T21:12:26.313690-05:00",
+    "study": "GSR1",
+    "state": "running",
+    "label": "seed_160_core_compute",
+    "record_time": "2026-09-11T01:46:43.929067+00:00",
+    "note": "A scheduler record, not a repeated process/progress or free-GPU survey."
+  },
+  "server_source_changes": false,
+  "new_GPU_work": false,
+  "evidence_directory": "PROJECT_ROOT/ResearchAgent/shared/results/GCT2_BCO1_design_20260910"
+}

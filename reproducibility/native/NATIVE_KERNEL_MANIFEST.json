@@ -1,0 +1,21 @@
+{
+  "src/ancestry.py": "2eb2c42058a791aaf35c56b6b3693dbd3a38990a1434d7a0cd8254ba4b97189b",
+  "src/art_policy.py": "dcd3462c8ee1c17205a7331aa2a8f7bd148180650df2cc1d61350710f5b96c73",
+  "src/asq1_sector_reference.py": "643fa35a4601651bf60d684eb60285cfc19a55a2e015c35946eb7a0ba6757013",
+  "src/attention_reference.py": "7c14939c135bbbd9fb52802e3f41bffa40531e56821c001ed6c253fdb9c5130c",
+  "src/bct_geometry.py": "de7173d76af4f2ab099dbc385f2aeea2e57650d66a47d4e3d5e050124dd07217",
+  "src/bct_policy.py": "a9b93ccf37268db68c895c803d9d9845018cb010acc40693b6d3365b9784fd77",
+  "src/carrier.py": "9bc5c091855bbe97003ff5f70bc21cf0dd1b49aa6d7f0664e86a6999cbb71b69",
+  "src/fixed_rule.py": "fa13ba55016b6562b1568060aa763f5b368bfdc72a4238c2981e103f7c2edb4b",
+  "src/legacy_scope_policy.py": "98fa846be33127192cb09cf17e82447ae399d58fa3e36de2fa884975bcfd8677",
+  "src/sector_reference.py": "a89a1c04624f0e7159d43b5a59044983c36bdc9095ae03c3d48368e654f9f428",
+  "src/selective_reference.py": "51170773f36f7e529808fd2577ebfb6d7aa4c19454676bf3b69584e93be9498e",
+  "src/study_geometry.py": "bbbb27b41dbadd8884f8a4a54d16a7c5ed77fa44d633342d4621f76bcd8d7202",
+  "vendor/bac1/backend/cms_geometry.py": "770a655ae6dc5e099b2239780ead32ace134d414d232c7e15d0a595d16e41e1c",
+  "vendor/bac1/backend/cms_protocol.py": "a8a48fc2dbc420f9a77bf9cc06d50faa41e22bdce318032918f9cd033df1828e",
+  "vendor/bac1/backend/role_adamw.py": "653afb6a644d634355801731e4ba492a10aa68a70ab5a1cca8adbb55ba2a8ed4",
+  "vendor/bac1/backend/tempering_reference.py": "d1bd72d9ccd18019aea83551b838d5915f727a0a7b6a0a2fd1006fb1c47969f1",
+  "vendor/bac1/backend/validation_v6_1.py": "ee16f65a5b948b0e645131a01ddc437edb5806e671c44c80792b40efecc9dd8b",
+  "vendor/bac1/frozen/gct_policy.py": "39a8b612ca3ae80fd42afbcd32d8c8a52f2ff9057592340e7831056bebaea4de",
+  "vendor/bac1/frozen/gct_runtime.py": "1257828ec45d38631c54f23cbbcaada120f1f8414e3f00d5f04f8a58a574451a"
+}

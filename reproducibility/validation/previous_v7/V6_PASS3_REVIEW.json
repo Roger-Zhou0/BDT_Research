@@ -1,0 +1,32 @@
+{
+  "release": "v6",
+  "review": "independent overnight pass 3",
+  "substantive_finding": "One residual institution-specific notebook-platform name remained in a descriptive OIP1 public evidence scope string after v5 account-label anonymization.",
+  "public_fix": "Replaced the platform name with generic notebook-environment wording; updated original/public hash binding.",
+  "protected_original_source_files_compared_to_v5": 143,
+  "protected_original_source_files_changed": 0,
+  "unit_tests_passed": 117,
+  "reproduce_all_passed": true,
+  "appendix_replay_passed": true,
+  "appendix_table_fragments_byte_identical": 14,
+  "allocation_observations_checked": 240,
+  "allocation_display_mean_cells_checked": 48,
+  "native_plan_job_counts": {
+    "CMS1": 24,
+    "GCT2": 36,
+    "BAC1": 42
+  },
+  "native_CPU_suites_reexecuted": false,
+  "reason_native_CPU_not_rerun": "All 143 protected original source files are byte-identical to v5; v6 changes public descriptive evidence and packaging anonymity checks only.",
+  "full_size_CUDA_validation": false,
+  "new_model_evaluations": 0,
+  "scientific_source_changed": false,
+  "scientific_values_changed": false,
+  "remaining_boundaries": [
+    "Exact external S1-B/FEV1 caches and immutable historical upstream revisions",
+    "Full CUDA parity",
+    "Incomplete redistribution of raw historical REPORT/evaluation/adjacent-study records",
+    "Every historical appendix runner",
+    "Source rights/ownership and any new open-source license decision"
+  ]
+}

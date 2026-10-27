@@ -1,0 +1,71 @@
+"""Regenerate evidence displays. No model evaluation or outcome selection."""
+from pathlib import Path
+import json
+import numpy as np
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+ROOT=Path(__file__).resolve().parents[1]
+a=json.loads((ROOT/'evidence/September22_Mechanism_Record_Audit.json').read_text())
+s=a['completed_mechanism_studies']
+# Tables use six decimals; all original scores remain in evidence JSON.
+rows=[]
+for arm in ['A','PP','PR','RP','RR']:
+ v=[s['EAC1']['scores'][str(seed)][arm] for seed in [159,160]]
+ diff=np.mean([s['EAC1']['scores'][str(seed)][arm]-s['EAC1']['scores'][str(seed)]['A'] for seed in [159,160]])
+ rows.append(f'{arm} & {v[0]:.6f} & {v[1]:.6f} & ${diff:+.6f}$'+r'\\')
+(ROOT/'tables/eac1_v15.tex').write_text('\n'.join(rows)+'\n')
+rows=[]
+for study in ['DNT1','DNT2']:
+ for i,arm in enumerate(['A','F','M','N']):
+  v=[s[study]['scores'][str(seed)][arm] for seed in [159,160]]
+  d=np.mean([s[study]['scores'][str(seed)][arm]-s[study]['scores'][str(seed)]['A'] for seed in [159,160]])
+  rows.append(f'{study if i==0 else ""} & {arm} & {v[0]:.6f} & {v[1]:.6f} & ${d:+.6f}$'+r'\\')
+ if study=='DNT1':rows.append(r'\midrule')
+(ROOT/'tables/dnt_v15.tex').write_text('\n'.join(rows)+'\n')
+for study in ['CTA1','TOC1']:
+ rows=[]
+ for arm in s[study]['scores']['159']:
+  v=[s[study]['scores'][str(seed)][arm] for seed in [159,160]]
+  label=(r'$\mathrm '+arm[0]+r'_{\mathrm '+arm[-1]+'}$') if '_' in arm else arm
+  rows.append(f'{label} & {v[0]:.6f} & {v[1]:.6f}'+r'\\')
+ (ROOT/f'tables/{study.lower()}_v15.tex').write_text('\n'.join(rows)+'\n')
+# Existing ASQ source precision is nine displayed decimals, not newly recovered precision.
+asq={'source':'v14 Appendix R / Table35, original nine-decimal display','parents':[167,168],
+ 'adamw':[3.662995486,3.661960855], 'ffn_bdt':[3.660906579,3.659816228],
+ 'combined':[3.660453405,3.659360247],
+ 'true_suppress':[3.668734543,3.667599138], 'false_suppress':[3.664176226,3.663045883],
+ 'true_amplify':[3.660508789,3.659418248], 'false_amplify':[3.665048059,3.663987856]}
+(ROOT/'evidence/ASQ1_display_inputs_v15.json').write_text(json.dumps(asq,indent=2)+'\n')
+fig,ax=plt.subplots(figsize=(5.4,2.05))
+x=np.array([0,1]);base=np.array(asq['adamw'])
+for pair,label,marker in [('true','True pairing','o'),('false','False pairing','s')]:
+ y=[1000*np.mean(np.array(asq[f'{pair}_{op}'])-base) for op in ['suppress','amplify']]
+ ax.plot(x,y,marker=marker,label=label,linewidth=1.8,markersize=5.5)
+ax.axhline(0,linestyle=':',linewidth=.9)
+ax.set_xticks(x,['Suppression\n'+r'$\rho=0.5$','Amplification\n'+r'$\rho=2$'])
+ax.set_xlim(-.15,1.15);ax.set_ylim(-3.7,7)
+ax.set_ylabel('DEV − same-parent AdamW\n($10^{-3}$ nats/token)',fontsize=9)
+ax.tick_params(labelsize=9)
+ax.spines[['top','right']].set_visible(False)
+ax.legend(frameon=False,loc='upper right',fontsize=9)
+fig.subplots_adjust(left=.15,right=.97,top=.96,bottom=.29)
+fig.savefig(ROOT/'figures/asq_operation_crossover.pdf')
+fig.savefig(ROOT/'figures/asq_operation_crossover.png',dpi=180)
+plt.close(fig)
+# Author-facing four-parent AOT figure. Not part of the manuscript pending REPORT.
+r=a['completed_DEV_pending_REPORT']['scores']
+fig,ax=plt.subplots(figsize=(5.8,2.7))
+for arms,label,marker in [(['combined','adaptive_structured'],'Full-BDT budgets','o'),(['fixed_budget_full_direction','assembled'],'Structured budgets','s')]:
+ means=[1000*np.mean([row[arm]-row['combined'] for row in r.values()]) for arm in arms]
+ ax.plot([0,1],means,marker=marker,label=label,linewidth=1.8)
+ax.set_xticks([0,1],['Full-BDT directions','Structured directions'])
+ax.set_ylabel('DEV − same-parent combined BDT\n($10^{-3}$ nats/token)',fontsize=9)
+ax.set_xlim(-.18,1.18);ax.set_ylim(-.13,.64);ax.axhline(0,linestyle=':',linewidth=.8)
+ax.legend(frameon=False,fontsize=9,loc='center right');ax.tick_params(labelsize=9)
+ax.spines[['top','right']].set_visible(False)
+ax.set_title('Four reused parents; descriptive DEV, final REPORT pending',fontsize=9)
+fig.subplots_adjust(left=.17,right=.98,top=.88,bottom=.20)
+fig.savefig(ROOT.parent/'AOT1_completed_DEV_descriptive.pdf')
+plt.close(fig)
+print('Generated four evidence tables and the ASQ manuscript figure; AOT figure is author-only.')

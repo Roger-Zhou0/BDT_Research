@@ -1,0 +1,86 @@
+{
+  "actual_gate": {
+    "adamw_0__adamw_1": {
+      "exact_recorded": true,
+      "first_result_sha": "7c8b9807b79ade25155b9bae64523a45ab9c8e7cca29dddf329a241c93b6947a",
+      "full_final_model_adam_equal": true,
+      "second_result_sha": "ed0cf8e2e2d01bc761b9e01f585b51a0ad1b6783aeac27584382e7985bbcc006",
+      "steps": 220
+    },
+    "adamw_0__reference_adam": {
+      "exact_recorded": true,
+      "first_result_sha": "7c8b9807b79ade25155b9bae64523a45ab9c8e7cca29dddf329a241c93b6947a",
+      "full_final_model_adam_equal": true,
+      "second_result_sha": "432685104e981f0039f09406869a543837f56a1e1d1be7dda679391c2ae61c4f",
+      "steps": 220
+    },
+    "bdt_0__bdt_1": {
+      "exact_recorded": true,
+      "first_result_sha": "2403c59e0182ff7391580119f7bc8312924b56b1cd468cb1657f667b68c46139",
+      "full_final_model_adam_equal": true,
+      "second_result_sha": "a4edce1feed625f77fec1d53bcc375afb63917fb4702701c1346b039e249c914",
+      "steps": 220
+    },
+    "bdt_0__reference_bdt": {
+      "exact_recorded": true,
+      "first_result_sha": "2403c59e0182ff7391580119f7bc8312924b56b1cd468cb1657f667b68c46139",
+      "full_final_model_adam_equal": true,
+      "second_result_sha": "40df02ad1dca1fd22db69128837d81de7d4f53f6c1f7bfc1d8afc0e030333ff3",
+      "steps": 220
+    },
+    "first_active_inputs_equal": true,
+    "parent__parent_reference": {
+      "exact_recorded": true,
+      "first_result_sha": "12a82c87c7acff415748df7489d44d64aac25efeb7476e1cb2154fc70f9eeff4",
+      "full_final_model_adam_equal": true,
+      "second_result_sha": "18d8b096326625447326ca3a936eb44a9d53b59bfa4551565e2929bdc60e2966",
+      "steps": 200
+    },
+    "prefix__prefix_repeat": {
+      "exact_recorded": true,
+      "first_result_sha": "d228ed80cf603a772fd9f488c85eaa244ff346ea88d759c9c78716b6f4a95a9b",
+      "full_final_model_adam_equal": true,
+      "second_result_sha": "8af3623ab938a269a0fda55e4fdcfe9606fe52849d5768e39840beb80d9a8e96",
+      "steps": 200
+    },
+    "scrambled_matched_0__scrambled_matched_1": {
+      "exact_recorded": true,
+      "first_result_sha": "a88be29a1f8b2e684cff248f51aebbcee6a32476a465980abd92dc28042cdd3c",
+      "full_final_model_adam_equal": true,
+      "second_result_sha": "3c013f351ee845aa23828a8ef6dbb8b45775e546b581a17d193a59fdecae1cf1",
+      "steps": 220
+    }
+  },
+  "completed_at": "2026-09-24T09:14:07.910254+00:00",
+  "corrupted_checkpoint_refused": true,
+  "device": "cpu",
+  "early_report_refused": true,
+  "elapsed_seconds": 58.08780090599976,
+  "gate_updates": 2560,
+  "preserved_growth_age": 620,
+  "report_evaluator": {
+    "attention_ops": [
+      "CPU fixture: dispatch not tested on CUDA"
+    ],
+    "offset_zero_matches_dev": true,
+    "partition": {
+      "loss": 4.5838024616241455,
+      "offset": 2500000,
+      "stop": 2500068,
+      "tokens": 64
+    },
+    "repeatable": true,
+    "rng_unchanged": true
+  },
+  "scientific_age_counter_fixture": {
+    "next_age": 7631,
+    "post_phase": 1,
+    "preserved_age": 7630,
+    "scope": "synthetic counter fixture"
+  },
+  "scope": "Actual pinned backend at tiny CPU geometry; not a target-H200 result or measured speedup.",
+  "source": "5111e090d4e01308ac96bfb471c7a4c22699e7c22435bfa1fd12baa207673032",
+  "state": "passed",
+  "study": "gct2",
+  "torch": "2.10.0+cpu"
+}

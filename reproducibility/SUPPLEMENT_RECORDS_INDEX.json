@@ -1,0 +1,114 @@
+{
+  "manuscript": "v39",
+  "release": "v9",
+  "evidence_levels": {
+    "original_record": "Original bytes checked, or explicitly tracked identity-only anonymous derivative; not a fresh checkpoint evaluation.",
+    "audited_projection": "Saved compact numbers and original source/record hashes; not replacement raw files.",
+    "display_precision": "Values retained exactly at manuscript display precision; no invented digits.",
+    "engineering": "Synthetic or implementation check, not efficacy replication."
+  },
+  "entries": [
+    {
+      "study": "CMS1",
+      "parents": 6,
+      "level": "original_record",
+      "original_REPORT_files": 18,
+      "native_driver": true,
+      "command": "python scripts/native_study.py --study cms1 --action plan"
+    },
+    {
+      "study": "GCT2/FEV1",
+      "parents": 6,
+      "model_endpoints": 18,
+      "evaluation_partitions": 2,
+      "level": "audited_projection",
+      "native_driver": true,
+      "FEV1_new_serial_dispatch": false,
+      "command": "python scripts/native_study.py --study gct2 --action plan",
+      "FEV1_builder_evaluator_source_included": false,
+      "native_driver_scope": "GCT2 training only; FEV1 builder/evaluator absent"
+    },
+    {
+      "study": "BAC1",
+      "parents": 6,
+      "endpoint_cells": 24,
+      "level": "original_record",
+      "native_driver": true,
+      "raw_REPORT_files_included": false,
+      "command": "python scripts/native_study.py --study bac1 --action plan",
+      "unrounded_final_analysis": true,
+      "cohort_lock_endpoint_hashes": 24
+    },
+    {
+      "study": "AGT1/FRT1/ART1/BCT1",
+      "parents": 4,
+      "reused_parents": true,
+      "logical_receipts": 56,
+      "unique_checkpoint_cells": 40,
+      "level": "audited_projection",
+      "contrasts": 15,
+      "native_drivers_all_included": false
+    },
+    {
+      "study": "BCT1 allocation diagnostic",
+      "parents": 4,
+      "retained_observations": 240,
+      "prospective": false,
+      "level": "audited_projection"
+    },
+    {
+      "study": "All supplied v20 tables",
+      "fragments": 42,
+      "level": "display_precision",
+      "all_historical_raw_records_recovered": false,
+      "current_manuscript_all_tables_claim": false
+    },
+    {
+      "study": "BCT2",
+      "parents": 4,
+      "parent_seeds": [
+        946301,
+        946302,
+        946303,
+        946304
+      ],
+      "reused_parents": false,
+      "model_endpoint_cells": 8,
+      "original_REPORT_files": 8,
+      "level": "original_record",
+      "final_report_original_sha256": "529b846d764a05147859ab47cd210d07075934246d3ddd9bf15cca2e341a3fd9",
+      "native_driver": false,
+      "fresh_GPU_reproduction": false,
+      "pooled_with_BCT1": false,
+      "command": "python scripts/verify_bct2.py --out build/bct2_records"
+    }
+  ],
+  "unified_offline_command": "python scripts/reproduce_all.py --out build/all_records",
+  "scientific_training_or_evaluation_performed_during_packaging": false,
+  "large_external_artifacts_included": false,
+  "v5_public_anonymity_hardening": {
+    "files": 2,
+    "renamed_evidence_keys": 6,
+    "numeric_or_timestamp_values_changed": false,
+    "original_scientific_source_changed": false
+  },
+  "v6_public_anonymity_hardening": {
+    "files": 1,
+    "removed_institution_specific_platform_mentions": 1,
+    "numeric_or_timestamp_values_changed": false,
+    "original_scientific_source_changed": false
+  },
+  "v7_provenance_label_hardening": {
+    "files": 4,
+    "corrected_false_byte_identity_prefixes": 4,
+    "hash_values_changed": false,
+    "scientific_source_or_values_changed": false
+  },
+  "historical_manuscript_evidence_export": "v20",
+  "v8_release_corrections": {
+    "BCT2_completed_evidence_included": true,
+    "private_identity_denylist_shipped": false,
+    "FEV1_source_coverage_corrected": true,
+    "preexisting_scientific_source_or_values_changed": false
+  }
+}

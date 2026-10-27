@@ -1,0 +1,209 @@
+{
+  "version": "ocb1_design_v1",
+  "status": "DESIGNED_NOT_DEPLOYED",
+  "target": {
+    "account": "account_a",
+    "session": "good"
+  },
+  "engineering_seed": 127,
+  "primary_model": "ordinary Dense12 matching GCT1, NOT the routed explicit-cloned S1 architecture",
+  "secondary_model": "ordinary Dense6, matching the GCT1 small-parent geometry",
+  "common_state": "Fresh dedicated 500-update Adam engineering state per depth; shadow observe canonical depth statistics",
+  "state_selection": "Fixed state index, not selected by validation. Never use a scientific treatment winner.",
+  "strict": "GCT1 strict deterministic runtime; same actual GPU UUID for every comparison",
+  "main_conditions": [
+    "dense12_native_fused_adam",
+    "dense12_split_ffn_adam",
+    "dense12_bdt_canonical",
+    "dense12_split_allproj_adam",
+    "dense12_gs_allproj",
+    "dense6_split_ffn_adam"
+  ],
+  "instrumentation_conditions": [
+    "dense12_audit_adam",
+    "dense12_audit_bdt",
+    "dense12_audit_scrambled"
+  ],
+  "main_blocks": 12,
+  "instrumentation_blocks": 6,
+  "warmup_updates": 20,
+  "full_step_updates": 20,
+  "optimizer_only_updates": 100,
+  "timed_start": 501,
+  "observation_every": 10,
+  "measurement_families": [
+    "full_step",
+    "optimizer_only"
+  ],
+  "main_orders": [
+    [
+      "dense12_native_fused_adam",
+      "dense12_split_ffn_adam",
+      "dense6_split_ffn_adam",
+      "dense12_bdt_canonical",
+      "dense12_gs_allproj",
+      "dense12_split_allproj_adam"
+    ],
+    [
+      "dense12_split_ffn_adam",
+      "dense12_bdt_canonical",
+      "dense12_native_fused_adam",
+      "dense12_split_allproj_adam",
+      "dense6_split_ffn_adam",
+      "dense12_gs_allproj"
+    ],
+    [
+      "dense12_bdt_canonical",
+      "dense12_split_allproj_adam",
+      "dense12_split_ffn_adam",
+      "dense12_gs_allproj",
+      "dense12_native_fused_adam",
+      "dense6_split_ffn_adam"
+    ],
+    [
+      "dense12_split_allproj_adam",
+      "dense12_gs_allproj",
+      "dense12_bdt_canonical",
+      "dense6_split_ffn_adam",
+      "dense12_split_ffn_adam",
+      "dense12_native_fused_adam"
+    ],
+    [
+      "dense12_gs_allproj",
+      "dense6_split_ffn_adam",
+      "dense12_split_allproj_adam",
+      "dense12_native_fused_adam",
+      "dense12_bdt_canonical",
+      "dense12_split_ffn_adam"
+    ],
+    [
+      "dense6_split_ffn_adam",
+      "dense12_native_fused_adam",
+      "dense12_gs_allproj",
+      "dense12_split_ffn_adam",
+      "dense12_split_allproj_adam",
+      "dense12_bdt_canonical"
+    ],
+    [
+      "dense12_native_fused_adam",
+      "dense12_split_ffn_adam",
+      "dense6_split_ffn_adam",
+      "dense12_bdt_canonical",
+      "dense12_gs_allproj",
+      "dense12_split_allproj_adam"
+    ],
+    [
+      "dense12_split_ffn_adam",
+      "dense12_bdt_canonical",
+      "dense12_native_fused_adam",
+      "dense12_split_allproj_adam",
+      "dense6_split_ffn_adam",
+      "dense12_gs_allproj"
+    ],
+    [
+      "dense12_bdt_canonical",
+      "dense12_split_allproj_adam",
+      "dense12_split_ffn_adam",
+      "dense12_gs_allproj",
+      "dense12_native_fused_adam",
+      "dense6_split_ffn_adam"
+    ],
+    [
+      "dense12_split_allproj_adam",
+      "dense12_gs_allproj",
+      "dense12_bdt_canonical",
+      "dense6_split_ffn_adam",
+      "dense12_split_ffn_adam",
+      "dense12_native_fused_adam"
+    ],
+    [
+      "dense12_gs_allproj",
+      "dense6_split_ffn_adam",
+      "dense12_split_allproj_adam",
+      "dense12_native_fused_adam",
+      "dense12_bdt_canonical",
+      "dense12_split_ffn_adam"
+    ],
+    [
+      "dense6_split_ffn_adam",
+      "dense12_native_fused_adam",
+      "dense12_gs_allproj",
+      "dense12_split_ffn_adam",
+      "dense12_split_allproj_adam",
+      "dense12_bdt_canonical"
+    ]
+  ],
+  "instrumentation_orders": [
+    [
+      "dense12_audit_adam",
+      "dense12_audit_bdt",
+      "dense12_audit_scrambled"
+    ],
+    [
+      "dense12_audit_bdt",
+      "dense12_audit_scrambled",
+      "dense12_audit_adam"
+    ],
+    [
+      "dense12_audit_scrambled",
+      "dense12_audit_adam",
+      "dense12_audit_bdt"
+    ],
+    [
+      "dense12_audit_scrambled",
+      "dense12_audit_bdt",
+      "dense12_audit_adam"
+    ],
+    [
+      "dense12_audit_adam",
+      "dense12_audit_scrambled",
+      "dense12_audit_bdt"
+    ],
+    [
+      "dense12_audit_bdt",
+      "dense12_audit_adam",
+      "dense12_audit_scrambled"
+    ]
+  ],
+  "optimizer_only_input": "Fixed clipped gradients captured at common state; clipping excluded; state evolves only inside each timed window",
+  "engineering_state_recipe": {
+    "steps": 500,
+    "schedule_horizon": 3000,
+    "peak_lr": 0.0008,
+    "warmup": 200,
+    "minimum_lr_ratio": 0.1,
+    "initialization": "independent",
+    "data": "OWN-S1-R1 on account A"
+  },
+  "timed_lr": 0.0006,
+  "gs_alpha": 0.1,
+  "gs_scope": [
+    "gate",
+    "up",
+    "down",
+    "attention_qkv",
+    "attention_out"
+  ],
+  "full_step_input": "Same fixed CPU batch ring, H2D included; sampler, validation, hashes, checkpoint I/O excluded",
+  "reset": "Warm method, then restore common state/RNG/history before timed window; CPU snapshots outside memory/timer",
+  "timers": [
+    "synchronized perf_counter window (primary)",
+    "CUDA-event elapsed window (secondary)"
+  ],
+  "memory": [
+    "peak allocated",
+    "peak reserved",
+    "baseline allocated",
+    "incremental peak"
+  ],
+  "sentinel": "Identical split-FFN Adam12 window before and after each complete block",
+  "sentinel_drift_fraction": 0.1,
+  "minimum_stable_main_blocks": 8,
+  "minimum_stable_instrumentation_blocks": 4,
+  "filtering": "All complete blocks are primary. Flag whole blocks by pre/post sentinel drift; stable-subset is secondary only.",
+  "report": "Median paired block ratios and IQR; no scientific seed-level inference from timer repetitions",
+  "interruption": "Retain failed/partial blocks; do not mix UUIDs, runtimes or take fastest blocks across attempts",
+  "automatic_repeats": false,
+  "profiler_in_primary_timers": false,
+  "claim_scope": "Measured implementation cost, not quality/time-to-target or intrinsic lower bound for BDT"
+}

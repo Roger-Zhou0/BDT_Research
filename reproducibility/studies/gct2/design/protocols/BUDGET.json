@@ -1,0 +1,16 @@
+{
+  "approximate_retained_payload_GiB": 96.56879425048828,
+  "branch_updates": 50400,
+  "budget_scope": "Mixed small/large optimizer updates, NOT homogeneous FLOPs or wall-clock.",
+  "initial_cohort_free_disk_GiB": 128,
+  "parent_cost_per_path_updates": 7630,
+  "parent_parameters": 81074688,
+  "parent_updates": 45780,
+  "per_GPU_free_memory_GiB": 32,
+  "post_cost_per_path_updates": 3000,
+  "recommended_path_token_exposures": 348323840,
+  "shared_prefix_updates": 1200,
+  "target_parameters": 123551232,
+  "total_campaign_token_exposures": 3190947840,
+  "total_scientific_updates": 97380
+}

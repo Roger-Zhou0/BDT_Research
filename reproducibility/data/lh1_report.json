@@ -1,0 +1,63 @@
+{
+  "provenance": "Exact rows from 04_CPU_RECOMPUTATION.json, Sept21 13:02:51 CDT, read from original saved completion investigation. All12 endpoint/REPORT links and saved statistics verified in that audit; no new checkpoint payload hashing or evaluation in this editorial pass.",
+  "columns": [
+    "parent",
+    "AdamW",
+    "preserved",
+    "reassigned"
+  ],
+  "rows": [
+    [
+      946201,
+      3.404692256823182,
+      3.4045461621135473,
+      3.4047470297664404
+    ],
+    [
+      946202,
+      3.40694628842175,
+      3.406457306817174,
+      3.4067620672285557
+    ],
+    [
+      946203,
+      3.4069481380283833,
+      3.4065750911831856,
+      3.4069146383553743
+    ],
+    [
+      946204,
+      3.405260721221566,
+      3.405035814270377,
+      3.405389327555895
+    ]
+  ],
+  "contrasts": {
+    "preserved - AdamW": {
+      "per_parent": [
+        -0.00014609470963478088,
+        -0.0004889816045761108,
+        -0.0003730468451976776,
+        -0.00022490695118904114
+      ],
+      "mean": -0.0003082575276494026,
+      "ci975": [
+        -0.0006274801199916379,
+        1.0965064692832567e-05
+      ]
+    },
+    "reassigned - preserved": {
+      "per_parent": [
+        0.0002008676528930664,
+        0.0003047604113817215,
+        0.00033954717218875885,
+        0.00035351328551769257
+      ],
+      "mean": 0.00029967213049530983,
+      "ci975": [
+        0.00015561141991221492,
+        0.00044373284107840474
+      ]
+    }
+  }
+}

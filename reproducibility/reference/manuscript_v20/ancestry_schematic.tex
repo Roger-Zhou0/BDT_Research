@@ -1,0 +1,34 @@
+% Vector schematic; the cyclic derangement is illustrative, not a recovered draw.
+\begin{tikzpicture}[x=1in,y=1in,font=\fontsize{8.2}{9.5}\selectfont,
+    block/.style={draw,rounded corners=1pt,minimum width=.255in,minimum height=.24in,inner sep=1pt},
+    chart/.style={draw,minimum width=.255in,minimum height=.23in,inner sep=1pt},
+    flow/.style={align=center,inner sep=1pt,font=\fontsize{7.5}{8.7}\selectfont}]
+\path[use as bounding box] (0,-1.86) rectangle (5.43,.22);
+\node[anchor=west,font=\fontsize{9}{10}\selectfont\bfseries] at (0,.15) {Same initial model; storage is not reindexed};
+\node at (2.05,-.10) {First descendants: depths 0--5};
+\node at (4.07,-.10) {Second descendants: depths 6--11};
+\node[anchor=west,align=left] at (0,-.38) {Stored blocks};
+\node[anchor=west,align=left] at (0,-.67) {Pretrained ancestor};
+\node[anchor=west,align=left] at (0,-1.02) {Preserved charts};
+\node[anchor=west,align=left] at (0,-1.37) {Reassigned charts};
+\foreach \j in {0,...,11} {
+  \pgfmathsetmacro{\xx}{1.27+.31*\j+.16*(\j>5)}
+  \pgfmathtruncatemacro{\ancestor}{mod(\j,6)}
+  \pgfmathtruncatemacro{\reassigned}{ifthenelse(\j>5,mod(\j+1,6),\j)}
+  \node[block] at (\xx,-.38) {$W_{\j}$};
+  \node at (\xx,-.67) {$B_{\ancestor}$};
+  \node[chart] at (\xx,-1.02) {$P_{\ancestor}$};
+  \node[chart] at (\xx,-1.37) {$P_{\reassigned}$};
+}
+\draw[densely dotted] (3.055,-.20) -- (3.055,-1.53);
+\draw (0,-.81) -- (4.89,-.81);
+\node[flow] (raw) at (.35,-1.76) {Raw\\proposals};
+\node[flow] (maps) at (1.40,-1.76) {Apply\\chart maps};
+\node[flow] (depth) at (2.48,-1.76) {Full-depth\\transformation};
+\node[flow] (inverse) at (3.58,-1.76) {Return to\\stored coordinates};
+\node[flow] (match) at (4.86,-1.76) {Own-state\\geometry match};
+\draw[-{Stealth[length=3pt]}] (raw) -- (maps);
+\draw[-{Stealth[length=3pt]}] (maps) -- (depth);
+\draw[-{Stealth[length=3pt]}] (depth) -- (inverse);
+\draw[-{Stealth[length=3pt]}] (inverse) -- (match);
+\end{tikzpicture}

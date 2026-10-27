@@ -1,0 +1,458 @@
+[
+  {
+    "arm": "adamw",
+    "depends_on": [],
+    "end": 7630,
+    "id": "seed_161/parent",
+    "lane": "B-good",
+    "seed": 161,
+    "stage": "parent",
+    "start": 0,
+    "updates": 7630
+  },
+  {
+    "arm": "adamw",
+    "depends_on": [
+      "seed_161/parent"
+    ],
+    "end": 0,
+    "id": "seed_161/grown",
+    "lane": "B-good",
+    "seed": 161,
+    "stage": "grow",
+    "start": 0,
+    "updates": 0
+  },
+  {
+    "arm": "adamw",
+    "depends_on": [
+      "seed_161/grown"
+    ],
+    "end": 200,
+    "id": "seed_161/prefix",
+    "lane": "B-good",
+    "seed": 161,
+    "stage": "prefix",
+    "start": 0,
+    "updates": 200
+  },
+  {
+    "arm": "adamw",
+    "depends_on": [
+      "seed_161/prefix"
+    ],
+    "end": 3000,
+    "id": "seed_161/arms/adamw",
+    "lane": "B-good",
+    "seed": 161,
+    "stage": "arm",
+    "start": 200,
+    "updates": 2800
+  },
+  {
+    "arm": "bdt",
+    "depends_on": [
+      "seed_161/prefix"
+    ],
+    "end": 3000,
+    "id": "seed_161/arms/bdt",
+    "lane": "B-good",
+    "seed": 161,
+    "stage": "arm",
+    "start": 200,
+    "updates": 2800
+  },
+  {
+    "arm": "scrambled_matched",
+    "depends_on": [
+      "seed_161/prefix"
+    ],
+    "end": 3000,
+    "id": "seed_161/arms/scrambled_matched",
+    "lane": "B-good",
+    "seed": 161,
+    "stage": "arm",
+    "start": 200,
+    "updates": 2800
+  },
+  {
+    "arm": "adamw",
+    "depends_on": [],
+    "end": 7630,
+    "id": "seed_162/parent",
+    "lane": "B-default",
+    "seed": 162,
+    "stage": "parent",
+    "start": 0,
+    "updates": 7630
+  },
+  {
+    "arm": "adamw",
+    "depends_on": [
+      "seed_162/parent"
+    ],
+    "end": 0,
+    "id": "seed_162/grown",
+    "lane": "B-default",
+    "seed": 162,
+    "stage": "grow",
+    "start": 0,
+    "updates": 0
+  },
+  {
+    "arm": "adamw",
+    "depends_on": [
+      "seed_162/grown"
+    ],
+    "end": 200,
+    "id": "seed_162/prefix",
+    "lane": "B-default",
+    "seed": 162,
+    "stage": "prefix",
+    "start": 0,
+    "updates": 200
+  },
+  {
+    "arm": "adamw",
+    "depends_on": [
+      "seed_162/prefix"
+    ],
+    "end": 3000,
+    "id": "seed_162/arms/adamw",
+    "lane": "B-default",
+    "seed": 162,
+    "stage": "arm",
+    "start": 200,
+    "updates": 2800
+  },
+  {
+    "arm": "scrambled_matched",
+    "depends_on": [
+      "seed_162/prefix"
+    ],
+    "end": 3000,
+    "id": "seed_162/arms/scrambled_matched",
+    "lane": "B-default",
+    "seed": 162,
+    "stage": "arm",
+    "start": 200,
+    "updates": 2800
+  },
+  {
+    "arm": "bdt",
+    "depends_on": [
+      "seed_162/prefix"
+    ],
+    "end": 3000,
+    "id": "seed_162/arms/bdt",
+    "lane": "B-default",
+    "seed": 162,
+    "stage": "arm",
+    "start": 200,
+    "updates": 2800
+  },
+  {
+    "arm": "adamw",
+    "depends_on": [],
+    "end": 7630,
+    "id": "seed_163/parent",
+    "lane": "B-good",
+    "seed": 163,
+    "stage": "parent",
+    "start": 0,
+    "updates": 7630
+  },
+  {
+    "arm": "adamw",
+    "depends_on": [
+      "seed_163/parent"
+    ],
+    "end": 0,
+    "id": "seed_163/grown",
+    "lane": "B-good",
+    "seed": 163,
+    "stage": "grow",
+    "start": 0,
+    "updates": 0
+  },
+  {
+    "arm": "adamw",
+    "depends_on": [
+      "seed_163/grown"
+    ],
+    "end": 200,
+    "id": "seed_163/prefix",
+    "lane": "B-good",
+    "seed": 163,
+    "stage": "prefix",
+    "start": 0,
+    "updates": 200
+  },
+  {
+    "arm": "bdt",
+    "depends_on": [
+      "seed_163/prefix"
+    ],
+    "end": 3000,
+    "id": "seed_163/arms/bdt",
+    "lane": "B-good",
+    "seed": 163,
+    "stage": "arm",
+    "start": 200,
+    "updates": 2800
+  },
+  {
+    "arm": "scrambled_matched",
+    "depends_on": [
+      "seed_163/prefix"
+    ],
+    "end": 3000,
+    "id": "seed_163/arms/scrambled_matched",
+    "lane": "B-good",
+    "seed": 163,
+    "stage": "arm",
+    "start": 200,
+    "updates": 2800
+  },
+  {
+    "arm": "adamw",
+    "depends_on": [
+      "seed_163/prefix"
+    ],
+    "end": 3000,
+    "id": "seed_163/arms/adamw",
+    "lane": "B-good",
+    "seed": 163,
+    "stage": "arm",
+    "start": 200,
+    "updates": 2800
+  },
+  {
+    "arm": "adamw",
+    "depends_on": [],
+    "end": 7630,
+    "id": "seed_164/parent",
+    "lane": "B-default",
+    "seed": 164,
+    "stage": "parent",
+    "start": 0,
+    "updates": 7630
+  },
+  {
+    "arm": "adamw",
+    "depends_on": [
+      "seed_164/parent"
+    ],
+    "end": 0,
+    "id": "seed_164/grown",
+    "lane": "B-default",
+    "seed": 164,
+    "stage": "grow",
+    "start": 0,
+    "updates": 0
+  },
+  {
+    "arm": "adamw",
+    "depends_on": [
+      "seed_164/grown"
+    ],
+    "end": 200,
+    "id": "seed_164/prefix",
+    "lane": "B-default",
+    "seed": 164,
+    "stage": "prefix",
+    "start": 0,
+    "updates": 200
+  },
+  {
+    "arm": "bdt",
+    "depends_on": [
+      "seed_164/prefix"
+    ],
+    "end": 3000,
+    "id": "seed_164/arms/bdt",
+    "lane": "B-default",
+    "seed": 164,
+    "stage": "arm",
+    "start": 200,
+    "updates": 2800
+  },
+  {
+    "arm": "adamw",
+    "depends_on": [
+      "seed_164/prefix"
+    ],
+    "end": 3000,
+    "id": "seed_164/arms/adamw",
+    "lane": "B-default",
+    "seed": 164,
+    "stage": "arm",
+    "start": 200,
+    "updates": 2800
+  },
+  {
+    "arm": "scrambled_matched",
+    "depends_on": [
+      "seed_164/prefix"
+    ],
+    "end": 3000,
+    "id": "seed_164/arms/scrambled_matched",
+    "lane": "B-default",
+    "seed": 164,
+    "stage": "arm",
+    "start": 200,
+    "updates": 2800
+  },
+  {
+    "arm": "adamw",
+    "depends_on": [],
+    "end": 7630,
+    "id": "seed_165/parent",
+    "lane": "B-good",
+    "seed": 165,
+    "stage": "parent",
+    "start": 0,
+    "updates": 7630
+  },
+  {
+    "arm": "adamw",
+    "depends_on": [
+      "seed_165/parent"
+    ],
+    "end": 0,
+    "id": "seed_165/grown",
+    "lane": "B-good",
+    "seed": 165,
+    "stage": "grow",
+    "start": 0,
+    "updates": 0
+  },
+  {
+    "arm": "adamw",
+    "depends_on": [
+      "seed_165/grown"
+    ],
+    "end": 200,
+    "id": "seed_165/prefix",
+    "lane": "B-good",
+    "seed": 165,
+    "stage": "prefix",
+    "start": 0,
+    "updates": 200
+  },
+  {
+    "arm": "scrambled_matched",
+    "depends_on": [
+      "seed_165/prefix"
+    ],
+    "end": 3000,
+    "id": "seed_165/arms/scrambled_matched",
+    "lane": "B-good",
+    "seed": 165,
+    "stage": "arm",
+    "start": 200,
+    "updates": 2800
+  },
+  {
+    "arm": "adamw",
+    "depends_on": [
+      "seed_165/prefix"
+    ],
+    "end": 3000,
+    "id": "seed_165/arms/adamw",
+    "lane": "B-good",
+    "seed": 165,
+    "stage": "arm",
+    "start": 200,
+    "updates": 2800
+  },
+  {
+    "arm": "bdt",
+    "depends_on": [
+      "seed_165/prefix"
+    ],
+    "end": 3000,
+    "id": "seed_165/arms/bdt",
+    "lane": "B-good",
+    "seed": 165,
+    "stage": "arm",
+    "start": 200,
+    "updates": 2800
+  },
+  {
+    "arm": "adamw",
+    "depends_on": [],
+    "end": 7630,
+    "id": "seed_166/parent",
+    "lane": "B-default",
+    "seed": 166,
+    "stage": "parent",
+    "start": 0,
+    "updates": 7630
+  },
+  {
+    "arm": "adamw",
+    "depends_on": [
+      "seed_166/parent"
+    ],
+    "end": 0,
+    "id": "seed_166/grown",
+    "lane": "B-default",
+    "seed": 166,
+    "stage": "grow",
+    "start": 0,
+    "updates": 0
+  },
+  {
+    "arm": "adamw",
+    "depends_on": [
+      "seed_166/grown"
+    ],
+    "end": 200,
+    "id": "seed_166/prefix",
+    "lane": "B-default",
+    "seed": 166,
+    "stage": "prefix",
+    "start": 0,
+    "updates": 200
+  },
+  {
+    "arm": "scrambled_matched",
+    "depends_on": [
+      "seed_166/prefix"
+    ],
+    "end": 3000,
+    "id": "seed_166/arms/scrambled_matched",
+    "lane": "B-default",
+    "seed": 166,
+    "stage": "arm",
+    "start": 200,
+    "updates": 2800
+  },
+  {
+    "arm": "bdt",
+    "depends_on": [
+      "seed_166/prefix"
+    ],
+    "end": 3000,
+    "id": "seed_166/arms/bdt",
+    "lane": "B-default",
+    "seed": 166,
+    "stage": "arm",
+    "start": 200,
+    "updates": 2800
+  },
+  {
+    "arm": "adamw",
+    "depends_on": [
+      "seed_166/prefix"
+    ],
+    "end": 3000,
+    "id": "seed_166/arms/adamw",
+    "lane": "B-default",
+    "seed": 166,
+    "stage": "arm",
+    "start": 200,
+    "updates": 2800
+  }
+]

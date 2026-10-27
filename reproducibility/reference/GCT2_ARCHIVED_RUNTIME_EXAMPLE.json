@@ -1,0 +1,26 @@
+{
+  "scope": "Runtime of the one recovered original GCT2 REPORT example; not a claim about every training/evaluation run.",
+  "seed": 161,
+  "arm": "adamw",
+  "runtime": {
+    "capability": [
+      9,
+      0
+    ],
+    "cuda": "12.8",
+    "cudnn": 91900,
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": true,
+    "deterministic": true,
+    "device": "cuda",
+    "gpu": "NVIDIA H200 NVL",
+    "matmul_tf32": false,
+    "numpy": "2.4.6",
+    "threads": 4,
+    "torch": "2.11.0+cu128",
+    "warn_only": false,
+    "workspace": ":4096:8"
+  },
+  "source_member": "reference/recovered_records/gct2/GCT2_report_example.json",
+  "source_sha256": "4f87090c892e19be1f2b523f3695338bc58f96bf8c980e440d3e3c6925f6b678"
+}

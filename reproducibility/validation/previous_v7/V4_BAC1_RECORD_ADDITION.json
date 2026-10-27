@@ -1,0 +1,22 @@
+{
+  "addition": "BAC1 original final-analysis precision and cohort lineage",
+  "analysis_sha256": "5fad4314323a48a1ebe3d4799568594ac2aa451a3c4063c8b656d10af1070183",
+  "cohort_lock_sha256": "68b73d3b31d2cfdc80275289eacb482955b1c3a8e06e5f148c59313d05a0129a",
+  "unrounded_rows": 6,
+  "endpoint_result_hashes": 24,
+  "display_cells_cross_checked": 30,
+  "displayed_primary_difference_cells_cross_checked": 6,
+  "primary_mean": 0.0033002886921167374,
+  "primary_ci95": [
+    0.002971574611868282,
+    0.0036290027723651927
+  ],
+  "individual_raw_REPORT_files_recovered": false,
+  "new_model_evaluations": 0,
+  "new_training_updates": 0,
+  "unit_test_count_after_addition": 114,
+  "unit_console_sha256": "139601b110b9faac0289196524feccc7a631d7ccf1eaee4a6673f5305b3ac84a",
+  "all_record_check_sha256": "2f7a77d91ab2eb90ba672a54f51d2c468012a6537d246b6233627508c01fc30f",
+  "appendix_replay_sha256": "6e86d8ddb7510dc236d2e303d36a273086ad464d7da95b7d1c8827ce28c798de",
+  "scope": "Original saved final analysis and cohort lock; not reconstruction of the 24 individual raw REPORT files."
+}

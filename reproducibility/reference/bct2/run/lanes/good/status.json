@@ -1,0 +1,11 @@
+{
+  "holding_cuda": false,
+  "host": "execution-host-b",
+  "process": {
+    "pid": 249,
+    "start": "320385545",
+    "state": "R"
+  },
+  "state": "complete",
+  "time": "2026-09-25T09:08:58.135166+00:00"
+}

@@ -1,0 +1,167 @@
+{
+  "AOT1_DEV": {
+    "evaluation": "Completed DEV, offset0, stop1050624, tokens1048576",
+    "independent_parent_units": 4,
+    "scope": "Hypothesis-generating completed DEV; not a final REPORT confirmation. Four families reused by BCT1.",
+    "score_transcription_canonical_hash": "97d411de8a1208fe439336c2a3977463fe98fb5a835724f15370dfaa4585676c",
+    "scores": {
+      "946201": {
+        "adaptive_structured": 3.66402449272573,
+        "assembled": 3.664520828053355,
+        "attention": 3.6646357774734497,
+        "block_diagonal": 3.664013797417283,
+        "combined": 3.664070215076208,
+        "cross_reversed": 3.6640108339488506,
+        "difference": 3.665364345535636,
+        "fixed_budget_full_direction": 3.664523582905531
+      },
+      "946202": {
+        "adaptive_structured": 3.665522838011384,
+        "assembled": 3.6660917699337006,
+        "attention": 3.6662016585469246,
+        "block_diagonal": 3.6655735038220882,
+        "combined": 3.6655330918729305,
+        "cross_reversed": 3.665546379983425,
+        "difference": 3.6671149618923664,
+        "fixed_budget_full_direction": 3.6660887114703655
+      },
+      "946203": {
+        "adaptive_structured": 3.6652409490197897,
+        "assembled": 3.665649764239788,
+        "attention": 3.6657811887562275,
+        "block_diagonal": 3.6652731988579035,
+        "combined": 3.665256867185235,
+        "cross_reversed": 3.6652528923004866,
+        "difference": 3.6665452364832163,
+        "fixed_budget_full_direction": 3.6657424215227365
+      },
+      "946204": {
+        "adaptive_structured": 3.6647592652589083,
+        "assembled": 3.665260488167405,
+        "attention": 3.665446760132909,
+        "block_diagonal": 3.6648071110248566,
+        "combined": 3.664749162271619,
+        "cross_reversed": 3.6648003607988358,
+        "difference": 3.666242741048336,
+        "fixed_budget_full_direction": 3.665310747921467
+      }
+    },
+    "source": {
+      "AOT1": "98f5fdd01db34038697dae48f7c83e4c264c6f4693b1aedebaebd9788667e096",
+      "ART1": "b49100583f7f9ad980997144367a505dcd610c2a7ce5d8e41a6c3798711ae43b",
+      "XSC1": "6600c3b9e14a944b5aa855267e4dca2cf087f5a8c83a5098be516c68d67a13aa"
+    }
+  },
+  "CTA1": {
+    "evaluation": "DEV, 1,048,576 targets, no REPORT",
+    "independent_parent_units": 2,
+    "parents_reused": true,
+    "protocol": "7883008cb44e8a72a23d213c67016237c109d51a3d8e70900d067afa1aed25b9",
+    "score_transcription_canonical_hash": "5a89eb74dd95d666c027d02445043942ff69de5e7316fc2f59aeef358454d7ba",
+    "scores": {
+      "159": {
+        "A_A": 3.8433951269835234,
+        "A_B": 3.8437210116535425,
+        "B_A": 3.840304831042886,
+        "B_B": 3.840495375916362
+      },
+      "160": {
+        "A_A": 3.8470493741333485,
+        "A_B": 3.8475843369960785,
+        "B_A": 3.8440320547670126,
+        "B_B": 3.844371762126684
+      }
+    },
+    "source": "283024a79568d99bad34867fc35c09a6a8f062217eb19d5bb3f451a4b896dc3b"
+  },
+  "DNT1": {
+    "evaluation": "DEV, 1,048,576 targets, no REPORT",
+    "independent_parent_units": 2,
+    "parents_reused": true,
+    "protocol": "1f1b075ac59782130c8d456159c289a55f971f40a2f3ee79aea775117a44b53c",
+    "score_transcription_canonical_hash": "fa16b3e3e4f2631bbd522393a2b0b3e758913bd991e7186656b7eb6ab28053cf",
+    "scores": {
+      "159": {
+        "A": 3.8456341717392206,
+        "F": 3.8431617002934217,
+        "M": 3.8432195857167244,
+        "N": 3.845507312566042
+      },
+      "160": {
+        "A": 3.8481481932103634,
+        "F": 3.8453413378447294,
+        "M": 3.8455432895570993,
+        "N": 3.847886571660638
+      }
+    },
+    "source": "8cb08bccfb3262a16f1ab478c5b2a13956181270c716e8761c8e33b963688d92"
+  },
+  "DNT2": {
+    "evaluation": "DEV, 1,048,576 targets, no REPORT",
+    "independent_parent_units": 2,
+    "parents_reused": true,
+    "protocol": "ebf0c1908a8ccf6dcbf9c4fac4dd8474435bf851ab51b9981430bef44c7ee921",
+    "score_transcription_canonical_hash": "2e441c1ffb4938249f01c628224a43344bddc3bc1b252d972b4d98da1f6a8aa6",
+    "scores": {
+      "159": {
+        "A": 3.8456341717392206,
+        "F": 3.842400038614869,
+        "M": 3.8426489159464836,
+        "N": 3.845378266647458
+      },
+      "160": {
+        "A": 3.8481481932103634,
+        "F": 3.8451357074081898,
+        "M": 3.8453754503279924,
+        "N": 3.847927847877145
+      }
+    },
+    "source": "64997a85c6c42720b0a0cc24fb35785dca8171cf17a9987f73f8a5738439e075"
+  },
+  "EAC1": {
+    "evaluation": "DEV, 1,048,576 targets, no REPORT",
+    "independent_parent_units": 2,
+    "parents_reused": true,
+    "protocol": "23a00540bf026781eac3f4e65b2fe4cf5567e418c83ccb8e8ec2e8768611e6cd",
+    "score_transcription_canonical_hash": "4fb6293762a6dd4ad25ad39b249fe67d7faa7101d3c0e06ebca37ad1c3d32d4e",
+    "scores": {
+      "159": {
+        "A": 3.661592897027731,
+        "PP": 3.6594850439578295,
+        "PR": 3.661924082785845,
+        "RP": 3.662649130448699,
+        "RR": 3.662580292671919
+      },
+      "160": {
+        "A": 3.664348052814603,
+        "PP": 3.6622301638126373,
+        "PR": 3.6646233536303043,
+        "RP": 3.665415234863758,
+        "RR": 3.665426217019558
+      }
+    },
+    "source": "8bcedf41da89582fe7e8ed730a47669962cb66f1aa16340f17d192b3dcd68beb"
+  },
+  "TOC1": {
+    "evaluation": "DEV, 1,048,576 targets, no REPORT",
+    "independent_parent_units": 2,
+    "parents_reused": true,
+    "protocol": "53871473cd6a0fc2b092006d2ccf5dff3440a85a6c3a1a584520773ec35f9eae",
+    "score_transcription_canonical_hash": "173f6af927c2db5504a45439141fdd6670b1805e36eac35c766b6f705fc7f1e4",
+    "scores": {
+      "159": {
+        "AA": 3.7368678972125053,
+        "AB": 3.736859243363142,
+        "BA": 3.7356793638318777,
+        "BB": 3.7356967236846685
+      },
+      "160": {
+        "AA": 3.7389502227306366,
+        "AB": 3.7389878183603287,
+        "BA": 3.7378569655120373,
+        "BB": 3.7378643304109573
+      }
+    },
+    "source": "58ddf5ccf309900ad8bdf36fe72a9a4120efc707be3d8b61e70a6d2ae42afb29"
+  }
+}

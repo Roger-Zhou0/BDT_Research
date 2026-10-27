@@ -1,0 +1,26 @@
+{
+  "base_source": "a8954018316a2bf3f9ac0fb0a3006e8fb27cbe7edeba8b6764ac379ae2561da3",
+  "base_files": {
+    "PROTOCOL.json": "38c23f0169733c58bf2a6c12eb0f2d57bb5adc85be7134c82e566c5bdc41a24d",
+    "PROTOCOL.md": "a5b5e1c1f02997a86a0c055702ee965e475e18356ed7bbbc229691bc89b93ed8",
+    "VALIDATION_NOTE.md": "750355ebc35bd3377f60c9283125350612e924596248821f6106eb2fc56bdfed",
+    "ancestry.py": "34bcaf354397fdd35358645f6a2f919c0bd619ece45cca1a8f76198b89e9cd5f",
+    "backend/cms_geometry.py": "770a655ae6dc5e099b2239780ead32ace134d414d232c7e15d0a595d16e41e1c",
+    "backend/cms_protocol.py": "a8a48fc2dbc420f9a77bf9cc06d50faa41e22bdce318032918f9cd033df1828e",
+    "backend/role_adamw.py": "653afb6a644d634355801731e4ba492a10aa68a70ab5a1cca8adbb55ba2a8ed4",
+    "backend/tempering_reference.py": "d1bd72d9ccd18019aea83551b838d5915f727a0a7b6a0a2fd1006fb1c47969f1",
+    "backend/validation_v6_1.py": "ee16f65a5b948b0e645131a01ddc437edb5806e671c44c80792b40efecc9dd8b",
+    "common.py": "57db2a5bba6a52b66252a1f596888d372b839f833ba930e151b0a631e6c0f2c6",
+    "experiment.py": "9fea5a6d0942dfb8ab21b023480a71ef0d67e3418e41e0a1fdc0fcd99d4cd1d5",
+    "followup_queue.py": "711a282d81608dcea4a3893d2f36b44c9cc6189c58ac31f7d309f236efacfae3",
+    "frozen/gct_policy.py": "39a8b612ca3ae80fd42afbcd32d8c8a52f2ff9057592340e7831056bebaea4de",
+    "frozen/gct_runtime.py": "1257828ec45d38631c54f23cbbcaada120f1f8414e3f00d5f04f8a58a574451a",
+    "frozen/gct_train.py": "07301b647644ea1b1369d25c9ca22ab79742cf7e9d1a1e4ad64f8bd1ed413017",
+    "register.py": "d82b3da0fa16ad7bd5281204668fc7f94949d8cd805d9f96a1e8ec971f67f56c",
+    "scope_policy.py": "98fa846be33127192cb09cf17e82447ae399d58fa3e36de2fa884975bcfd8677",
+    "tests/test_suite.py": "ed49ed5020c04b05dabf2df036c6350b0d77f509560f2c8820e74000dc38449f",
+    "train.py": "6647f512d5c1c9bd2830b76169fef91ab6480234411c07f4f9fdc25108b162f9"
+  },
+  "kind": "ancestry_confirmation",
+  "release": "PREPARED; NOT CUDA-VALIDATED OR SCIENTIFICALLY RELEASED"
+}

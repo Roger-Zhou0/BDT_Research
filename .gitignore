@@ -1,0 +1,28 @@
+# Python caches and virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.DS_Store
+
+# Generated outputs (not archived scientific evidence)
+build/
+outputs/
+runs/
+checkpoints/
+wandb/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+
+# Local credentials and key material
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.credentials

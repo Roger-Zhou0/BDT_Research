@@ -1,0 +1,32 @@
+{
+  "release_provenance": "inherited_v3_validation_record",
+  "note": "Historical v3 packaging validation retained for audit. Historical v5 checks are RELEASE_CHECKS.json, V4_BAC1_RECORD_ADDITION.json, V5_ANONYMITY_PATCH.json, UNIT_TESTS.console.txt, ALL_RECORD_CHECKS.json, and the external v5 release-validation handoff; current v6 adds V6_ANONYMITY_PATCH.json and the external v6 validation.",
+  "check": {
+    "returncode": 0,
+    "seconds": 1.5718064370003049,
+    "console_sha256": "41a1b6fb45ff78fdd78db4d9682d070213026cca5dbda0bbbae5d3f854a3508b"
+  },
+  "unit": {
+    "returncode": 0,
+    "seconds": 8.400592746999791,
+    "console_sha256": "7ae72a36956d04473e787895fa16805c5e4fe1757dd65366aebf877dbc2fce50",
+    "tests_run": 110
+  },
+  "records": {
+    "returncode": 0,
+    "seconds": 1.571351147000314,
+    "console_sha256": "382f5fad93567817075dd03728159f898eb7f4fc38b28094a77eccff770f1048"
+  },
+  "appendix": {
+    "returncode": 0,
+    "seconds": 9.511811781999313,
+    "console_sha256": "6e86d8ddb7510dc236d2e303d36a273086ad464d7da95b7d1c8827ce28c798de"
+  },
+  "scope": {
+    "fresh_archive_extraction": true,
+    "external_import_paths_cleared": true,
+    "native_and_BCT1_tested_source_bytes_unchanged": true,
+    "original_sources_or_manuscript_modified": false,
+    "full_size_CUDA_validation": false
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "arm": "adamw",
+  "checkpoint_sha256": "2002c1bbbd4de7f227860ba6fa64679ce105e2d08afbf9914f549afe07caf3f2",
+  "cohort_sha256": "904c9283987b8c27586e8756fce8898513b6e616c163112d7e1a2b15ef9c0240",
+  "collector_source_sha256": "3d485a26ea4a3c214da98216e6d397ed68a23c31f7a1350ff86ffea42d738b02",
+  "completed_at": "2026-09-11T09:27:25.883645+00:00",
+  "evaluator": "gct2.evaluate_slice",
+  "loss": 3.61936810426414,
+  "offset": 2500000,
+  "partition": "REPORT",
+  "runtime": {
+    "capability": [
+      9,
+      0
+    ],
+    "cuda": "12.8",
+    "cudnn": 91900,
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": true,
+    "deterministic": true,
+    "device": "cuda",
+    "gpu": "NVIDIA H200 NVL",
+    "matmul_tf32": false,
+    "numpy": "2.4.6",
+    "threads": 4,
+    "torch": "2.11.0+cu128",
+    "warn_only": false,
+    "workspace": ":4096:8"
+  },
+  "seed": 161,
+  "started_at": "2026-09-11T09:27:07.714536+00:00",
+  "stop": 3550624,
+  "tokens": 1048576,
+  "training_result_sha256": "f0bb5e825f21e827643f2f95886147c810b39f46984f46bc1d7147f491d8225a",
+  "training_source_sha256": "08ecced9d27c4527661c1e8ee46c398c05bd0b573a9d227bf2db092ef66f2c7a"
+}

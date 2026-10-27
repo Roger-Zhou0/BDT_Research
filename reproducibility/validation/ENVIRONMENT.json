@@ -1,0 +1,10 @@
+{
+  "cuda_used": false,
+  "matplotlib": "3.10.8",
+  "numpy": "2.3.5",
+  "platform": "Linux",
+  "python": "3.13.5",
+  "scientific_model_evaluations": 0,
+  "scipy": "1.17.0",
+  "torch": "2.10.0+cpu"
+}

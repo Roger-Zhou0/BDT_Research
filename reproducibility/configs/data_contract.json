@@ -1,0 +1,21 @@
+{
+  "realization": "S1-B",
+  "dtype": "uint16",
+  "vocab_size": 50257,
+  "train_tokens": 3000000000,
+  "validation_tokens": 5000000,
+  "sha256": {
+    "metadata.json": "64d9e563d8b12517cfe123560d39ab4f579ef9c4ec5482e215c20cb4f4108feb",
+    "train.bin": "760fe8d0a55959dc322643fa4ac856e542e11bd59ac84c2f48f6e00a3d587ce6",
+    "val.bin": "5dd2caeb46e3c237e6c9291d5964c548ae004cd87b3c29f01188b444af2aff0f"
+  },
+  "report": {
+    "offset": 2500000,
+    "sequences": 2048,
+    "sequence_ids": 513,
+    "targets": 1048576,
+    "exclusive_stop": 3550624
+  },
+  "cache_generation_recipe_recovered": false,
+  "raw_data_included": false
+}

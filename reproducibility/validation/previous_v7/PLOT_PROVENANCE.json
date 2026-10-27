@@ -1,0 +1,10 @@
+{
+  "figure2_ancestry.png": "v20 Figure2 numerical content from display-precision BAC1 inputs; one point per parent/policy.",
+  "figure3_operation.png": "v20 Figure3 numerical content; two reused parents; no confidence intervals.",
+  "allocation_bdt_budget_gs_gate.png": "v20 Figure4 / Appendix allocation: four-parent means and parent ranges, not CIs; sparse observations, lines are guides.",
+  "allocation_bdt_budget_gs_up.png": "v20 Figure4 / Appendix allocation: four-parent means and parent ranges, not CIs; sparse observations, lines are guides.",
+  "allocation_bdt_budget_gs_down.png": "v20 Figure4 / Appendix allocation: four-parent means and parent ranges, not CIs; sparse observations, lines are guides.",
+  "allocation_structured_budget_gs_gate.png": "v20 Figure4 / Appendix allocation: four-parent means and parent ranges, not CIs; sparse observations, lines are guides.",
+  "allocation_structured_budget_gs_up.png": "v20 Figure4 / Appendix allocation: four-parent means and parent ranges, not CIs; sparse observations, lines are guides.",
+  "allocation_structured_budget_gs_down.png": "v20 Figure4 / Appendix allocation: four-parent means and parent ranges, not CIs; sparse observations, lines are guides."
+}

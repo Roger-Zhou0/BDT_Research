@@ -1,0 +1,198 @@
+{
+  "candidate": "diagnostics_lite_v1: omit raw-update cosine and common-error reporting only when diagnostics=False; preserve norm/condition safety checks and update arithmetic",
+  "candidate_policy": "At most one versioned implementation candidate. No quality tuning. Any substantive second implementation requires a new scope decision.",
+  "engineering_seed": 127,
+  "engineering_success": {
+    "minimum_faster_blocks": 10,
+    "minimum_median_full_step_reduction": 0.02,
+    "overhead_goal": "Halve residual overhead versus split Adam in the contemporaneous reference/candidate measurement; a goal, not a publication gate.",
+    "required_quality_checks": "all exact-equivalence checks plus >=8 stable full-step blocks"
+  },
+  "frozen_reference": {
+    "ocb1_source_digest": "e3a4d782bb662ce6eec7674aca00ce16304aa29d87673f101dbbfe4392b80d99",
+    "temper_sha256": "d1bd72d9ccd18019aea83551b838d5915f727a0a7b6a0a2fd1006fb1c47969f1"
+  },
+  "name": "BCO1",
+  "profile": {
+    "include": [
+      "proposal formation",
+      "centering/projection",
+      "covariance formation",
+      "eigendecomposition",
+      "operator application",
+      "norm restoration",
+      "safety checks",
+      "optional reporting",
+      "apply/decay",
+      "host synchronization",
+      "allocations"
+    ],
+    "ordinary_steps": 18,
+    "primary_timers_profiled": false,
+    "refresh_steps": [
+      510,
+      520
+    ],
+    "report": "Refresh vs ordinary separately; exclusive time where available. Nested or overlapping durations are not additive.",
+    "runtime_events": "Use disjoint record_function regions in a separate instrumentation copy; retain CPU/CUDA event keys and scalar-sync events.",
+    "update_range": [
+      501,
+      520
+    ]
+  },
+  "question": "Can avoidable implementation work be removed without changing the measured treatment?",
+  "restrictions": "Do not change GCT2, overwrite OCB1, aggregate across devices, substitute profile duration for timing, or claim time-to-quality.",
+  "stages": [
+    "profile",
+    "one_candidate",
+    "exact_equivalence_gate",
+    "balanced_before_after_measurement",
+    "stop_and_report"
+  ],
+  "status": "DESIGN_COMPLETE_CPU_TRANSFORM_PROTOTYPE_ONLY",
+  "target": {
+    "account": "account_a",
+    "session": "good"
+  },
+  "timing": {
+    "comparison": [
+      "candidate/reference",
+      "reference/split",
+      "candidate/split"
+    ],
+    "conditions": [
+      "split_adam",
+      "reference_bdt",
+      "candidate_bdt"
+    ],
+    "exact_final_states_must_agree": true,
+    "exclude": [
+      "profiling",
+      "validation",
+      "checkpoint I/O",
+      "audit hashes",
+      "one-off state restore"
+    ],
+    "families": [
+      "full_step",
+      "optimizer_only"
+    ],
+    "full_step_input": "Same fixed CPU batch ring; H2D, forward/backward, clipping and optimizer included.",
+    "full_step_updates": 20,
+    "main_blocks": 12,
+    "minimum_stable_blocks": 8,
+    "one_gpu_uuid": true,
+    "optimizer_input": "Same fixed clipped gradients. Include two or ten covariance refreshes in 20/100 updates respectively.",
+    "optimizer_only_updates": 100,
+    "orders": [
+      [
+        "split_adam",
+        "reference_bdt",
+        "candidate_bdt"
+      ],
+      [
+        "split_adam",
+        "candidate_bdt",
+        "reference_bdt"
+      ],
+      [
+        "reference_bdt",
+        "split_adam",
+        "candidate_bdt"
+      ],
+      [
+        "reference_bdt",
+        "candidate_bdt",
+        "split_adam"
+      ],
+      [
+        "candidate_bdt",
+        "split_adam",
+        "reference_bdt"
+      ],
+      [
+        "candidate_bdt",
+        "reference_bdt",
+        "split_adam"
+      ],
+      [
+        "split_adam",
+        "reference_bdt",
+        "candidate_bdt"
+      ],
+      [
+        "split_adam",
+        "candidate_bdt",
+        "reference_bdt"
+      ],
+      [
+        "reference_bdt",
+        "split_adam",
+        "candidate_bdt"
+      ],
+      [
+        "reference_bdt",
+        "candidate_bdt",
+        "split_adam"
+      ],
+      [
+        "candidate_bdt",
+        "split_adam",
+        "reference_bdt"
+      ],
+      [
+        "candidate_bdt",
+        "reference_bdt",
+        "split_adam"
+      ]
+    ],
+    "restore_after_warmup": true,
+    "sentinel_drift_limit": 0.1,
+    "sentinels": [
+      "split_adam_before",
+      "split_adam_after"
+    ],
+    "source_state": "Hash-verified OCB1 Dense12 engineering update500 snapshot; rebuild only if recorded recipe/state identity matches.",
+    "summary": "Median paired block ratios + IQR; all completed blocks primary, stable subset secondary",
+    "warmup_updates": 20
+  },
+  "unchanged": [
+    "cap",
+    "observation cadence",
+    "covariance EMA",
+    "scope",
+    "onset",
+    "ramp",
+    "FP32/FP64 arithmetic",
+    "normalization",
+    "learning-rate schedule",
+    "optimizer moments"
+  ],
+  "validation": {
+    "active_end": 1000,
+    "cpu_transform_steps": 1000,
+    "full_size_common_prefix_end": 200,
+    "max_model_updates": 2600,
+    "multiple_seeds": "engineering seed127 only; no scientific seed consumption",
+    "paths": [
+      "reference",
+      "candidate_uninterrupted",
+      "candidate_interrupt310_resume"
+    ],
+    "report_fields_allowed_to_differ": [
+      "raw_update_cosine",
+      "common_max_abs_error",
+      "timings"
+    ],
+    "required_exact": [
+      "raw proposals",
+      "applied proposals",
+      "moments and counters",
+      "model tensors",
+      "covariance/eigen state",
+      "RNG",
+      "training batches"
+    ]
+  },
+  "version": "bco1_design_v1"
+}

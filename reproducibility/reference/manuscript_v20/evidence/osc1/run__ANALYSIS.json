@@ -1,0 +1,105 @@
+{
+  "accounting": {
+    "gradients": [
+      {
+        "count": 128,
+        "kind": "calibration",
+        "replay": false,
+        "state": "computed"
+      },
+      {
+        "count": 24079,
+        "kind": "science",
+        "replay": false,
+        "state": "computed"
+      },
+      {
+        "count": 1,
+        "kind": "science",
+        "replay": false,
+        "state": "reserved"
+      },
+      {
+        "count": 1,
+        "kind": "science",
+        "replay": true,
+        "state": "computed"
+      }
+    ],
+    "proved_model_updates": 22400
+  },
+  "contrasts": {
+    "noise_matched - native": {
+      "descriptive_mean": -1.705065369606018e-05,
+      "per_parent": {
+        "159": -2.287141978740692e-05,
+        "160": -1.122988760471344e-05
+      }
+    },
+    "noise_matched - paired_total": {
+      "descriptive_mean": -1.2051314115524292e-06,
+      "per_parent": {
+        "159": 3.6116689443588257e-06,
+        "160": -6.021931767463684e-06
+      }
+    },
+    "paired_total - native": {
+      "descriptive_mean": -1.584552228450775e-05,
+      "per_parent": {
+        "159": -2.6483088731765747e-05,
+        "160": -5.207955837249756e-06
+      }
+    },
+    "signal_matched - native": {
+      "descriptive_mean": 7.994472980499268e-06,
+      "per_parent": {
+        "159": 7.316470146179199e-06,
+        "160": 8.672475814819336e-06
+      }
+    },
+    "signal_matched - noise_matched": {
+      "descriptive_mean": 2.5045126676559448e-05,
+      "per_parent": {
+        "159": 3.018788993358612e-05,
+        "160": 1.9902363419532776e-05
+      }
+    },
+    "signal_matched - paired_total": {
+      "descriptive_mean": 2.383999526500702e-05,
+      "per_parent": {
+        "159": 3.3799558877944946e-05,
+        "160": 1.3880431652069092e-05
+      }
+    }
+  },
+  "endpoint_seal_sha256": "c8d66ebda4e7b3409342a9b50069f98d27a13e5b0dfa175096715299b8be9d33",
+  "protocol": "b69f4b8cedb1c122e65162dd7de785bd5df6571bb9ff7c603f959227e93937d7",
+  "receipts": {
+    "159/native": "82aa9c391a07a1f8509b7f6c99637edcb066aa9d03ca52c1dc50e3c2da03f0ca",
+    "159/noise_matched": "63a8bd03f8423fa822090b916a56431c08fd6c2c822073aa8f37f47e2eec8804",
+    "159/paired_total": "e5b0c0df3cc173d1babda01b3ff00cb34895007a7487473c2a214f78abe40485",
+    "159/signal_matched": "f13676cd658e57e83e3b1c218e9fb554c1d9de90714fef7ce6b57e1057e55845",
+    "160/native": "f510edb111be6aaf1c7a57a2c0ae2ae6fe885ba391a253e06cf2b353855c565b",
+    "160/noise_matched": "3cd23bd5e11224b2761e632e72cbbc69a904ce522dddbbed1e98ba3ca528a96f",
+    "160/paired_total": "407b762e094ab11e686423e10f7b9c83115476e84c64a150acf89c56d7df2e11",
+    "160/signal_matched": "72d06edbe505a07ce3a37a9bfe3952a43b2499509d3b0faab511db3088a30adf"
+  },
+  "scope": "Two reused development parents; show both paired differences and descriptive mean; no population CI, equivalence, mediation fraction, or fresh confirmation.",
+  "scores": {
+    "159": {
+      "native": 3.658321052789688,
+      "noise_matched": 3.6582981813699007,
+      "paired_total": 3.6582945697009563,
+      "signal_matched": 3.6583283692598343
+    },
+    "160": {
+      "native": 3.6629801876842976,
+      "noise_matched": 3.662968957796693,
+      "paired_total": 3.6629749797284603,
+      "signal_matched": 3.6629888601601124
+    }
+  },
+  "source": "28f14801e8007d6ffc20b2bfe2e22c3a3514a61beb1fc8daccc186f5da401607",
+  "state": "complete",
+  "time": "2026-09-22T22:24:00.723309+00:00"
+}

@@ -1,0 +1,14 @@
+{
+  "original_release_digest": "c63c877701dc3feb22b4b7e0bf01166beba3775e39cbc9603b487363e669f3fa",
+  "subset_files": 19,
+  "all_listed_kernel_files_byte_identical": true,
+  "excluded_infrastructure": "Native scheduling, host admission, operational ledgers, and private filesystem I/O are not part of the portable entrypoint. common.py is a new adapter, not part of the historical release.",
+  "complete_native_release_shipped": false,
+  "function_excerpts": {
+    "config": "fc3bc34e6535beadc4ee0d9dc48ae093c60dcc113b23d917d39e6104d55df7cb",
+    "build": "a887483881613ad252b751a46704ec4bfbb1da4f397727fd711a5eb9c30b0d65",
+    "source_name": "92782c6b7825a17a096ac06bdf98931fc3e7e585154907ce6271a51694cf34ba",
+    "copy_growth": "c96a3e41bba092d3cfbae89669b47b79ab3c7d594ca37c553e6ae41b8a877489"
+  },
+  "function_excerpt_parent_sha256": "828450101e2e152fe38abacfb548817e2bc2702041abf3de35678f502a29961e"
+}

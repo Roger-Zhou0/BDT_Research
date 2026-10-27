@@ -1,0 +1,44 @@
+{
+  "arms": [
+    "adamw",
+    "bdt",
+    "draw0_preserved",
+    "draw0_reassigned"
+  ],
+  "endpoints": {
+    "seed_175/arms/adamw/result.json": "16d218657a6138cf39a7e6180836efb4a6ddf49ef4d2d06534dde3e0dd51b07f",
+    "seed_175/arms/bdt/result.json": "27c0ed7923aa996c45d007084b52bebeae856db9775e720ecf238bf7d8eec760",
+    "seed_175/arms/draw0_preserved/result.json": "df4489f5c8c7b65240eae5dfd57c8fe2dc880275b977292b38360dac97407549",
+    "seed_175/arms/draw0_reassigned/result.json": "71fe175e7db0ff07300c0c11b802bf9d5bf95cecd0380fc9baf977b831786313",
+    "seed_176/arms/adamw/result.json": "b08a2ec699e87641c091486cadedc2e745ffa7f6960d272e528749dfcd967c9c",
+    "seed_176/arms/bdt/result.json": "74bceeff9461ae79cb64dc49525373d6914cbc9d875448ffde45a61cc4276657",
+    "seed_176/arms/draw0_preserved/result.json": "ae7feccfbbcdef610151c7050f72dc83b904ae6d541be1010153c6a4571526a7",
+    "seed_176/arms/draw0_reassigned/result.json": "7c419a68bf63acdacdb9c152644f78294d1c0a99a4deecce5bd28a826ef1a180",
+    "seed_177/arms/adamw/result.json": "bda34cc63755685198e625bde859e9038375ff83a53796aade299d1b913f7d24",
+    "seed_177/arms/bdt/result.json": "aceff0a9c87a5ceb63601b6fa806f0f6110d392b6e53e63fbe5bc07e11aa88d8",
+    "seed_177/arms/draw0_preserved/result.json": "f344f567d3aa1a262ccce6333cd783e088c23ef46cfd62ccee2c84e789d4f855",
+    "seed_177/arms/draw0_reassigned/result.json": "0e2de946af1cd88bf88bf6018168d330fada9e07dcf2d965f910afb54589e65f",
+    "seed_178/arms/adamw/result.json": "e4ec891b178d680962ae9e1d8b55791cfbc62d4006985db9fb981ae11bac6836",
+    "seed_178/arms/bdt/result.json": "ac7b8197a2587b210339c4776146dbd87d9b541109fa9ebe1bc939b52cbb082f",
+    "seed_178/arms/draw0_preserved/result.json": "bee1981cb4e1e84e9a67ef8b9c6e70a23aee3c72b421e91c21467380c1253b97",
+    "seed_178/arms/draw0_reassigned/result.json": "daa3c8fec8164d92571eb8b34e7c53f498168afe61b23e8d5539f3eddf73d612",
+    "seed_179/arms/adamw/result.json": "4480879ce4a70d4fdc294974bd26a23a35c483e82e98f5f74d87cb3c6a61f264",
+    "seed_179/arms/bdt/result.json": "e27e983ba81c6ff89217253076e1527ec7e5737f811db9f8714d68bd109d6f1e",
+    "seed_179/arms/draw0_preserved/result.json": "69b26408f0bac138eccddabb0d767650fcd9013055cb3c712c0e6ba07399fc6d",
+    "seed_179/arms/draw0_reassigned/result.json": "f2524e1e8ca36fa2ac41adf00b2ea4ca1daf80718a0f510bd57abe96887ac6da",
+    "seed_180/arms/adamw/result.json": "0c4d8cb78bfebd0efe04c38f9e172b73e6e8c7fcb7187784c83b2c2719b0460d",
+    "seed_180/arms/bdt/result.json": "a1343932fde4ec439780758f5ac621c82204045af7a188ceefced281239b35e3",
+    "seed_180/arms/draw0_preserved/result.json": "59244cd93f0fd4e1b92950e61cb6e0690f26a27b01f49d247464732713c296ab",
+    "seed_180/arms/draw0_reassigned/result.json": "11253b77a59619bd4e038acc8c87e658fbb2849bdee1160b6e815c48fb2cc103"
+  },
+  "protocol": "1fd9fc1ad636dcf0da1361f1184115e8cbd2cbcbd96485a31aa1cc2b6b0ca63e",
+  "seeds": [
+    175,
+    176,
+    177,
+    178,
+    179,
+    180
+  ],
+  "source": "1f119bbb7be46a323e8d08bbbf1041bbb6c29f296d8cebb673c9fb6d2a058fba"
+}

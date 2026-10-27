@@ -1,0 +1,44 @@
+{
+  "cache": {
+    "path": "PROJECT_ROOT/recurrent-graph/recurrent_graph_s1_124m/data_s1/fineweb_edu_3b",
+    "sha256": {
+      "metadata.json": "64d9e563d8b12517cfe123560d39ab4f579ef9c4ec5482e215c20cb4f4108feb",
+      "train.bin": "760fe8d0a55959dc322643fa4ac856e542e11bd59ac84c2f48f6e00a3d587ce6",
+      "val.bin": "5dd2caeb46e3c237e6c9291d5964c548ae004cd87b3c29f01188b444af2aff0f"
+    },
+    "stat": {
+      "metadata.json": {
+        "inode": 5165296523349197854,
+        "mtime_ns": 1788327636773609283,
+        "size": 346
+      },
+      "train.bin": {
+        "inode": 6845943003989610740,
+        "mtime_ns": 1788327636760346812,
+        "size": 6000000000
+      },
+      "val.bin": {
+        "inode": 14801766657499078253,
+        "mtime_ns": 1788325560675864000,
+        "size": 10000000
+      }
+    }
+  },
+  "candidate_lock_sha256": "79a99529d43baa36cdf8714c6796ae71913a8e5925f6c844745bbbb604e04dd0",
+  "created_at": "2026-09-11T05:40:59.464801+00:00",
+  "legacy_audit_sha256": "b53e656125c330753c76fc503f4798ab3d2eddbd234797925143be94d90cbf1e",
+  "overlap_lock_sha256": "9c5a21bcefea4c83a88dc6e757b218fa53ea840a790922b8b03439fb29e01fe3",
+  "protocol": "d3130d9159aecc8f6ea176293edeb05295a9f014a9b3eac0b77432e6b0254483",
+  "scope": "Newly reserved source documents with recorded identities and exact-token overlap screening. Historical source IDs/URLs were not saved; no claim of proved URL-disjointness or complete near-duplicate removal.",
+  "selection": {
+    "documents": 4096,
+    "documents_sha256": "ce784142fa92d4a2d86d54e0eaf948bff0083ba24f9b260ae13de098457394f2",
+    "internal_overlap_rejections": 9,
+    "records_sha256": "a0b2bb3ad3cd8081a2ac47075153aa4d6e8e87ad9fe7e3f48a1bfad8e697df2f",
+    "tokens_scored": 2097152
+  },
+  "source": "eb9d92165aa599ded4145abfcaa80c7c9a6d21177ac2bf31fc80b8788d6f2a1b",
+  "source_revision": "87f09149ef4734204d70ed1d046ddc9ca3f2b8f9",
+  "state": "locked",
+  "tokenizer_sha256": "11e818f948f43497f364722def50c13f419158554961ee4bb095fbd3350895c3"
+}

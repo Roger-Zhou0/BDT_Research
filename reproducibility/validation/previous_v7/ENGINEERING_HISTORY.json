@@ -1,0 +1,31 @@
+{
+  "attempts": [
+    {
+      "attempt": "native source recovery and original CPU suites",
+      "state": "passed",
+      "scientific_sources_changed": false
+    },
+    {
+      "attempt": "anonymous appendix replay1",
+      "state": "failed",
+      "stage": "verify_allocation.py original raw-hash guard",
+      "reason": "Anonymous record-key names changed the display-payload byte digest, so the original exact-private-byte checker correctly refused it.",
+      "resolution": "Retained historical source/input hashes unchanged. Added a separately labelled public-record verifier using original-to-public origin mappings and the same numerical identities.",
+      "failing_console_sha256": "d3c8953720aea032191287d8144ecfed01c9da0a2a648139169c6a90b288e257"
+    },
+    {
+      "attempt": "anonymous appendix replay2",
+      "state": "passed",
+      "tables": 14,
+      "new_model_evaluations": 0
+    },
+    {
+      "attempt": "figure display inspection",
+      "state": "layout adjustment",
+      "reason": "The re-executed historical long ASQ axis label clipped in this plotting environment. New wrapper uses tight bounds plus padding. Archived plot source/data and manuscript were not edited."
+    }
+  ],
+  "original_failure_logs_deleted": false,
+  "missing_values_imputed": false,
+  "science_tolerances_relaxed": false
+}

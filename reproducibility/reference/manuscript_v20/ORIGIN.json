@@ -1,0 +1,531 @@
+{
+  "manuscript": "v20",
+  "inputs": [
+    {
+      "member": "reference/manuscript_v20/tables/E12_per_seed.tex",
+      "original_source_member": "tables/E12_per_seed.tex",
+      "original_sha256": "b3e7726521b690bcaf45511d12fb4b579027e6f95e97bd804b741f431a74e01f",
+      "public_sha256": "b3e7726521b690bcaf45511d12fb4b579027e6f95e97bd804b741f431a74e01f",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/E13_per_seed.tex",
+      "original_source_member": "tables/E13_per_seed.tex",
+      "original_sha256": "6026a0441d59e743ee485311fd04fadd85d3797e970d25823f1bd4da855b7151",
+      "public_sha256": "6026a0441d59e743ee485311fd04fadd85d3797e970d25823f1bd4da855b7151",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/E14_per_seed.tex",
+      "original_source_member": "tables/E14_per_seed.tex",
+      "original_sha256": "b5b52b51e958ef7d9688292e463abd672b5e43764891f1d3966992adccd70f2f",
+      "public_sha256": "b5b52b51e958ef7d9688292e463abd672b5e43764891f1d3966992adccd70f2f",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/acl1_all_endpoints.tex",
+      "original_source_member": "tables/acl1_all_endpoints.tex",
+      "original_sha256": "9b9580c02e70bf0dad97e479db13cfe0eb54e11cd25b858456a021829df860f5",
+      "public_sha256": "9b9580c02e70bf0dad97e479db13cfe0eb54e11cd25b858456a021829df860f5",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/adjacent_report_contrasts.tex",
+      "original_source_member": "tables/adjacent_report_contrasts.tex",
+      "original_sha256": "fffe28bb37aaac54334e4d435a119b46c6a3a834234408dc130587fca679602c",
+      "public_sha256": "fffe28bb37aaac54334e4d435a119b46c6a3a834234408dc130587fca679602c",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/adjacent_report_scores.tex",
+      "original_source_member": "tables/adjacent_report_scores.tex",
+      "original_sha256": "14235b6f614e2a679193446c9cbb73b466f88396e55f55b91fb888bf4392b84b",
+      "public_sha256": "14235b6f614e2a679193446c9cbb73b466f88396e55f55b91fb888bf4392b84b",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/aot_development_scores.tex",
+      "original_source_member": "tables/aot_development_scores.tex",
+      "original_sha256": "f33a7a20e5d0d2a9460f0ab3cc3aab7f48d25f1e8410372ceb06a74cd32b4f33",
+      "public_sha256": "f33a7a20e5d0d2a9460f0ab3cc3aab7f48d25f1e8410372ceb06a74cd32b4f33",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/arm1_all_endpoints.tex",
+      "original_source_member": "tables/arm1_all_endpoints.tex",
+      "original_sha256": "dbb347df954aef510be9ae863d1be91a1c6a5f0ee841fbf4a82f8370d171ecdb",
+      "public_sha256": "dbb347df954aef510be9ae863d1be91a1c6a5f0ee841fbf4a82f8370d171ecdb",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/arm1_applied_geometry.tex",
+      "original_source_member": "tables/arm1_applied_geometry.tex",
+      "original_sha256": "253727ec459d6c581c3bc07f9f99f8c69ea5dd0575ebd1a1e6ca2f53d1ebf4c3",
+      "public_sha256": "253727ec459d6c581c3bc07f9f99f8c69ea5dd0575ebd1a1e6ca2f53d1ebf4c3",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/art_report_contrasts.tex",
+      "original_source_member": "tables/art_report_contrasts.tex",
+      "original_sha256": "7e3459701f37239385992a70cac7b9ac129270b71dcbda170f0aca648ae373e8",
+      "public_sha256": "7e3459701f37239385992a70cac7b9ac129270b71dcbda170f0aca648ae373e8",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/art_report_scores.tex",
+      "original_source_member": "tables/art_report_scores.tex",
+      "original_sha256": "8783472af365af4d6e0576b0c170b964e28699207014a7bfaf36b47bd2b8a982",
+      "public_sha256": "8783472af365af4d6e0576b0c170b964e28699207014a7bfaf36b47bd2b8a982",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/baa1_all_endpoints.tex",
+      "original_source_member": "tables/baa1_all_endpoints.tex",
+      "original_sha256": "e62bce01d6bf8a2c0982afeaba81fc01f0a9616655085b1f19793ffb89575d69",
+      "public_sha256": "e62bce01d6bf8a2c0982afeaba81fc01f0a9616655085b1f19793ffb89575d69",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/bac1_all_endpoints.tex",
+      "original_source_member": "tables/bac1_all_endpoints.tex",
+      "original_sha256": "7430100089c4d55aed86efedaabd638d58082a19c2fe98ccef0a5a7e51db8c03",
+      "public_sha256": "7430100089c4d55aed86efedaabd638d58082a19c2fe98ccef0a5a7e51db8c03",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/bcr1_all_endpoints.tex",
+      "original_source_member": "tables/bcr1_all_endpoints.tex",
+      "original_sha256": "35d24741ac550d1d62033b5557835538556b18820b4fb58f1b89d53922b12e0d",
+      "public_sha256": "35d24741ac550d1d62033b5557835538556b18820b4fb58f1b89d53922b12e0d",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/bct_report_contrasts.tex",
+      "original_source_member": "tables/bct_report_contrasts.tex",
+      "original_sha256": "d4f08d6b0c76f0fdc324d33ef60c5f36da60502db4be09ed884449090ec85adf",
+      "public_sha256": "d4f08d6b0c76f0fdc324d33ef60c5f36da60502db4be09ed884449090ec85adf",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/bct_report_scores.tex",
+      "original_source_member": "tables/bct_report_scores.tex",
+      "original_sha256": "d965f4266caa9c90675af31d00eb92f2980b6869be891bd2bcf09b2f4b2e562d",
+      "public_sha256": "d965f4266caa9c90675af31d00eb92f2980b6869be891bd2bcf09b2f4b2e562d",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/budget_profile_means.tex",
+      "original_source_member": "tables/budget_profile_means.tex",
+      "original_sha256": "bf94ddbcc447a5dfa8f867f8aa76d9b28ecf655d0d31531dede9d8f6826829d3",
+      "public_sha256": "bf94ddbcc447a5dfa8f867f8aa76d9b28ecf655d0d31531dede9d8f6826829d3",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/cms1_per_seed.tex",
+      "original_source_member": "tables/cms1_per_seed.tex",
+      "original_sha256": "169c99cbae5a0762629ff2d7c9afd56c2f463be6b51ff021c7aa4cda0a56f883",
+      "public_sha256": "169c99cbae5a0762629ff2d7c9afd56c2f463be6b51ff021c7aa4cda0a56f883",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/cta1_v15.tex",
+      "original_source_member": "tables/cta1_v15.tex",
+      "original_sha256": "c3c15d9725d56f94ad0f472161a27f7bb11b50dac1bac4c7e4cd2febda19675f",
+      "public_sha256": "c3c15d9725d56f94ad0f472161a27f7bb11b50dac1bac4c7e4cd2febda19675f",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/direction_per_seed.tex",
+      "original_source_member": "tables/direction_per_seed.tex",
+      "original_sha256": "d8c050620a8c401323f6d3fa8875711de5d6f4e0623833da67a89543001ef596",
+      "public_sha256": "d8c050620a8c401323f6d3fa8875711de5d6f4e0623833da67a89543001ef596",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/dnt_v15.tex",
+      "original_source_member": "tables/dnt_v15.tex",
+      "original_sha256": "6ebb2fb9ed3fcb45efafb2de2df24e1a1542b402b915039e3dd7092f89dce631",
+      "public_sha256": "6ebb2fb9ed3fcb45efafb2de2df24e1a1542b402b915039e3dd7092f89dce631",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/eac1_v15.tex",
+      "original_source_member": "tables/eac1_v15.tex",
+      "original_sha256": "c699d80d1b579bfd7bd3e97d55da37f6ea6b61bd7238105737dcf521e7a13f68",
+      "public_sha256": "c699d80d1b579bfd7bd3e97d55da37f6ea6b61bd7238105737dcf521e7a13f68",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/fair_exact_per_seed.tex",
+      "original_source_member": "tables/fair_exact_per_seed.tex",
+      "original_sha256": "0ce3bfda5e5934c60e46853ba6183e41e3fe9f30c1ee56c401ff09574ef7eab7",
+      "public_sha256": "0ce3bfda5e5934c60e46853ba6183e41e3fe9f30c1ee56c401ff09574ef7eab7",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/fev1_all_endpoints.tex",
+      "original_source_member": "tables/fev1_all_endpoints.tex",
+      "original_sha256": "1d354ffecf150812c76ef454c354783e20d70ef620c1b6368c83f08548b93767",
+      "public_sha256": "1d354ffecf150812c76ef454c354783e20d70ef620c1b6368c83f08548b93767",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/gct2_all_endpoints.tex",
+      "original_source_member": "tables/gct2_all_endpoints.tex",
+      "original_sha256": "1d60a5545700c723214b165deaf51859dc2acf5ba56d01cf3a324ebe3a452717",
+      "public_sha256": "1d60a5545700c723214b165deaf51859dc2acf5ba56d01cf3a324ebe3a452717",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/gct2_fev1_intervals.tex",
+      "original_source_member": "tables/gct2_fev1_intervals.tex",
+      "original_sha256": "03fc7e3e66d84d7820da76ed63736c6596aec1e48867e76cc5b73f8d49ddef36",
+      "public_sha256": "03fc7e3e66d84d7820da76ed63736c6596aec1e48867e76cc5b73f8d49ddef36",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/growth_endpoints.tex",
+      "original_source_member": "tables/growth_endpoints.tex",
+      "original_sha256": "4d34fad9257fce9499d055d06af9fc1e3a6e8f8269194049c7c62d926420fabe",
+      "public_sha256": "4d34fad9257fce9499d055d06af9fc1e3a6e8f8269194049c7c62d926420fabe",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/initialization_per_seed.tex",
+      "original_source_member": "tables/initialization_per_seed.tex",
+      "original_sha256": "57e38e32d58fa8dc69311ee29fb795b2f4731ee603e66b3c9896ddcc45dae1b3",
+      "public_sha256": "57e38e32d58fa8dc69311ee29fb795b2f4731ee603e66b3c9896ddcc45dae1b3",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/lh1_all_endpoints.tex",
+      "original_source_member": "tables/lh1_all_endpoints.tex",
+      "original_sha256": "b29345af52433b019c6c45dbb4d567ac8d0d885081e37ac198774841a942216a",
+      "public_sha256": "b29345af52433b019c6c45dbb4d567ac8d0d885081e37ac198774841a942216a",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/local_contrasts.tex",
+      "original_source_member": "tables/local_contrasts.tex",
+      "original_sha256": "ea590d69a6e7b55177837493b09bf3b3ac15fef3b0ae3418eecee24a5dff022a",
+      "public_sha256": "ea590d69a6e7b55177837493b09bf3b3ac15fef3b0ae3418eecee24a5dff022a",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/odc_all_endpoints.tex",
+      "original_source_member": "tables/odc_all_endpoints.tex",
+      "original_sha256": "38e21eb6fac8d90cded13dddd1f4fa9b19688fcd929a9060f9a6984f2824cd37",
+      "public_sha256": "38e21eb6fac8d90cded13dddd1f4fa9b19688fcd929a9060f9a6984f2824cd37",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/odc_effects.tex",
+      "original_source_member": "tables/odc_effects.tex",
+      "original_sha256": "195f6c948ea0520027092a0c8908883bcc7ba71311f83538c5c6cb5be2513587",
+      "public_sha256": "195f6c948ea0520027092a0c8908883bcc7ba71311f83538c5c6cb5be2513587",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/oip_all_state_metrics.tex",
+      "original_source_member": "tables/oip_all_state_metrics.tex",
+      "original_sha256": "e41fb3f6455f6ffcddb40b38dc7cf475b7e673241bc12cf912d12602ac2a91ef",
+      "public_sha256": "e41fb3f6455f6ffcddb40b38dc7cf475b7e673241bc12cf912d12602ac2a91ef",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/osc1_manipulation.tex",
+      "original_source_member": "tables/osc1_manipulation.tex",
+      "original_sha256": "6955d2a53a2f07687b532a451c28e27f19f37c20361bd55da79ff7bdf0f8f32d",
+      "public_sha256": "6955d2a53a2f07687b532a451c28e27f19f37c20361bd55da79ff7bdf0f8f32d",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/osc1_primary.tex",
+      "original_source_member": "tables/osc1_primary.tex",
+      "original_sha256": "46e134dba5b21d5ce0c3f3b4f302db1aa081b16e46c39093c81517fb0065d27e",
+      "public_sha256": "46e134dba5b21d5ce0c3f3b4f302db1aa081b16e46c39093c81517fb0065d27e",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/osc1_scores.tex",
+      "original_source_member": "tables/osc1_scores.tex",
+      "original_sha256": "535bf8060d113624bd99dc0e3fd29108a45eb03f4b8a24645b24473c12b85b78",
+      "public_sha256": "535bf8060d113624bd99dc0e3fd29108a45eb03f4b8a24645b24473c12b85b78",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/pct1_all_endpoints.tex",
+      "original_source_member": "tables/pct1_all_endpoints.tex",
+      "original_sha256": "9f0fbef8242222c8876336e22946553d5fb16637fd326df47d19bd2275a91b95",
+      "public_sha256": "9f0fbef8242222c8876336e22946553d5fb16637fd326df47d19bd2275a91b95",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/qcp1_all_endpoints.tex",
+      "original_source_member": "tables/qcp1_all_endpoints.tex",
+      "original_sha256": "d8c2738e1ec1956030f37f21295d0218c859860011ba5fd531906715b417aeb4",
+      "public_sha256": "d8c2738e1ec1956030f37f21295d0218c859860011ba5fd531906715b417aeb4",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/scope_all_endpoints.tex",
+      "original_source_member": "tables/scope_all_endpoints.tex",
+      "original_sha256": "cf5c783c6a0c8ad1c3978b6da7ee2d660426cc8f24d76648ec00793d0d8c4763",
+      "public_sha256": "cf5c783c6a0c8ad1c3978b6da7ee2d660426cc8f24d76648ec00793d0d8c4763",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/scope_effects.tex",
+      "original_source_member": "tables/scope_effects.tex",
+      "original_sha256": "c267d10bf426b74c4dccfe631fdb865453fc341f8cd6e04a4fbe78e83c8364c7",
+      "public_sha256": "c267d10bf426b74c4dccfe631fdb865453fc341f8cd6e04a4fbe78e83c8364c7",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/scratch_endpoints.tex",
+      "original_source_member": "tables/scratch_endpoints.tex",
+      "original_sha256": "a9366beccee8c99c10d624c2ca3ca59954005137f24fa19b82d2502009d41b4e",
+      "public_sha256": "a9366beccee8c99c10d624c2ca3ca59954005137f24fa19b82d2502009d41b4e",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/tables/toc1_v15.tex",
+      "original_source_member": "tables/toc1_v15.tex",
+      "original_sha256": "53e9cd085b1b52f2dfef88bae99b52851a5c82d6aebed0f6fefc6d122a8c5a38",
+      "public_sha256": "53e9cd085b1b52f2dfef88bae99b52851a5c82d6aebed0f6fefc6d122a8c5a38",
+      "level": "manuscript displayed precision; original table fragment, not a raw run record"
+    },
+    {
+      "member": "reference/manuscript_v20/evidence/ARM1_applied_geometry.json",
+      "original_source_member": "evidence/ARM1_applied_geometry.json",
+      "original_sha256": "238baf25d44f26971e3333811e48f698e19ed9498a08ca26970c66a90ccbdfea",
+      "public_sha256": "238baf25d44f26971e3333811e48f698e19ed9498a08ca26970c66a90ccbdfea",
+      "level": "saved manuscript evidence input; see original evidence scope fields",
+      "transformation": "byte-identical"
+    },
+    {
+      "member": "reference/manuscript_v20/evidence/ARM1_applied_geometry_summary.json",
+      "original_source_member": "evidence/ARM1_applied_geometry_summary.json",
+      "original_sha256": "a630b8c76bbbe97575008500631aada00b15eafac422053bba154986c7702c06",
+      "public_sha256": "a630b8c76bbbe97575008500631aada00b15eafac422053bba154986c7702c06",
+      "level": "saved manuscript evidence input; see original evidence scope fields",
+      "transformation": "byte-identical"
+    },
+    {
+      "member": "reference/manuscript_v20/evidence/ASQ1_display_inputs_v15.json",
+      "original_source_member": "evidence/ASQ1_display_inputs_v15.json",
+      "original_sha256": "4ef807514db70ecb526e8d9a9b964e8024b910c7694fd2fb8c41b1fec994c93f",
+      "public_sha256": "4ef807514db70ecb526e8d9a9b964e8024b910c7694fd2fb8c41b1fec994c93f",
+      "level": "saved manuscript evidence input; see original evidence scope fields",
+      "transformation": "byte-identical"
+    },
+    {
+      "member": "reference/manuscript_v20/evidence/LH1_verified_REPORT.json",
+      "original_source_member": "evidence/LH1_verified_REPORT.json",
+      "original_sha256": "273f234053e8e54f0d191db7e0066a117fac32af32225c8ce17a6cf8bd12d402",
+      "public_sha256": "273f234053e8e54f0d191db7e0066a117fac32af32225c8ce17a6cf8bd12d402",
+      "level": "saved manuscript evidence input; see original evidence scope fields",
+      "transformation": "byte-identical"
+    },
+    {
+      "member": "reference/manuscript_v20/evidence/NEW_EVIDENCE_RECOMPUTATION.json",
+      "original_source_member": "evidence/NEW_EVIDENCE_RECOMPUTATION.json",
+      "original_sha256": "076dbb144136ba5a804afcb6a839e515e1e9f539642853c52b073d087092646d",
+      "public_sha256": "076dbb144136ba5a804afcb6a839e515e1e9f539642853c52b073d087092646d",
+      "level": "saved manuscript evidence input; see original evidence scope fields",
+      "transformation": "byte-identical"
+    },
+    {
+      "member": "reference/manuscript_v20/evidence/September22_Mechanism_Record_Audit.json",
+      "original_source_member": "evidence/September22_Mechanism_Record_Audit.json",
+      "original_sha256": "fd358ddad0cdc92f72a4dad8ff9052e720555be5247c7f202c74501858a53d6c",
+      "public_sha256": "8b13aa5587b021cc898f3504320f6dd1a733b971fb0cf5dfb9dd27dbf2bce0cb",
+      "level": "saved manuscript evidence input; see original evidence scope fields",
+      "transformation": "identity/path/account-label derivative"
+    },
+    {
+      "member": "reference/manuscript_v20/evidence/budget_interpretability/RECOMPUTATION.json",
+      "original_source_member": "evidence/budget_interpretability/RECOMPUTATION.json",
+      "original_sha256": "746da5c68ec2fbced1b09c0f65668b5b852c39f04f180b855b76bd484a10976c",
+      "public_sha256": "746da5c68ec2fbced1b09c0f65668b5b852c39f04f180b855b76bd484a10976c",
+      "level": "saved manuscript evidence input; see original evidence scope fields",
+      "transformation": "byte-identical"
+    },
+    {
+      "member": "reference/manuscript_v20/evidence/budget_interpretability/SAVED_SNAPSHOT_AUDIT.json",
+      "original_source_member": "evidence/budget_interpretability/SAVED_SNAPSHOT_AUDIT.json",
+      "original_sha256": "2fa2e99c55f2f527ef36537fff7ef6dd0fcdf62801677a7c976e60e9abd7d825",
+      "public_sha256": "8fc6ada5d8c8c0431c583c01346db9b56e0eac8ef00cdbbaf9eec2d2c5586ac6",
+      "level": "saved manuscript evidence input; see original evidence scope fields",
+      "transformation": "identity/path-only derivative"
+    },
+    {
+      "member": "reference/manuscript_v20/evidence/budget_interpretability/budget_diagnostics.csv",
+      "original_source_member": "evidence/budget_interpretability/budget_diagnostics.csv",
+      "original_sha256": "b8113822cecff58e8deac91da8d02144aee9742d6fe13ddba000fd242d211c46",
+      "public_sha256": "b8113822cecff58e8deac91da8d02144aee9742d6fe13ddba000fd242d211c46",
+      "level": "saved manuscript evidence input; see original evidence scope fields",
+      "transformation": "byte-identical"
+    },
+    {
+      "member": "reference/manuscript_v20/evidence/budget_interpretability/plot_data_compact.json",
+      "original_source_member": "evidence/budget_interpretability/plot_data_compact.json",
+      "original_sha256": "996a8bf80aa746c9aa53d9cf359e244f0b6c8fa2c2efdd93ab84a0930daea93b",
+      "public_sha256": "acff8e4269d36f78873a2beac2846c5ba0af5abfabd7ccd144015f44f8ebc5c3",
+      "level": "saved manuscript evidence input; see original evidence scope fields",
+      "transformation": "identity/path-only derivative"
+    },
+    {
+      "member": "reference/manuscript_v20/evidence/final_report_20260923/execution_and_audit_summary.json",
+      "original_source_member": "evidence/final_report_20260923/execution_and_audit_summary.json",
+      "original_sha256": "6b9ab6bbc0e8c731caaf7d7c12409cdde361363bcb0060ffd021cb60f27368e3",
+      "public_sha256": "bce25cd875520f44997e343fccd618ce41319647d3616638575a07dcc73446f6",
+      "level": "saved manuscript evidence input; see original evidence scope fields",
+      "transformation": "identity/path-only derivative"
+    },
+    {
+      "member": "reference/manuscript_v20/evidence/final_report_20260923/recomputed_contrasts.json",
+      "original_source_member": "evidence/final_report_20260923/recomputed_contrasts.json",
+      "original_sha256": "c9576656683f97f1694bddbe1b3a772cce834745a92cf61a317b751b74339fb6",
+      "public_sha256": "c9576656683f97f1694bddbe1b3a772cce834745a92cf61a317b751b74339fb6",
+      "level": "saved manuscript evidence input; see original evidence scope fields",
+      "transformation": "byte-identical"
+    },
+    {
+      "member": "reference/manuscript_v20/evidence/final_report_20260923/scores.json",
+      "original_source_member": "evidence/final_report_20260923/scores.json",
+      "original_sha256": "c91a2cf0177cf9be7ac44fbcd876767e3e993634b427c0dc0244183e438c2eed",
+      "public_sha256": "c91a2cf0177cf9be7ac44fbcd876767e3e993634b427c0dc0244183e438c2eed",
+      "level": "saved manuscript evidence input; see original evidence scope fields",
+      "transformation": "byte-identical"
+    },
+    {
+      "member": "reference/manuscript_v20/evidence/inherited_display_tables.json",
+      "original_source_member": "evidence/inherited_display_tables.json",
+      "original_sha256": "a87961614f55f9efd45185e636baa5c766bc20aa2f6acc5b6ae44382cbaaf97c",
+      "public_sha256": "a87961614f55f9efd45185e636baa5c766bc20aa2f6acc5b6ae44382cbaaf97c",
+      "level": "saved manuscript evidence input; see original evidence scope fields",
+      "transformation": "byte-identical"
+    },
+    {
+      "member": "reference/manuscript_v20/evidence/oip1/authenticated_completion_metrics.json",
+      "original_source_member": "evidence/oip1/authenticated_completion_metrics.json",
+      "original_sha256": "0bcfa4d5ae13289f753d82433db43381653ac201aac574c0af7cc037ec56fdc8",
+      "public_sha256": "461b7de0c509fbc95c039ae86069247559a9f9d56f62d81280657a12fc59cd4e",
+      "level": "saved manuscript evidence input; see original evidence scope fields",
+      "transformation": "identity/path/account-label derivative"
+    },
+    {
+      "member": "reference/manuscript_v20/evidence/osc1/DEV_RECEIPTS.json",
+      "original_source_member": "evidence/osc1/DEV_RECEIPTS.json",
+      "original_sha256": "9349c4278f43e360a91d6679f116cf9a45e3b64fca7baa7c2f93dad3b287b09c",
+      "public_sha256": "9349c4278f43e360a91d6679f116cf9a45e3b64fca7baa7c2f93dad3b287b09c",
+      "level": "saved manuscript evidence input; see original evidence scope fields",
+      "transformation": "byte-identical"
+    },
+    {
+      "member": "reference/manuscript_v20/evidence/osc1/FINAL_AUDIT.json",
+      "original_source_member": "evidence/osc1/FINAL_AUDIT.json",
+      "original_sha256": "437bc758e3a1f11ee9b6dd97edfe8bcb06cc0400f48d62298a916b6904af185f",
+      "public_sha256": "437bc758e3a1f11ee9b6dd97edfe8bcb06cc0400f48d62298a916b6904af185f",
+      "level": "saved manuscript evidence input; see original evidence scope fields",
+      "transformation": "byte-identical"
+    },
+    {
+      "member": "reference/manuscript_v20/evidence/osc1/logged_geometry_summary.json",
+      "original_source_member": "evidence/osc1/logged_geometry_summary.json",
+      "original_sha256": "b300ddb382967ee6a71573225eba07d27f5dcb486a372b6b698e69c6a2004140",
+      "public_sha256": "b300ddb382967ee6a71573225eba07d27f5dcb486a372b6b698e69c6a2004140",
+      "level": "saved manuscript evidence input; see original evidence scope fields",
+      "transformation": "byte-identical"
+    },
+    {
+      "member": "reference/manuscript_v20/evidence/osc1/run__ALL_ENDPOINTS_LOCKED.json",
+      "original_source_member": "evidence/osc1/run__ALL_ENDPOINTS_LOCKED.json",
+      "original_sha256": "c8d66ebda4e7b3409342a9b50069f98d27a13e5b0dfa175096715299b8be9d33",
+      "public_sha256": "c8d66ebda4e7b3409342a9b50069f98d27a13e5b0dfa175096715299b8be9d33",
+      "level": "saved manuscript evidence input; see original evidence scope fields",
+      "transformation": "byte-identical"
+    },
+    {
+      "member": "reference/manuscript_v20/evidence/osc1/run__ANALYSIS.json",
+      "original_source_member": "evidence/osc1/run__ANALYSIS.json",
+      "original_sha256": "49a69bcea6e3427870f06be9a3493432e2c87ec093de969ec160b12a85ebbb65",
+      "public_sha256": "49a69bcea6e3427870f06be9a3493432e2c87ec093de969ec160b12a85ebbb65",
+      "level": "saved manuscript evidence input; see original evidence scope fields",
+      "transformation": "byte-identical"
+    },
+    {
+      "member": "reference/manuscript_v20/evidence/osc1/run__SUCCESS.json",
+      "original_source_member": "evidence/osc1/run__SUCCESS.json",
+      "original_sha256": "18754b2cc0c996397bda35e899662840e6f325072ac35be97467ce9333d5e5a1",
+      "public_sha256": "18754b2cc0c996397bda35e899662840e6f325072ac35be97467ce9333d5e5a1",
+      "level": "saved manuscript evidence input; see original evidence scope fields",
+      "transformation": "byte-identical"
+    },
+    {
+      "member": "reference/manuscript_v20/figure_scripts/audit_osc_logs.py.txt",
+      "original_source_member": "scripts/audit_osc_logs.py",
+      "original_sha256": "efa13e661a34bff88f480f7404b7dfe97a95ce3b83bbe03d311747a5832798d9",
+      "public_sha256": "efa13e661a34bff88f480f7404b7dfe97a95ce3b83bbe03d311747a5832798d9",
+      "level": "historical figure/table script, inspectable reference; inputs may reference the manuscript tree"
+    },
+    {
+      "member": "reference/manuscript_v20/figure_scripts/build_new_evidence.py.txt",
+      "original_source_member": "scripts/build_new_evidence.py",
+      "original_sha256": "20adcf58e482c481d05da2402729a9681139fc859289432ff5ba57f06f80d73b",
+      "public_sha256": "20adcf58e482c481d05da2402729a9681139fc859289432ff5ba57f06f80d73b",
+      "level": "historical figure/table script, inspectable reference; inputs may reference the manuscript tree"
+    },
+    {
+      "member": "reference/manuscript_v20/figure_scripts/build_osc_evidence.py.txt",
+      "original_source_member": "scripts/build_osc_evidence.py",
+      "original_sha256": "b098fdd5c6272f6d33d70941a2b43da5227442a920b28b72a0e3368984956f44",
+      "public_sha256": "b098fdd5c6272f6d33d70941a2b43da5227442a920b28b72a0e3368984956f44",
+      "level": "historical figure/table script, inspectable reference; inputs may reference the manuscript tree"
+    },
+    {
+      "member": "reference/manuscript_v20/figure_scripts/build_transfer_evidence.py.txt",
+      "original_source_member": "scripts/build_transfer_evidence.py",
+      "original_sha256": "ab0c1bd3f9ba7b7c7c0604c95e2be3cdacb84e213623605d58640903b4d7cfe5",
+      "public_sha256": "ab0c1bd3f9ba7b7c7c0604c95e2be3cdacb84e213623605d58640903b4d7cfe5",
+      "level": "historical figure/table script, inspectable reference; inputs may reference the manuscript tree"
+    },
+    {
+      "member": "reference/manuscript_v20/figure_scripts/check_osc_geometry.py.txt",
+      "original_source_member": "scripts/check_osc_geometry.py",
+      "original_sha256": "1e9cd598b78cceecb4476d378e94de078f38d2fae04f3bacbad76c8ab9bb37bf",
+      "public_sha256": "1e9cd598b78cceecb4476d378e94de078f38d2fae04f3bacbad76c8ab9bb37bf",
+      "level": "historical figure/table script, inspectable reference; inputs may reference the manuscript tree"
+    },
+    {
+      "member": "reference/manuscript_v20/figure_scripts/plot_allocation.py.txt",
+      "original_source_member": "scripts/plot_allocation.py",
+      "original_sha256": "ebe2e26ff97ef223b9aebb773c27ac4db869cc4187dd910bfae3c1c37cdc4a1a",
+      "public_sha256": "ebe2e26ff97ef223b9aebb773c27ac4db869cc4187dd910bfae3c1c37cdc4a1a",
+      "level": "historical figure/table script, inspectable reference; inputs may reference the manuscript tree"
+    },
+    {
+      "member": "reference/manuscript_v20/figure_scripts/plot_figures.py.txt",
+      "original_source_member": "scripts/plot_figures.py",
+      "original_sha256": "db4f35ac48114b9c0ad2ea442faaf885f0cce5d0fadf3de03a7abb80d6a80d11",
+      "public_sha256": "db4f35ac48114b9c0ad2ea442faaf885f0cce5d0fadf3de03a7abb80d6a80d11",
+      "level": "historical figure/table script, inspectable reference; inputs may reference the manuscript tree"
+    },
+    {
+      "member": "reference/manuscript_v20/figure_scripts/verify_allocation.py.txt",
+      "original_source_member": "scripts/verify_allocation.py",
+      "original_sha256": "a3517f8cd191e1e189b451e54a10beddd62659e831b1ef3ded14aad207df4cca",
+      "public_sha256": "a3517f8cd191e1e189b451e54a10beddd62659e831b1ef3ded14aad207df4cca",
+      "level": "historical figure/table script, inspectable reference; inputs may reference the manuscript tree"
+    },
+    {
+      "member": "reference/manuscript_v20/ancestry_schematic.tex",
+      "original_source_member": "figures/ancestry_schematic.tex",
+      "original_sha256": "d3edbc8ee4bfd9259b1e9f7c526d101c7454cf78e6a40c3223ad441de3f29a0d",
+      "public_sha256": "d3edbc8ee4bfd9259b1e9f7c526d101c7454cf78e6a40c3223ad441de3f29a0d",
+      "level": "conceptual diagram source"
+    }
+  ],
+  "scope": "All42 supplied current table fragments plus current saved numerical evidence. Inputs are not promoted to original checkpoint/tensor records. No new evaluations or edits to manuscript scientific values."
+}

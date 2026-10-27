@@ -1,0 +1,12 @@
+{
+  "device": "cpu",
+  "packages": {
+    "matplotlib": "3.10.8",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "torch": "2.10.0+cpu"
+  },
+  "platform_system": "Linux",
+  "python": "3.13.5",
+  "scope": "Packaging/test environment; not historical scientific GPU runtime."
+}

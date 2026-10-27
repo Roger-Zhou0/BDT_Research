@@ -1,0 +1,218 @@
+{
+  "lane": "default",
+  "ledger": {
+    "counters": {
+      "engineering": 66,
+      "science": 26860
+    },
+    "tasks": [
+      {
+        "phase": 3000,
+        "proved": 2800,
+        "task": "bct2_workspace/run/families/seed_946301/arms/bdt_budget_gs"
+      },
+      {
+        "phase": 3000,
+        "proved": 2800,
+        "task": "bct2_workspace/run/families/seed_946301/arms/structured_budget_gs"
+      },
+      {
+        "phase": 7630,
+        "proved": 7630,
+        "task": "bct2_workspace/run/families/seed_946301/parent"
+      },
+      {
+        "phase": 200,
+        "proved": 200,
+        "task": "bct2_workspace/run/families/seed_946301/prefix"
+      },
+      {
+        "phase": 3000,
+        "proved": 2800,
+        "task": "bct2_workspace/run/families/seed_946303/arms/bdt_budget_gs"
+      },
+      {
+        "phase": 3000,
+        "proved": 2800,
+        "task": "bct2_workspace/run/families/seed_946303/arms/structured_budget_gs"
+      },
+      {
+        "phase": 7630,
+        "proved": 7630,
+        "task": "bct2_workspace/run/families/seed_946303/parent"
+      },
+      {
+        "phase": 200,
+        "proved": 200,
+        "task": "bct2_workspace/run/families/seed_946303/prefix"
+      },
+      {
+        "phase": 203,
+        "proved": 3,
+        "task": "bct2_workspace/run/lanes/default/gates/cpu_1790204179249308101/bdt_budget_gs_a"
+      },
+      {
+        "phase": 203,
+        "proved": 3,
+        "task": "bct2_workspace/run/lanes/default/gates/cpu_1790204179249308101/bdt_budget_gs_b"
+      },
+      {
+        "phase": 201,
+        "proved": 1,
+        "task": "bct2_workspace/run/lanes/default/gates/cpu_1790204179249308101/bdt_budget_gs_nativecheck"
+      },
+      {
+        "phase": 401,
+        "proved": 2,
+        "task": "bct2_workspace/run/lanes/default/gates/cpu_1790204179249308101/bdt_budget_gs_ramp_a"
+      },
+      {
+        "phase": 401,
+        "proved": 2,
+        "task": "bct2_workspace/run/lanes/default/gates/cpu_1790204179249308101/bdt_budget_gs_ramp_b"
+      },
+      {
+        "phase": 3,
+        "proved": 3,
+        "task": "bct2_workspace/run/lanes/default/gates/cpu_1790204179249308101/parent_a"
+      },
+      {
+        "phase": 3,
+        "proved": 3,
+        "task": "bct2_workspace/run/lanes/default/gates/cpu_1790204179249308101/parent_b"
+      },
+      {
+        "phase": 2,
+        "proved": 2,
+        "task": "bct2_workspace/run/lanes/default/gates/cpu_1790204179249308101/prefix2"
+      },
+      {
+        "phase": 200,
+        "proved": 1,
+        "task": "bct2_workspace/run/lanes/default/gates/cpu_1790204179249308101/prefix200"
+      },
+      {
+        "phase": 203,
+        "proved": 3,
+        "task": "bct2_workspace/run/lanes/default/gates/cpu_1790204179249308101/structured_budget_gs_a"
+      },
+      {
+        "phase": 203,
+        "proved": 3,
+        "task": "bct2_workspace/run/lanes/default/gates/cpu_1790204179249308101/structured_budget_gs_b"
+      },
+      {
+        "phase": 201,
+        "proved": 1,
+        "task": "bct2_workspace/run/lanes/default/gates/cpu_1790204179249308101/structured_budget_gs_nativecheck"
+      },
+      {
+        "phase": 401,
+        "proved": 2,
+        "task": "bct2_workspace/run/lanes/default/gates/cpu_1790204179249308101/structured_budget_gs_ramp_a"
+      },
+      {
+        "phase": 401,
+        "proved": 2,
+        "task": "bct2_workspace/run/lanes/default/gates/cpu_1790204179249308101/structured_budget_gs_ramp_b"
+      },
+      {
+        "phase": 203,
+        "proved": 3,
+        "task": "bct2_workspace/run/lanes/default/gates/gpu_1790204251803702925/bdt_budget_gs_a"
+      },
+      {
+        "phase": 203,
+        "proved": 3,
+        "task": "bct2_workspace/run/lanes/default/gates/gpu_1790204251803702925/bdt_budget_gs_b"
+      },
+      {
+        "phase": 201,
+        "proved": 1,
+        "task": "bct2_workspace/run/lanes/default/gates/gpu_1790204251803702925/bdt_budget_gs_nativecheck"
+      },
+      {
+        "phase": 401,
+        "proved": 2,
+        "task": "bct2_workspace/run/lanes/default/gates/gpu_1790204251803702925/bdt_budget_gs_ramp_a"
+      },
+      {
+        "phase": 401,
+        "proved": 2,
+        "task": "bct2_workspace/run/lanes/default/gates/gpu_1790204251803702925/bdt_budget_gs_ramp_b"
+      },
+      {
+        "phase": 3,
+        "proved": 3,
+        "task": "bct2_workspace/run/lanes/default/gates/gpu_1790204251803702925/parent_a"
+      },
+      {
+        "phase": 3,
+        "proved": 3,
+        "task": "bct2_workspace/run/lanes/default/gates/gpu_1790204251803702925/parent_b"
+      },
+      {
+        "phase": 2,
+        "proved": 2,
+        "task": "bct2_workspace/run/lanes/default/gates/gpu_1790204251803702925/prefix2"
+      },
+      {
+        "phase": 200,
+        "proved": 1,
+        "task": "bct2_workspace/run/lanes/default/gates/gpu_1790204251803702925/prefix200"
+      },
+      {
+        "phase": 203,
+        "proved": 3,
+        "task": "bct2_workspace/run/lanes/default/gates/gpu_1790204251803702925/structured_budget_gs_a"
+      },
+      {
+        "phase": 203,
+        "proved": 3,
+        "task": "bct2_workspace/run/lanes/default/gates/gpu_1790204251803702925/structured_budget_gs_b"
+      },
+      {
+        "phase": 201,
+        "proved": 1,
+        "task": "bct2_workspace/run/lanes/default/gates/gpu_1790204251803702925/structured_budget_gs_nativecheck"
+      },
+      {
+        "phase": 401,
+        "proved": 2,
+        "task": "bct2_workspace/run/lanes/default/gates/gpu_1790204251803702925/structured_budget_gs_ramp_a"
+      },
+      {
+        "phase": 401,
+        "proved": 2,
+        "task": "bct2_workspace/run/lanes/default/gates/gpu_1790204251803702925/structured_budget_gs_ramp_b"
+      },
+      {
+        "phase": 201,
+        "proved": 1,
+        "task": "engineering/independent/bct2_workspace/run/lanes/default/gates/cpu_1790204179249308101/bdt_budget_gs_nativecheck"
+      },
+      {
+        "phase": 201,
+        "proved": 1,
+        "task": "engineering/independent/bct2_workspace/run/lanes/default/gates/cpu_1790204179249308101/structured_budget_gs_nativecheck"
+      },
+      {
+        "phase": 201,
+        "proved": 1,
+        "task": "engineering/independent/bct2_workspace/run/lanes/default/gates/gpu_1790204251803702925/bdt_budget_gs_nativecheck"
+      },
+      {
+        "phase": 201,
+        "proved": 1,
+        "task": "engineering/independent/bct2_workspace/run/lanes/default/gates/gpu_1790204251803702925/structured_budget_gs_nativecheck"
+      }
+    ]
+  },
+  "science_proofs": 26860,
+  "seeds": [
+    946301,
+    946303
+  ],
+  "source": "27a8786f2c0173f4812b46014179d94fd54179f93aa55909874ee262f6f2e80f",
+  "state": "local_complete"
+}

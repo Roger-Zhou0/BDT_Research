@@ -1,0 +1,95 @@
+{
+  "checks": {
+    "adamw_repeat_resume": {
+      "arrays": 880,
+      "exact": true,
+      "first_result_sha": "afded3024a9e3a07d272014d10a0725030f619410091fc9185f8be39d52f767f",
+      "second_result_sha": "f2564c69cefb8fa9e16cc72a4fdd5a436d1ca8a61b65aec8e37fd200aa89f778",
+      "steps": 220
+    },
+    "adamw_vs_frozen": {
+      "arrays": 880,
+      "exact": true,
+      "first_result_sha": "afded3024a9e3a07d272014d10a0725030f619410091fc9185f8be39d52f767f",
+      "second_result_sha": "8f9501c97837a33b77cab0953ae28e374145762983653429fda17a00fb0b42f5",
+      "steps": 220
+    },
+    "bdt_repeat_resume": {
+      "arrays": 880,
+      "exact": true,
+      "first_result_sha": "914c366b68a59ec71be7ac4e1482b601a552905d2650f6818bd123920f13314f",
+      "second_result_sha": "0d1385afce37ac0cee69a57aa654b9aa8d7dab6ae51386d33b58d67e5c3bd874",
+      "steps": 220
+    },
+    "bdt_vs_frozen": {
+      "arrays": 880,
+      "exact": true,
+      "first_result_sha": "914c366b68a59ec71be7ac4e1482b601a552905d2650f6818bd123920f13314f",
+      "second_result_sha": "b1a45a81db26522820734f73487e9da7125b9536443c336ac6e5c8fe7f4bd004",
+      "steps": 220
+    },
+    "matched_first_active_gradient": true,
+    "parent_vs_frozen_adam": {
+      "arrays": 800,
+      "exact": true,
+      "first_result_sha": "643d42432d73b849310966bc93df8684b61aa560af0533aa4ae64fe4b2b5bfd0",
+      "second_result_sha": "fb4eee75bade5894fcae2e35a9e268fdbb16e8357e5e70f53e4941519b09c393",
+      "steps": 200
+    },
+    "scrambled_matched_repeat_resume": {
+      "arrays": 880,
+      "exact": true,
+      "first_result_sha": "2d6a051c652757af54ebc6c936f626f487adf502a9e614a546853f39dfad4d8b",
+      "second_result_sha": "d76a3ae87800ffc15095f77e651259a22f327f6b52be72768de96e94c3f395c7",
+      "steps": 220
+    }
+  },
+  "evidence": {
+    "adamw_0/contract.json": "8b16f75975bc7944d96e2be63ca734f3af99605bff00422ed3621157ef793cd9",
+    "adamw_0/initialization.json": "0d64813dd7372a627dea4b4c595a7eb7d49a57cfac21a4d9dc6bf747121cbde9",
+    "adamw_0/result.json": "afded3024a9e3a07d272014d10a0725030f619410091fc9185f8be39d52f767f",
+    "adamw_0/samples.npz": "e8ec83b4ef95ae4c8f03296e938ba33c1e2ec3f853d58562de6b2eb378034b01",
+    "adamw_1/contract.json": "8b16f75975bc7944d96e2be63ca734f3af99605bff00422ed3621157ef793cd9",
+    "adamw_1/initialization.json": "0d64813dd7372a627dea4b4c595a7eb7d49a57cfac21a4d9dc6bf747121cbde9",
+    "adamw_1/result.json": "f2564c69cefb8fa9e16cc72a4fdd5a436d1ca8a61b65aec8e37fd200aa89f778",
+    "adamw_1/samples.npz": "e8ec83b4ef95ae4c8f03296e938ba33c1e2ec3f853d58562de6b2eb378034b01",
+    "bdt_0/contract.json": "7df10ce97260cf326155f0997e339b1e1ea33681e0e7a9a75db13be9fa403abf",
+    "bdt_0/initialization.json": "0d64813dd7372a627dea4b4c595a7eb7d49a57cfac21a4d9dc6bf747121cbde9",
+    "bdt_0/result.json": "914c366b68a59ec71be7ac4e1482b601a552905d2650f6818bd123920f13314f",
+    "bdt_0/samples.npz": "98f2a9f68ec6ad9f722446392d61699f46ff4e3ad2bd61d7e027b1795c91da8d",
+    "bdt_1/contract.json": "7df10ce97260cf326155f0997e339b1e1ea33681e0e7a9a75db13be9fa403abf",
+    "bdt_1/initialization.json": "0d64813dd7372a627dea4b4c595a7eb7d49a57cfac21a4d9dc6bf747121cbde9",
+    "bdt_1/result.json": "0d1385afce37ac0cee69a57aa654b9aa8d7dab6ae51386d33b58d67e5c3bd874",
+    "bdt_1/samples.npz": "98f2a9f68ec6ad9f722446392d61699f46ff4e3ad2bd61d7e027b1795c91da8d",
+    "parent/contract.json": "798a7fd5da96cc6da290f8ae2831fa6a3f5c72d5b3a8db53d0e8fd1e5253b386",
+    "parent/initialization.json": "b727bc679b55f8e14202981a1c2049ae70f05cd374c43e5f1c5e397a7bbb3c87",
+    "parent/result.json": "643d42432d73b849310966bc93df8684b61aa560af0533aa4ae64fe4b2b5bfd0",
+    "parent/samples.npz": "f45a1f0bfa506e53a07005a1495b105427636ef52ac4c24e33263e75e2cbdbdb",
+    "reference_adamw/contract.json": "431c1b14fbc70bbf66887d7a803aab0a48df1acc9f31220ee745cf6389b8d5fb",
+    "reference_adamw/initialization.json": "0d64813dd7372a627dea4b4c595a7eb7d49a57cfac21a4d9dc6bf747121cbde9",
+    "reference_adamw/result.json": "8f9501c97837a33b77cab0953ae28e374145762983653429fda17a00fb0b42f5",
+    "reference_adamw/samples.npz": "e8ec83b4ef95ae4c8f03296e938ba33c1e2ec3f853d58562de6b2eb378034b01",
+    "reference_bdt/contract.json": "3c77131cfe79c91dd42367d710f2b6a980cbdefb7c85406db912e579503c7619",
+    "reference_bdt/initialization.json": "0d64813dd7372a627dea4b4c595a7eb7d49a57cfac21a4d9dc6bf747121cbde9",
+    "reference_bdt/result.json": "b1a45a81db26522820734f73487e9da7125b9536443c336ac6e5c8fe7f4bd004",
+    "reference_bdt/samples.npz": "98f2a9f68ec6ad9f722446392d61699f46ff4e3ad2bd61d7e027b1795c91da8d",
+    "reference_parent/contract.json": "4837cf81e770f4422697f27a216c148fc628ef6ae48f23e2c79611d653bc7881",
+    "reference_parent/initialization.json": "b727bc679b55f8e14202981a1c2049ae70f05cd374c43e5f1c5e397a7bbb3c87",
+    "reference_parent/result.json": "fb4eee75bade5894fcae2e35a9e268fdbb16e8357e5e70f53e4941519b09c393",
+    "reference_parent/samples.npz": "f45a1f0bfa506e53a07005a1495b105427636ef52ac4c24e33263e75e2cbdbdb",
+    "scrambled_matched_0/contract.json": "2f6912412030d2338e222dded01e0750039bd79541e830f1f414451e874bab0e",
+    "scrambled_matched_0/initialization.json": "0d64813dd7372a627dea4b4c595a7eb7d49a57cfac21a4d9dc6bf747121cbde9",
+    "scrambled_matched_0/result.json": "2d6a051c652757af54ebc6c936f626f487adf502a9e614a546853f39dfad4d8b",
+    "scrambled_matched_0/samples.npz": "69667498ab53ce2fe8a5be33734ae5a64b7ee32172d453338d913750ca8573da",
+    "scrambled_matched_1/contract.json": "2f6912412030d2338e222dded01e0750039bd79541e830f1f414451e874bab0e",
+    "scrambled_matched_1/initialization.json": "0d64813dd7372a627dea4b4c595a7eb7d49a57cfac21a4d9dc6bf747121cbde9",
+    "scrambled_matched_1/result.json": "d76a3ae87800ffc15095f77e651259a22f327f6b52be72768de96e94c3f395c7",
+    "scrambled_matched_1/samples.npz": "69667498ab53ce2fe8a5be33734ae5a64b7ee32172d453338d913750ca8573da"
+  },
+  "gpu_uuid": "GPU-5c049b56-f6ab-b320-e9de-aa44c160a30e",
+  "max_optimizer_updates": 2160,
+  "scope": "One existing development seed; repeats and interrupted-resume through active update 420, not efficacy",
+  "source_sha": "2644b80c17f1f587d337545c986aeb0a68839f730857c44a39bc0b5658b4955f",
+  "state": "passed",
+  "time": "2026-09-10T09:05:44.854957+00:00"
+}

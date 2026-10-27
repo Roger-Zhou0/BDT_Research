@@ -1,0 +1,54 @@
+{
+  "interval95": {
+    "confidence": 0.95,
+    "df": 3,
+    "lower": -0.0006332087165214267,
+    "mean": -0.0005939332768321037,
+    "standard_error": 1.234127332301207e-05,
+    "upper": -0.0005546578371427807
+  },
+  "native_source": "c63c877701dc3feb22b4b7e0bf01166beba3775e39cbc9603b487363e669f3fa",
+  "negative_signs": 4,
+  "per_parent": {
+    "946301": -0.0005582384765148163,
+    "946302": -0.0005986224859952927,
+    "946303": -0.0006043910980224609,
+    "946304": -0.000614481046795845
+  },
+  "primary": "bdt_budget_gs - structured_budget_gs",
+  "primary_criterion_met": true,
+  "protocol": "11c36c6ecb55474754d90138c0d1c29e62deef119ba4675a898e2d9d4956db18",
+  "report_receipts": {
+    "946301_bdt_budget_gs.json": "4b1810bf9b576d905c93009baf798dd251d526f8407676de88b6d76cc0bcd6d9",
+    "946301_structured_budget_gs.json": "5738d610013f57f4548102ce88c86160dc0e6a431a07c50fb30372a6b233d979",
+    "946302_bdt_budget_gs.json": "ae09aab77af85921a8f7ef6cf207eaf8ff5dc9a104694139e93b0d7dd12bf787",
+    "946302_structured_budget_gs.json": "39e34535de7e559124f33d4f98ef2b11a7fb5bb3bce06c4ee80e51ea85b3f32b",
+    "946303_bdt_budget_gs.json": "15199a1ab56f21f137e0a92e35e218a4709c955eea5574472d426d5928722f51",
+    "946303_structured_budget_gs.json": "a058bf0434da03c5c56f035c42d1b16a5cac3638994bca0ea94204093db6d22f",
+    "946304_bdt_budget_gs.json": "92d94a3f1a7fde5b1db351ade1e93cfa3178de755c81b9762fcbcff4a99cf050",
+    "946304_structured_budget_gs.json": "57973ed58b83380a71ce8f86b7552d60f4f399b4d3e41837d131b992109cb096"
+  },
+  "scope": "Fresh parent initializations and seed-specific pretraining streams; unchanged architecture, cache and recipe. Analyze separately from BCT1. Not a new corpus, architecture, or standalone-GS benchmark. No parent selection, replacement or adaptive sample size.",
+  "scores": {
+    "946301": {
+      "bdt_budget_gs": 3.6236073412001133,
+      "structured_budget_gs": 3.624165579676628
+    },
+    "946302": {
+      "bdt_budget_gs": 3.624475598335266,
+      "structured_budget_gs": 3.6250742208212614
+    },
+    "946303": {
+      "bdt_budget_gs": 3.626926653087139,
+      "structured_budget_gs": 3.6275310441851616
+    },
+    "946304": {
+      "bdt_budget_gs": 3.621706934645772,
+      "structured_budget_gs": 3.622321415692568
+    }
+  },
+  "seal_sha256": "f31a80e5b8d0db84d03e44ec30e378b2576df92d5f64fac643e32ad43a85a2de",
+  "source": "27a8786f2c0173f4812b46014179d94fd54179f93aa55909874ee262f6f2e80f",
+  "state": "complete",
+  "zero_variance_requires_review": false
+}

@@ -1,0 +1,31 @@
+{
+  "arm": "bdt_budget_gs",
+  "checkpoint_sha256": "fec402f04fce9f861ae1340b3613f2a04de8bd502ae9d21ba5fa50f333bbd37e",
+  "loss": 3.621706934645772,
+  "model": "8e412fdbef5a5e8b9f0bdc00585fff8904f058afaa5966feaf8dd981ce7a589e",
+  "offset": 2500000,
+  "protocol": "11c36c6ecb55474754d90138c0d1c29e62deef119ba4675a898e2d9d4956db18",
+  "runtime": {
+    "capability": [
+      9,
+      0
+    ],
+    "cuda": "12.8",
+    "cudnn": 91900,
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": true,
+    "deterministic": true,
+    "device": "cuda",
+    "gpu": "NVIDIA H200 NVL",
+    "matmul_tf32": false,
+    "numpy": "2.4.6",
+    "threads": 2,
+    "torch": "2.11.0+cu128",
+    "warn_only": false,
+    "workspace": ":4096:8"
+  },
+  "seal_sha256": "f31a80e5b8d0db84d03e44ec30e378b2576df92d5f64fac643e32ad43a85a2de",
+  "seed": 946304,
+  "source": "27a8786f2c0173f4812b46014179d94fd54179f93aa55909874ee262f6f2e80f",
+  "tokens": 1048576
+}

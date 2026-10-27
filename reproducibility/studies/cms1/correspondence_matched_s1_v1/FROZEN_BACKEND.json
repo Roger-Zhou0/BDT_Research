@@ -1,0 +1,22 @@
+{
+  "PARENT_EVIDENCE.json": "b8f575005d80074563c8d3ee35874d94d2edb6f06effa021bed52daf80238273",
+  "PARENT_PROTOCOL.json": "9ccd4f5039c77a0f315299ed4eb987d4e3431658ec684019226c913faa74ce4b",
+  "analyze.py": "ed51762007a324515627618028590d48bdf26a96ad8b9f6e182c191be7a88d16",
+  "backend_tests.py": "700fdbb6c6e2fb2f51cf0bb39065d4eb556a5eb79544c529cf2ae9dbb998f944",
+  "collect.py": "4b0d0fc1e92e24a610ee5180f2624c411958b09f5e2c18bc7040876b497c8699",
+  "engine.py": "239eaa305bc3a84aa60b9d241aff7c21cde53a4d7aa12d843b1b871ac35d75b4",
+  "integrity.py": "3f176e9c48cda74f3fbc3c3f8873e508f0b4b4045dd76c928d36fcba47741962",
+  "model_support.py": "0328fcc89186e9ad0cae6a0c56a90eb4155fd3125e7b6d4527de6382d121cca5",
+  "optimizers.py": "e2f89c5aec8861d90757d543d0a7d89b6061836d8483c65a974a625442018e55",
+  "parent_evidence.py": "91f903229e6a08d175efd1bbbc2bdc75e27b234b95184175e61934cad0612a22",
+  "protocol.py": "026f95f91120e1a3b1028473358f4ab8877bd1ab6f4c10c5d4b31d6fcb677e19",
+  "role_adamw.py": "653afb6a644d634355801731e4ba492a10aa68a70ab5a1cca8adbb55ba2a8ed4",
+  "run.py": "6d1caec3f2f9d9d8c3601bd794f623e386cb90bf347642343e42afd1cacfebe5",
+  "scheduler.py": "5f256efbccfd70e69c8c4c37ac046e8cdc396a8889d3e4c41d6f326ade4a25d1",
+  "select_recipes.py": "c9ca441916058c85e81ef4ab156c451ceee0707677552f7869f86eb32694d254",
+  "tempering_reference.py": "d1bd72d9ccd18019aea83551b838d5915f727a0a7b6a0a2fd1006fb1c47969f1",
+  "tests.py": "e5b6229d697643b7728a034c7a23dd3136ab6a08cd3c870eb5b5bd1122f037a5",
+  "vendor/s1_124m_aligned_symmetric.py": "50709137999bc111206fbfd252e2abfe5c49e5ec98433ae8d237596af425d419",
+  "vendor/validation_v6_1.py": "ee16f65a5b948b0e645131a01ddc437edb5806e671c44c80792b40efecc9dd8b",
+  "vendor/validation_v6_3.py": "82f2c94daefed1dd123d67f1b113aa31efbf970b308c179c23f895ca89f2cc01"
+}

@@ -1,0 +1,54 @@
+"""Verify the supplied OSC1 receipts and regenerate display tables. No model work."""
+from pathlib import Path
+import hashlib,json,math,statistics
+ROOT=Path(__file__).resolve().parents[1]
+P=ROOT/'evidence/osc1'
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def main():
+ a=json.loads((P/'run__ANALYSIS.json').read_text()); seal=json.loads((P/'run__ALL_ENDPOINTS_LOCKED.json').read_text()); success=json.loads((P/'run__SUCCESS.json').read_text())
+ assert sha(P/'run__ANALYSIS.json')==success['analysis_sha256']=='49a69bcea6e3427870f06be9a3493432e2c87ec093de969ec160b12a85ebbb65'
+ assert sha(P/'run__ALL_ENDPOINTS_LOCKED.json')==a['endpoint_seal_sha256']
+ assert success['source']==a['source']==seal['source']=='28f14801e8007d6ffc20b2bfe2e22c3a3514a61beb1fc8daccc186f5da401607'
+ assert a['protocol']==seal['protocol']=='b69f4b8cedb1c122e65162dd7de785bd5df6571bb9ff7c603f959227e93937d7'
+ assert len(seal['endpoints'])==8 and all(x['phase']==3000 for x in seal['endpoints'].values())
+ receipts=json.loads((P/'DEV_RECEIPTS.json').read_text());assert len(receipts)==8
+ for r in receipts:
+  key=r['cell'];s,arm=key.split('/');d=r['receipt'];e=seal['endpoints'][key]
+  # Original exporter is sorted, two-space JSON with a trailing newline.
+  rb=(json.dumps(d,indent=2,sort_keys=True,allow_nan=False)+'\n').encode()
+  assert hashlib.sha256(rb).hexdigest()==r['sha256']==a['receipts'][key]
+  assert d['identity']==e['identity'] and d['checkpoint_sha256']==e['sha256']
+  assert (d['tokens'],d['offset'],d['stop'])==(1048576,0,1050624)
+  assert d['source']==a['source'] and d['loss']==a['scores'][s][arm]
+ for name,row in a['contrasts'].items():
+  x,y=name.split(' - ');v={s:r[x]-r[y] for s,r in a['scores'].items()}
+  assert v==row['per_parent'] and statistics.mean(v.values())==row['descriptive_mean']
+ assert a['accounting']['proved_model_updates']==22400
+ g=json.loads((P/'logged_geometry_summary.json').read_text());assert len(g['phases'])==105
+ for arm,ag in g['post_ramp_summary'].items():
+  rr=[x for x in g['per_parent_projection'] if x['arm']==arm]
+  assert len(rr)==6 and sum(x['n'] for x in rr)==630
+  assert abs(statistics.mean(x['cosine_mean'] for x in rr)-ag['cosine']['mean'])<1e-15
+  assert min(x['cosine_min'] for x in rr)==ag['cosine']['min']
+  assert abs(statistics.mean(x['amplification_mean'] for x in rr)-ag['amp']['mean'])<1e-15
+  assert all(x['negative_mass_max']==0 and x['positive_rank']==11 for x in rr)
+  assert ag['neg_mass_fraction']['max']==0
+ labels={'native':'Native BDT','paired_total':'Paired-total','signal_matched':'Signal-matched','noise_matched':'Noise-matched'}
+ rows=[f"{l} & {a['scores']['159'][arm]:.8f} & {a['scores']['160'][arm]:.8f}\\\\" for arm,l in labels.items()]
+ (ROOT/'tables/osc1_scores.tex').write_text('\n'.join(rows)+'\n')
+ rows=[]
+ for arm in ['signal_matched','noise_matched']:
+  c=a['contrasts'][arm+' - paired_total'];rows.append(f"{labels[arm]} & ${c['per_parent']['159']*1e6:+.2f}$ & ${c['per_parent']['160']*1e6:+.2f}$ & ${c['descriptive_mean']*1e6:+.2f}$\\\\")
+ (ROOT/'tables/osc1_primary.tex').write_text('\n'.join(rows)+'\n')
+ S=g['post_ramp_summary']['signal_matched'];N=g['post_ramp_summary']['noise_matched']
+ rows=[f"Residual-direction cosine, mean & {S['cosine']['mean']:.6f} & {N['cosine']['mean']:.6f}\\\\",
+ f"Observed cosine range & [{S['cosine']['min']:.6f}, {S['cosine']['max']:.6f}] & [{N['cosine']['min']:.6f}, {N['cosine']['max']:.6f}]\\\\",
+ f"Distance / total correction (\\%) & {100*S['matched_diff_over_reference_correction']['mean']:.3f} & {100*N['matched_diff_over_reference_correction']['mean']:.3f}\\\\",
+ f"Distance / raw centered norm (\\%) & {100*S['matched_diff_over_raw_norm']['mean']:.4f} & {100*N['matched_diff_over_raw_norm']['mean']:.4f}\\\\",
+ f"Matching amplification, mean & {S['amp']['mean']:.6f} & {N['amp']['mean']:.6f}\\\\",
+ "Largest negative spectral mass & 0 & 0\\\\"]
+ (ROOT/'tables/osc1_manipulation.tex').write_text('\n'.join(rows)+'\n')
+ report=dict(state='passed',source=a['source'],protocol=a['protocol'],original_analysis_hash_verified=True,endpoint_seal_hash_verified=True,individual_DEV_bytes_reconstructed_and_hash_verified=8,contrasts_recomputed=6,proved_model_updates_from_saved_analysis=22400,diagnostic_events_per_component=630,diagnostic_means_reconcile_across_parent_projection_groups=True,scope='No new model evaluation or checkpoint loading. Logged summary transcription reconciles group means; raw logs are not included. Distances retain original eventwise derived summaries.')
+ (ROOT.parent/'OSC1_EVIDENCE_VALIDATION.json').write_text(json.dumps(report,indent=2)+'\n')
+ print(json.dumps(report,indent=2))
+if __name__=='__main__':main()

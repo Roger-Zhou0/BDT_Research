@@ -1,0 +1,260 @@
+{
+  "scope": "Selected descriptive OIP1 metrics and live notebook-environment completion audit; not a full raw-record export. No new scientific work or operational changes.",
+  "observations_utc": {
+    "initial_account_a": "2026-09-23T06:44:00.760721+00:00",
+    "initial_account_b": "2026-09-23T06:44:18.434387+00:00",
+    "OIP1_audit": "2026-09-23T06:47:55.119801+00:00",
+    "GSC1_final": "2026-09-23T06:49:12.724469+00:00"
+  },
+  "mac_original_snapshot_directory": "PROJECT_ROOT/ResearchAgent/shared/results/experiment_completion_check_20260923_014354",
+  "mac_compact_export_sha256": "33831bbd195f66a567878dba1cfc34b99455880313e1c53a71314ced0585770a",
+  "GSC1": {
+    "state": "waiting_for_memory",
+    "worker_pid": 231,
+    "worker_start": "299150536",
+    "worker_identity_matches": true,
+    "gpu_uuid": "GPU-5c049b56-f6ab-b320-e9de-aa44c160a30e",
+    "free_mib": 24550,
+    "required_free_mib": 49152,
+    "holding_cuda": false,
+    "target_cpu_gate_passed": true,
+    "target_gpu_gate_present": false,
+    "fatal_present": false,
+    "science_updates": 0,
+    "new_endpoints": 0,
+    "registered_updates": 22400,
+    "charged_work": {
+      "engineering_applied": 32,
+      "engineering_computed": 6
+    }
+  },
+  "BCT1": {
+    "state": "local_training_complete_both_accounts_REPORT_pending",
+    "new_endpoints": 8,
+    "linked_anchors": 8,
+    "scientific_updates": 22400,
+    "endpoint_phase": 3000,
+    "account_a_local_success_utc": "2026-09-23T05:34:37.733291+00:00",
+    "account_b_local_success_utc": "2026-09-23T05:50:59.344672+00:00",
+    "local_manifest_sha256": {
+      "account_a": "de1751c99dd100749615c67a2f552680f94dcc707633e67404ea80cc5365acd6",
+      "account_b": "d6fc0ffd9dae0e4c60c0c00140a7a1c71e84b2d6a6411e85d2c67c8a90658010"
+    },
+    "metadata_checks": "All16 result/contract/latest links and referenced JSON hashes passed; checkpoint existence and file sizes checked. No fresh checkpoint payload hashes/tensor identities.",
+    "aggregate_analysis_performed": false,
+    "primary_REPORT_performed": false,
+    "barrier": "Global16 seal and original ART1 REPORT closure required by frozen BCT1 protocol."
+  },
+  "OIP1": {
+    "state": "complete",
+    "completed_at": "2026-09-23T03:02:15.090955+00:00",
+    "source": "1889acf14fe8b7a5f188f8e67e9085848bb33d9f05222a12ae2e042f203912a3",
+    "protocol": "9e850d62d0b274fb9f08d33ec60659e46e1b06628325b3c620cfe24b84c533ec",
+    "analysis_sha256": "715a5dd02ec1d14223f3e0328879ce1330dc62c83a5a68c92fbfd97087dbafac",
+    "backward_calls": 512,
+    "model_updates": 0,
+    "validation_evaluations": 0,
+    "record_checks": {
+      "success_binds_analysis": true,
+      "protocol_hash_matches": true,
+      "input_metadata_hash_matches": true,
+      "replicate_results_match": 8,
+      "FIT_hashes_match": 8,
+      "pair_receipt_hashes_match": 256
+    },
+    "sample_units": "Two reused parents159/160; phases200/3000; two sampling replicates and three FFN projection groups. Action means within each state/condition average six equal-sized 16-batch groups; these are not independent training replications.",
+    "all_fitted_signal_negative_mass_fractions_zero": true,
+    "all_recorded_matching_defined": true,
+    "rows": [
+      {
+        "state": "159_200",
+        "condition": "retained_adaptive",
+        "signal_total_residual_cosine_mean": 0.9999585244229372,
+        "noise_total_residual_cosine_mean": 0.9992662204464811,
+        "signal_matched_difference_over_total_correction_mean": 0.009040524437891861,
+        "noise_matched_difference_over_total_correction_mean": 0.03803761597010188,
+        "SN_normalized_matrix_distance_mean": 0.01934992980206872,
+        "SN_normalized_operator_distance_mean": 0.008785747243728588,
+        "replicate_signal_matrix_distance_mean": 0.000999130921289333
+      },
+      {
+        "state": "159_200",
+        "condition": "zero_adaptive",
+        "signal_total_residual_cosine_mean": 0.9035297728027427,
+        "noise_total_residual_cosine_mean": 0.9983684786769597,
+        "signal_matched_difference_over_total_correction_mean": 0.4337262361902073,
+        "noise_matched_difference_over_total_correction_mean": 0.05362822894633512,
+        "SN_normalized_matrix_distance_mean": 0.22602236663054362,
+        "SN_normalized_operator_distance_mean": 0.10725527056575257,
+        "replicate_signal_matrix_distance_mean": 0.015508901886476637
+      },
+      {
+        "state": "159_200",
+        "condition": "retained_scalar",
+        "signal_total_residual_cosine_mean": 0.9999809054291519,
+        "noise_total_residual_cosine_mean": 0.999670437580571,
+        "signal_matched_difference_over_total_correction_mean": 0.006115525126459047,
+        "noise_matched_difference_over_total_correction_mean": 0.02540813589765073,
+        "SN_normalized_matrix_distance_mean": 0.019303471064677072,
+        "SN_normalized_operator_distance_mean": 0.006540730130239654,
+        "replicate_signal_matrix_distance_mean": 0.004142932153549351
+      },
+      {
+        "state": "159_200",
+        "condition": "zero_scalar",
+        "signal_total_residual_cosine_mean": 0.8623598930602052,
+        "noise_total_residual_cosine_mean": 0.9879841570102547,
+        "signal_matched_difference_over_total_correction_mean": 0.5115105337137145,
+        "noise_matched_difference_over_total_correction_mean": 0.15284492441914044,
+        "SN_normalized_matrix_distance_mean": 0.4794084426735545,
+        "SN_normalized_operator_distance_mean": 0.12628686851750137,
+        "replicate_signal_matrix_distance_mean": 0.027184612627676585
+      },
+      {
+        "state": "159_3000",
+        "condition": "retained_adaptive",
+        "signal_total_residual_cosine_mean": 0.9999897838383656,
+        "noise_total_residual_cosine_mean": 0.9998044791001983,
+        "signal_matched_difference_over_total_correction_mean": 0.004422122272324921,
+        "noise_matched_difference_over_total_correction_mean": 0.019344035123178324,
+        "SN_normalized_matrix_distance_mean": 0.007786600284771248,
+        "SN_normalized_operator_distance_mean": 0.0031990228620027935,
+        "replicate_signal_matrix_distance_mean": 0.000877317830498267
+      },
+      {
+        "state": "159_3000",
+        "condition": "zero_adaptive",
+        "signal_total_residual_cosine_mean": 0.7750951195087663,
+        "noise_total_residual_cosine_mean": 0.9999577119788046,
+        "signal_matched_difference_over_total_correction_mean": 0.6682700469549668,
+        "noise_matched_difference_over_total_correction_mean": 0.00900803472599112,
+        "SN_normalized_matrix_distance_mean": 0.35268761277987004,
+        "SN_normalized_operator_distance_mean": 0.14867477188322523,
+        "replicate_signal_matrix_distance_mean": 0.1326374125209561
+      },
+      {
+        "state": "159_3000",
+        "condition": "retained_scalar",
+        "signal_total_residual_cosine_mean": 0.999990608668511,
+        "noise_total_residual_cosine_mean": 0.9998284767064817,
+        "signal_matched_difference_over_total_correction_mean": 0.00429489282779793,
+        "noise_matched_difference_over_total_correction_mean": 0.01835092044461248,
+        "SN_normalized_matrix_distance_mean": 0.013063255679033365,
+        "SN_normalized_operator_distance_mean": 0.004435240888303001,
+        "replicate_signal_matrix_distance_mean": 0.0017019533122339889
+      },
+      {
+        "state": "159_3000",
+        "condition": "zero_scalar",
+        "signal_total_residual_cosine_mean": 0.891803796018315,
+        "noise_total_residual_cosine_mean": 0.9999168021313316,
+        "signal_matched_difference_over_total_correction_mean": 0.4591158369955923,
+        "noise_matched_difference_over_total_correction_mean": 0.012536343194378874,
+        "SN_normalized_matrix_distance_mean": 0.35670849559011925,
+        "SN_normalized_operator_distance_mean": 0.13125535551110534,
+        "replicate_signal_matrix_distance_mean": 0.12697838049522825
+      },
+      {
+        "state": "160_200",
+        "condition": "retained_adaptive",
+        "signal_total_residual_cosine_mean": 0.9999252840927001,
+        "noise_total_residual_cosine_mean": 0.9986016192606297,
+        "signal_matched_difference_over_total_correction_mean": 0.012165370146352154,
+        "noise_matched_difference_over_total_correction_mean": 0.052627680193038345,
+        "SN_normalized_matrix_distance_mean": 0.024408325886351008,
+        "SN_normalized_operator_distance_mean": 0.011228012955212896,
+        "replicate_signal_matrix_distance_mean": 0.0007545164773177909
+      },
+      {
+        "state": "160_200",
+        "condition": "zero_adaptive",
+        "signal_total_residual_cosine_mean": 0.9251807668361975,
+        "noise_total_residual_cosine_mean": 0.9991951729130402,
+        "signal_matched_difference_over_total_correction_mean": 0.38369316897922456,
+        "noise_matched_difference_over_total_correction_mean": 0.03890886044380458,
+        "SN_normalized_matrix_distance_mean": 0.2007035813404766,
+        "SN_normalized_operator_distance_mean": 0.09112746053271935,
+        "replicate_signal_matrix_distance_mean": 0.01850875897297486
+      },
+      {
+        "state": "160_200",
+        "condition": "retained_scalar",
+        "signal_total_residual_cosine_mean": 0.9998843923483904,
+        "noise_total_residual_cosine_mean": 0.9977237599765489,
+        "signal_matched_difference_over_total_correction_mean": 0.014884736608700171,
+        "noise_matched_difference_over_total_correction_mean": 0.06586659412151359,
+        "SN_normalized_matrix_distance_mean": 0.04889577488472547,
+        "SN_normalized_operator_distance_mean": 0.015079698617703231,
+        "replicate_signal_matrix_distance_mean": 0.0035023381391342118
+      },
+      {
+        "state": "160_200",
+        "condition": "zero_scalar",
+        "signal_total_residual_cosine_mean": 0.9156513798870561,
+        "noise_total_residual_cosine_mean": 0.9969873804570151,
+        "signal_matched_difference_over_total_correction_mean": 0.4050280066406166,
+        "noise_matched_difference_over_total_correction_mean": 0.07656682299172135,
+        "SN_normalized_matrix_distance_mean": 0.3259301629494509,
+        "SN_normalized_operator_distance_mean": 0.08841000036587343,
+        "replicate_signal_matrix_distance_mean": 0.05215931413243513
+      },
+      {
+        "state": "160_3000",
+        "condition": "retained_adaptive",
+        "signal_total_residual_cosine_mean": 0.9999920136498686,
+        "noise_total_residual_cosine_mean": 0.9998495312875745,
+        "signal_matched_difference_over_total_correction_mean": 0.0039827583083220635,
+        "noise_matched_difference_over_total_correction_mean": 0.017284321665583746,
+        "SN_normalized_matrix_distance_mean": 0.007041591506625252,
+        "SN_normalized_operator_distance_mean": 0.0029287739846273367,
+        "replicate_signal_matrix_distance_mean": 0.0006869705159366492
+      },
+      {
+        "state": "160_3000",
+        "condition": "zero_adaptive",
+        "signal_total_residual_cosine_mean": 0.7722208841285271,
+        "noise_total_residual_cosine_mean": 0.999914519142901,
+        "signal_matched_difference_over_total_correction_mean": 0.6727685706663273,
+        "noise_matched_difference_over_total_correction_mean": 0.01182976815417596,
+        "SN_normalized_matrix_distance_mean": 0.3791712050219458,
+        "SN_normalized_operator_distance_mean": 0.14434015222824464,
+        "replicate_signal_matrix_distance_mean": 0.12751815018326726
+      },
+      {
+        "state": "160_3000",
+        "condition": "retained_scalar",
+        "signal_total_residual_cosine_mean": 0.9999915116284187,
+        "noise_total_residual_cosine_mean": 0.9998446263936278,
+        "signal_matched_difference_over_total_correction_mean": 0.003970242901026657,
+        "noise_matched_difference_over_total_correction_mean": 0.016968042911678458,
+        "SN_normalized_matrix_distance_mean": 0.014014299156859585,
+        "SN_normalized_operator_distance_mean": 0.004021692307825474,
+        "replicate_signal_matrix_distance_mean": 0.001560112557466786
+      },
+      {
+        "state": "160_3000",
+        "condition": "zero_scalar",
+        "signal_total_residual_cosine_mean": 0.8148284489649166,
+        "noise_total_residual_cosine_mean": 0.9994550280407839,
+        "signal_matched_difference_over_total_correction_mean": 0.5921651494650534,
+        "noise_matched_difference_over_total_correction_mean": 0.03205113301200867,
+        "SN_normalized_matrix_distance_mean": 0.6432456881542884,
+        "SN_normalized_operator_distance_mean": 0.15589238544051437,
+        "replicate_signal_matrix_distance_mean": 0.049953863076148436
+      }
+    ]
+  },
+  "earlier_studies": {
+    "OSC1": "complete; eight final endpoints and existing SUCCESS present",
+    "ART1": "all16new training endpoints present; no final REPORT files found in registered run directories",
+    "AOT1": "all8new training endpoints present; local exports complete; no final REPORT files found in registered run directories",
+    "XSC1": "all8new training endpoints present; local exports complete; no final REPORT files found in registered run directories"
+  },
+  "not_performed": [
+    "No GPU/session restart",
+    "No model update or new evaluation",
+    "No protocol or checkpoint edits",
+    "No Campus Cluster inspection",
+    "No BCT1 aggregate efficacy calculation before its global seal"
+  ]
+}

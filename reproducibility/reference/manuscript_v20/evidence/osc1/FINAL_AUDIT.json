@@ -1,0 +1,99 @@
+{
+  "state": "final_JSON_receipts_verified",
+  "observed_at": "2026-09-23T00:54:47.512003+00:00",
+  "analysis_sha256": "49a69bcea6e3427870f06be9a3493432e2c87ec093de969ec160b12a85ebbb65",
+  "source": "28f14801e8007d6ffc20b2bfe2e22c3a3514a61beb1fc8daccc186f5da401607",
+  "protocol": "b69f4b8cedb1c122e65162dd7de785bd5df6571bb9ff7c603f959227e93937d7",
+  "endpoint_seal_sha256": "c8d66ebda4e7b3409342a9b50069f98d27a13e5b0dfa175096715299b8be9d33",
+  "eight_endpoints_at_phase3000": true,
+  "all_eight_DEV_receipt_hashes_and_score_and_identity_bindings_match": true,
+  "success_binds_analysis": true,
+  "all_six_contrasts_recompute_exactly": true,
+  "proof_count_from_saved_analysis": 22400,
+  "scores": {
+    "159": {
+      "native": 3.658321052789688,
+      "noise_matched": 3.6582981813699007,
+      "paired_total": 3.6582945697009563,
+      "signal_matched": 3.6583283692598343
+    },
+    "160": {
+      "native": 3.6629801876842976,
+      "noise_matched": 3.662968957796693,
+      "paired_total": 3.6629749797284603,
+      "signal_matched": 3.6629888601601124
+    }
+  },
+  "contrasts": {
+    "noise_matched - native": {
+      "per_parent": {
+        "159": -2.287141978740692e-05,
+        "160": -1.122988760471344e-05
+      },
+      "descriptive_mean": -1.705065369606018e-05
+    },
+    "noise_matched - paired_total": {
+      "per_parent": {
+        "159": 3.6116689443588257e-06,
+        "160": -6.021931767463684e-06
+      },
+      "descriptive_mean": -1.2051314115524292e-06
+    },
+    "paired_total - native": {
+      "per_parent": {
+        "159": -2.6483088731765747e-05,
+        "160": -5.207955837249756e-06
+      },
+      "descriptive_mean": -1.584552228450775e-05
+    },
+    "signal_matched - native": {
+      "per_parent": {
+        "159": 7.316470146179199e-06,
+        "160": 8.672475814819336e-06
+      },
+      "descriptive_mean": 7.994472980499268e-06
+    },
+    "signal_matched - noise_matched": {
+      "per_parent": {
+        "159": 3.018788993358612e-05,
+        "160": 1.9902363419532776e-05
+      },
+      "descriptive_mean": 2.5045126676559448e-05
+    },
+    "signal_matched - paired_total": {
+      "per_parent": {
+        "159": 3.3799558877944946e-05,
+        "160": 1.3880431652069092e-05
+      },
+      "descriptive_mean": 2.383999526500702e-05
+    }
+  },
+  "gradient_accounting": [
+    {
+      "count": 128,
+      "kind": "calibration",
+      "replay": false,
+      "state": "computed"
+    },
+    {
+      "count": 24079,
+      "kind": "science",
+      "replay": false,
+      "state": "computed"
+    },
+    {
+      "count": 1,
+      "kind": "science",
+      "replay": false,
+      "state": "reserved"
+    },
+    {
+      "count": 1,
+      "kind": "science",
+      "replay": true,
+      "state": "computed"
+    }
+  ],
+  "completed_at": "2026-09-22T22:24:00.723309+00:00",
+  "scope": "Read-only saved JSON/file-receipt audit; no fresh checkpoint payload rehash, tensor loading, training, evaluation, or BCT1 intervention."
+}

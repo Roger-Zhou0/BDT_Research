@@ -1,0 +1,254 @@
+{
+  "analysis": {
+    "adapt_n": false,
+    "adjusted_confidence": 0.975,
+    "contrasts": [
+      [
+        "bdt",
+        "scrambled_matched"
+      ],
+      [
+        "bdt",
+        "adamw"
+      ]
+    ],
+    "joint_success": "Both adjusted upper bounds < 0, after all validity checks; report both estimates regardless.",
+    "method": "Paired Student-t, df=5; Bonferroni family of two contrasts",
+    "n": 6,
+    "normality_scope": "Nominal small-sample t intervals assume approximately normal independent seed differences.",
+    "optional_stopping": false,
+    "ordinary_confidence": 0.95,
+    "t975_df5": 2.5705818356363146,
+    "t9875_df5": 3.163381449748609,
+    "zero_variance": "Flag for review; do not auto-declare confirmation"
+  },
+  "arm_order": {
+    "161": [
+      "adamw",
+      "bdt",
+      "scrambled_matched"
+    ],
+    "162": [
+      "adamw",
+      "scrambled_matched",
+      "bdt"
+    ],
+    "163": [
+      "bdt",
+      "scrambled_matched",
+      "adamw"
+    ],
+    "164": [
+      "bdt",
+      "adamw",
+      "scrambled_matched"
+    ],
+    "165": [
+      "scrambled_matched",
+      "adamw",
+      "bdt"
+    ],
+    "166": [
+      "scrambled_matched",
+      "bdt",
+      "adamw"
+    ]
+  },
+  "arms": [
+    "adamw",
+    "bdt",
+    "scrambled_matched"
+  ],
+  "bdt": {
+    "cap": 3.0,
+    "covariance_beta": 0.9,
+    "observe_every": 10,
+    "ramp": 200,
+    "scope": "whole twelve-depth FFN gate/up/down",
+    "warmup": 200
+  },
+  "budget": {
+    "approximate_retained_payload_GiB": 96.56879425048828,
+    "branch_updates": 50400,
+    "budget_scope": "Mixed small/large optimizer updates, NOT homogeneous FLOPs or wall-clock.",
+    "initial_cohort_free_disk_GiB": 128,
+    "parent_cost_per_path_updates": 7630,
+    "parent_parameters": 81074688,
+    "parent_updates": 45780,
+    "per_GPU_free_memory_GiB": 32,
+    "post_cost_per_path_updates": 3000,
+    "recommended_path_token_exposures": 348323840,
+    "shared_prefix_updates": 1200,
+    "target_parameters": 123551232,
+    "total_campaign_token_exposures": 3190947840,
+    "total_scientific_updates": 97380
+  },
+  "cache_label": "S1-B",
+  "cache_sha256": {
+    "metadata.json": "64d9e563d8b12517cfe123560d39ab4f579ef9c4ec5482e215c20cb4f4108feb",
+    "train.bin": "760fe8d0a55959dc322643fa4ac856e542e11bd59ac84c2f48f6e00a3d587ce6",
+    "val.bin": "5dd2caeb46e3c237e6c9291d5964c548ae004cd87b3c29f01188b444af2aff0f"
+  },
+  "candidate_seeds": [
+    161,
+    162,
+    163,
+    164,
+    165,
+    166
+  ],
+  "checkpoint": {
+    "atomic": true,
+    "every": 250,
+    "keep_post": [
+      0,
+      200,
+      1000,
+      2000,
+      3000
+    ]
+  },
+  "data_directory": "data_s1/fineweb_edu_3b",
+  "dev": {
+    "context": 512,
+    "offset": 0,
+    "scored_tokens": 1048576,
+    "sequences": 2048,
+    "stop": 1050624
+  },
+  "growth": {
+    "copy": "all block weights, embeddings, final norm, both named Adam moments, optimizer age",
+    "function_preserving": false,
+    "independent_storage": true,
+    "mapping": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "next_training_data_step": 7631,
+    "preserved_global_age": 7630,
+    "reset_only": [
+      "post-growth LR phase",
+      "both whole-depth covariance histories"
+    ]
+  },
+  "lanes": {
+    "B-default": {
+      "account": "account_b",
+      "seeds": [
+        162,
+        164,
+        166
+      ],
+      "session": "default"
+    },
+    "B-good": {
+      "account": "account_b",
+      "seeds": [
+        161,
+        163,
+        165
+      ],
+      "session": "good"
+    }
+  },
+  "matching": {
+    "angle_absolute_tolerance": 5e-06,
+    "common_relative_tolerance": 1e-05,
+    "compute": "FP64 geometry, FP32 output cast",
+    "displacement_absolute_tolerance": 2e-06,
+    "displacement_relative_tolerance": 0.0002,
+    "log_all_degeneracies": true,
+    "minimum_candidate_sine": 1e-07,
+    "norm_relative_tolerance": 1e-05,
+    "random_fallback": false,
+    "reference": "CMS1 own-state matching, unchanged in GCT1",
+    "zero_angle_sine": 1e-07
+  },
+  "name": "GCT2",
+  "no_auto_followups": true,
+  "parent": {
+    "layers": 6,
+    "parameters": 81074688,
+    "peak_lr": 0.0008,
+    "steps": 7630
+  },
+  "pilot_seeds_excluded": [
+    159,
+    160
+  ],
+  "post": {
+    "layers": 12,
+    "parameters": 123551232,
+    "peak_lr": 0.0006,
+    "shared_prefix_updates": 200,
+    "total_phase_updates": 3000
+  },
+  "proposed_root": "runs/growth_correspondence_confirmation_v1",
+  "purpose": "Confirm fixed-recipe pretrained-growth utility and own-state direction/strength separation.",
+  "release": {
+    "allow_BCO1_candidate_in_confirmation": false,
+    "parent_reference_protocol_digest": "f3cd9097f66360d4e71a5932c780d3e216520f7a29222f6fe4a82bb44a975298",
+    "parent_reference_source_digest": "cb703e1fb6f619ae7044cb47807483be375f47b4dbeb7c7a75af09b7e6ad5048",
+    "train_loop": "unchanged arithmetic from GCT1; new scheduler and REPORT evaluator require independent tests"
+  },
+  "report": {
+    "context": 512,
+    "novelty": "Established S1-B REPORT text, NOT newly unseen data",
+    "offset": 2500000,
+    "scored_tokens": 1048576,
+    "sequences": 2048,
+    "stop": 3550624,
+    "when": "after all 18 final training records and checkpoints are verified and the cohort lock is committed"
+  },
+  "retries": {
+    "code_or_data_change": "stop",
+    "invariant": "stop",
+    "max_total_same_recipe_OOM_attempts_per_job": 3,
+    "nonfinite": "stop",
+    "other_interruption": "explicit resume, no recipe/seed replacement"
+  },
+  "seed_policy": "All six must pass a live complete inventory check; collision or incomplete audit stops. No silent replacement.",
+  "shadows": "All three scientific arms retain both hypothetical histories and matching construction; only applied FFN proposals differ.",
+  "shape": {
+    "accumulation": 4,
+    "context": 512,
+    "d_model": 768,
+    "ffn_hidden": 2048,
+    "heads": 12,
+    "microbatch": 16,
+    "vocab_size": 50257
+  },
+  "statistical_unit": "Independent small-parent training seed",
+  "status": "DESIGN_COMPLETE_NOT_REGISTERED_NOT_LAUNCHED",
+  "strict": {
+    "attention": "automatic, record actual dispatch",
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": true,
+    "deterministic": true,
+    "matmul_tf32": false,
+    "warn_only": false,
+    "workspace": ":4096:8"
+  },
+  "training": {
+    "beta1": 0.9,
+    "beta2": 0.95,
+    "decay": 0.1,
+    "eps": 1e-08,
+    "gradient_clip": 1.0,
+    "min_lr_ratio": 0.1,
+    "precision": "bf16",
+    "tokens_per_update": 32768,
+    "warmup": 200
+  },
+  "version": "gct2_design_v1"
+}

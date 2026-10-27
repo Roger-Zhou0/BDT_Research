@@ -1,0 +1,105 @@
+{
+  "adjusted_contrast_support": {
+    "bdt_minus_adamw": true,
+    "bdt_minus_scrambled_matched": true
+  },
+  "comparisons": {
+    "bdt_minus_adamw": {
+      "ci95": [
+        -0.0022729967799513967,
+        -0.0021347151680062783
+      ],
+      "ci975": [
+        -0.0022889412803488328,
+        -0.002118770667608842
+      ],
+      "favorable": 6,
+      "mean": -0.0022038559739788375,
+      "n": 6,
+      "sd": 6.588379824741987e-05,
+      "status": "analyzed",
+      "values": [
+        -0.0021458305418491364,
+        -0.0023313984274864197,
+        -0.002178588882088661,
+        -0.00221090205013752,
+        -0.0021839365363121033,
+        -0.0021724794059991837
+      ]
+    },
+    "bdt_minus_scrambled_matched": {
+      "ci95": [
+        -0.003213828910997305,
+        -0.00308183035789848
+      ],
+      "ci975": [
+        -0.0032290489460601057,
+        -0.0030666103228356796
+      ],
+      "favorable": 6,
+      "mean": -0.0031478296344478927,
+      "n": 6,
+      "sd": 6.289025647723778e-05,
+      "status": "analyzed",
+      "values": [
+        -0.0032200906425714493,
+        -0.0031430721282958984,
+        -0.0031501706689596176,
+        -0.003213081508874893,
+        -0.0030563771724700928,
+        -0.0031041856855154037
+      ]
+    }
+  },
+  "input_digest": "86b2bdc8b4fe24e80ea5032b8e5234042240a5dae19771f9fd28ffff8bce18b3",
+  "joint_confirmation": true,
+  "protocol_digest": "6caf40b410393a6583bd0dad2f7da646831e04e3cb50f6c9aa244fa0aaee695b",
+  "rows": [
+    {
+      "adamw": 3.61936810426414,
+      "bdt": 3.617222273722291,
+      "scrambled_matched": 3.6204423643648624,
+      "seed": 161
+    },
+    {
+      "adamw": 3.622451785951853,
+      "bdt": 3.6201203875243664,
+      "scrambled_matched": 3.6232634596526623,
+      "seed": 162
+    },
+    {
+      "adamw": 3.619941897690296,
+      "bdt": 3.6177633088082075,
+      "scrambled_matched": 3.620913479477167,
+      "seed": 163
+    },
+    {
+      "adamw": 3.6215473506599665,
+      "bdt": 3.619336448609829,
+      "scrambled_matched": 3.622549530118704,
+      "seed": 164
+    },
+    {
+      "adamw": 3.618084356188774,
+      "bdt": 3.615900419652462,
+      "scrambled_matched": 3.618956796824932,
+      "seed": 165
+    },
+    {
+      "adamw": 3.623471910133958,
+      "bdt": 3.6212994307279587,
+      "scrambled_matched": 3.624403616413474,
+      "seed": 166
+    }
+  ],
+  "scope": "Fixed-recipe growth-transfer confirmation over six independent training seeds; established REPORT text. No GS or scratch superiority/time-to-quality claim.",
+  "seeds": [
+    161,
+    162,
+    163,
+    164,
+    165,
+    166
+  ],
+  "state": "complete"
+}

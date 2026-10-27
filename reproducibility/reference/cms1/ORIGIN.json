@@ -1,0 +1,114 @@
+{
+  "archive_sha256": "c7abd33ea1f1b40206a353fac88471e5969e5da740b4cea891117e05ce7042a9",
+  "bindings": [
+    {
+      "contract_identity_verified": true,
+      "path": "seed_147/adamw_report.json",
+      "result_bytes_binding_verified": true,
+      "sha256": "b7d6156786bc9e56a261e1838792dd3567d15c30c6fc550d723c78e5a588bfff"
+    },
+    {
+      "contract_identity_verified": true,
+      "path": "seed_147/bdt_report.json",
+      "result_bytes_binding_verified": true,
+      "sha256": "8e5eacc6b5007cc919520f44b4131f7d60e754238385e0c99a4305ac8e8fb141"
+    },
+    {
+      "contract_identity_verified": true,
+      "path": "seed_147/scrambled_matched_report.json",
+      "result_bytes_binding_verified": true,
+      "sha256": "c5975f292ea8f83a51823643acc0e9c62922dfbda16e923ffd77bbf866920438"
+    },
+    {
+      "contract_identity_verified": true,
+      "path": "seed_148/adamw_report.json",
+      "result_bytes_binding_verified": true,
+      "sha256": "1b480349f05c01e85d1a8e707cdaed5c1c0bd6e23b7b7f4dcb031ddeadf408b6"
+    },
+    {
+      "contract_identity_verified": true,
+      "path": "seed_148/bdt_report.json",
+      "result_bytes_binding_verified": true,
+      "sha256": "7e0a3e06f26c55b54eb84c6c8f94ba6264ff725ed8ed710c00a815a65865391f"
+    },
+    {
+      "contract_identity_verified": true,
+      "path": "seed_148/scrambled_matched_report.json",
+      "result_bytes_binding_verified": true,
+      "sha256": "5b661e62ceb68ed4f51e5a67fc2a810322e091237543014c2cf051adab6f2238"
+    },
+    {
+      "contract_identity_verified": true,
+      "path": "seed_149/adamw_report.json",
+      "result_bytes_binding_verified": true,
+      "sha256": "9864bea3c684898638eccb43f4578f9ee43077c46ac1cf28c7a516f537ae0817"
+    },
+    {
+      "contract_identity_verified": true,
+      "path": "seed_149/bdt_report.json",
+      "result_bytes_binding_verified": true,
+      "sha256": "09867e0d1d21f7e4ada4bfb23ec87414b7c993040e0aa228d8cb77f0f9905855"
+    },
+    {
+      "contract_identity_verified": true,
+      "path": "seed_149/scrambled_matched_report.json",
+      "result_bytes_binding_verified": true,
+      "sha256": "9e98b92eb1dde405ce5deee54508b376e5e246f008298233c7ede0ef9105cfaf"
+    },
+    {
+      "contract_identity_verified": true,
+      "path": "seed_150/adamw_report.json",
+      "result_bytes_binding_verified": true,
+      "sha256": "b4ecb0ff195da45230085cab25da9f3550d00fdb11eefb7add9f72d349426251"
+    },
+    {
+      "contract_identity_verified": true,
+      "path": "seed_150/bdt_report.json",
+      "result_bytes_binding_verified": true,
+      "sha256": "22cfaf2d7babc2fda7b2e61e9587733effef8a89c659591ce3fb495911ad1ab3"
+    },
+    {
+      "contract_identity_verified": true,
+      "path": "seed_150/scrambled_matched_report.json",
+      "result_bytes_binding_verified": true,
+      "sha256": "120a0a36608861c4eaf5e713e0f5636460465bb25ca75d36d52e3b65681df579"
+    },
+    {
+      "contract_identity_verified": true,
+      "path": "seed_151/adamw_report.json",
+      "result_bytes_binding_verified": true,
+      "sha256": "9ab5c3f0768a71cab0b91434731c305131d79bb2dcf720ba2d7bf1485f413679"
+    },
+    {
+      "contract_identity_verified": true,
+      "path": "seed_151/bdt_report.json",
+      "result_bytes_binding_verified": true,
+      "sha256": "e35e29c28367e539ac28df47603ce674f77785e9d9b167cc782736688cc4dc68"
+    },
+    {
+      "contract_identity_verified": true,
+      "path": "seed_151/scrambled_matched_report.json",
+      "result_bytes_binding_verified": true,
+      "sha256": "dd33a8fc5acd50125ca94ffee79528bf166b9c9d3e1aee9bc01c0aaaddaba76e"
+    },
+    {
+      "contract_identity_verified": true,
+      "path": "seed_152/adamw_report.json",
+      "result_bytes_binding_verified": true,
+      "sha256": "cc5fb05e1f2463ca9ce71381391115f136bfc451c029160f59a8685b87c121b6"
+    },
+    {
+      "contract_identity_verified": true,
+      "path": "seed_152/bdt_report.json",
+      "result_bytes_binding_verified": true,
+      "sha256": "5a89ba03d2224e53403a39a6c7000545570c3ff3c38de1f18b1b521b60e0eda5"
+    },
+    {
+      "contract_identity_verified": true,
+      "path": "seed_152/scrambled_matched_report.json",
+      "result_bytes_binding_verified": true,
+      "sha256": "c82e90e1b57909fb519324f783edd97d02e2f504fad3c0075476a27b223b21b6"
+    }
+  ],
+  "boundary": "Archived complete REPORT records; no new evaluation or checkpoint read."
+}

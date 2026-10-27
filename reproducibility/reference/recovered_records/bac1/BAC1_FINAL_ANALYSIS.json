@@ -1,0 +1,72 @@
+{
+  "automatic_extension": false,
+  "candidate": true,
+  "inference": "Six fresh independent parent-plus-fixed-draw families; one primary reassigned-minus-preserved REPORT contrast. No pooling with BAA1/PCT1 or extra draws as independent parents.",
+  "primary": {
+    "ci95": [
+      0.002971574611868282,
+      0.0036290027723651927
+    ],
+    "mean": 0.0033002886921167374,
+    "n": 6,
+    "positive_families": 6,
+    "sd": 0.0003132293851588995,
+    "values": [
+      0.0031399913132190704,
+      0.003113953396677971,
+      0.003128575161099434,
+      0.003928305581212044,
+      0.0032564662396907806,
+      0.0032344404608011246
+    ],
+    "zero_variance_review": false
+  },
+  "protocol": "1fd9fc1ad636dcf0da1361f1184115e8cbd2cbcbd96485a31aa1cc2b6b0ca63e",
+  "rows": [
+    {
+      "adamw": 3.621990105137229,
+      "bdt": 3.6197868045419455,
+      "draw0_preserved": 3.619808556511998,
+      "draw0_reassigned": 3.6229485478252172,
+      "seed": 175
+    },
+    {
+      "adamw": 3.6209167167544365,
+      "bdt": 3.6187557466328144,
+      "draw0_preserved": 3.6188282761722803,
+      "draw0_reassigned": 3.6219422295689583,
+      "seed": 176
+    },
+    {
+      "adamw": 3.623219283297658,
+      "bdt": 3.6211453303694725,
+      "draw0_preserved": 3.6211615670472383,
+      "draw0_reassigned": 3.624290142208338,
+      "seed": 177
+    },
+    {
+      "adamw": 3.6194803174585104,
+      "bdt": 3.6169842351228,
+      "draw0_preserved": 3.616967698559165,
+      "draw0_reassigned": 3.620896004140377,
+      "seed": 178
+    },
+    {
+      "adamw": 3.6199183892458677,
+      "bdt": 3.6179325990378857,
+      "draw0_preserved": 3.6178246587514877,
+      "draw0_reassigned": 3.6210811249911785,
+      "seed": 179
+    },
+    {
+      "adamw": 3.618388405069709,
+      "bdt": 3.6162824481725693,
+      "draw0_preserved": 3.6162775587290525,
+      "draw0_reassigned": 3.6195119991898537,
+      "seed": 180
+    }
+  ],
+  "source": "1f119bbb7be46a323e8d08bbbf1041bbb6c29f296d8cebb673c9fb6d2a058fba",
+  "state": "complete",
+  "time": "2026-09-15T08:34:56.234488+00:00"
+}

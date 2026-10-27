@@ -1,0 +1,119 @@
+{
+  "state": "passed",
+  "new_model_evaluations": 0,
+  "new_training_updates": 0,
+  "original_scripts": [
+    {
+      "script": "build_new_evidence.py",
+      "source_sha256": "20adcf58e482c481d05da2402729a9681139fc859289432ff5ba57f06f80d73b",
+      "returncode": 0
+    },
+    {
+      "script": "build_transfer_evidence.py",
+      "source_sha256": "ab0c1bd3f9ba7b7c7c0604c95e2be3cdacb84e213623605d58640903b4d7cfe5",
+      "returncode": 0
+    },
+    {
+      "script": "build_osc_evidence.py",
+      "source_sha256": "b098fdd5c6272f6d33d70941a2b43da5227442a920b28b72a0e3368984956f44",
+      "returncode": 0
+    },
+    {
+      "script": "check_osc_geometry.py",
+      "source_sha256": "1e9cd598b78cceecb4476d378e94de078f38d2fae04f3bacbad76c8ab9bb37bf",
+      "returncode": 0
+    }
+  ],
+  "byte_matching_regenerated_tables": [
+    {
+      "name": "eac1_v15.tex",
+      "matches_shipped_table_bytes": true,
+      "sha256": "c699d80d1b579bfd7bd3e97d55da37f6ea6b61bd7238105737dcf521e7a13f68"
+    },
+    {
+      "name": "dnt_v15.tex",
+      "matches_shipped_table_bytes": true,
+      "sha256": "6ebb2fb9ed3fcb45efafb2de2df24e1a1542b402b915039e3dd7092f89dce631"
+    },
+    {
+      "name": "cta1_v15.tex",
+      "matches_shipped_table_bytes": true,
+      "sha256": "c3c15d9725d56f94ad0f472161a27f7bb11b50dac1bac4c7e4cd2febda19675f"
+    },
+    {
+      "name": "toc1_v15.tex",
+      "matches_shipped_table_bytes": true,
+      "sha256": "53e9cd085b1b52f2dfef88bae99b52851a5c82d6aebed0f6fefc6d122a8c5a38"
+    },
+    {
+      "name": "adjacent_report_scores.tex",
+      "matches_shipped_table_bytes": true,
+      "sha256": "14235b6f614e2a679193446c9cbb73b466f88396e55f55b91fb888bf4392b84b"
+    },
+    {
+      "name": "art_report_scores.tex",
+      "matches_shipped_table_bytes": true,
+      "sha256": "8783472af365af4d6e0576b0c170b964e28699207014a7bfaf36b47bd2b8a982"
+    },
+    {
+      "name": "bct_report_scores.tex",
+      "matches_shipped_table_bytes": true,
+      "sha256": "d965f4266caa9c90675af31d00eb92f2980b6869be891bd2bcf09b2f4b2e562d"
+    },
+    {
+      "name": "adjacent_report_contrasts.tex",
+      "matches_shipped_table_bytes": true,
+      "sha256": "fffe28bb37aaac54334e4d435a119b46c6a3a834234408dc130587fca679602c"
+    },
+    {
+      "name": "art_report_contrasts.tex",
+      "matches_shipped_table_bytes": true,
+      "sha256": "7e3459701f37239385992a70cac7b9ac129270b71dcbda170f0aca648ae373e8"
+    },
+    {
+      "name": "bct_report_contrasts.tex",
+      "matches_shipped_table_bytes": true,
+      "sha256": "d4f08d6b0c76f0fdc324d33ef60c5f36da60502db4be09ed884449090ec85adf"
+    },
+    {
+      "name": "oip_all_state_metrics.tex",
+      "matches_shipped_table_bytes": true,
+      "sha256": "e41fb3f6455f6ffcddb40b38dc7cf475b7e673241bc12cf912d12602ac2a91ef"
+    },
+    {
+      "name": "osc1_scores.tex",
+      "matches_shipped_table_bytes": true,
+      "sha256": "535bf8060d113624bd99dc0e3fd29108a45eb03f4b8a24645b24473c12b85b78"
+    },
+    {
+      "name": "osc1_primary.tex",
+      "matches_shipped_table_bytes": true,
+      "sha256": "46e134dba5b21d5ce0c3f3b4f302db1aa081b16e46c39093c81517fb0065d27e"
+    },
+    {
+      "name": "osc1_manipulation.tex",
+      "matches_shipped_table_bytes": true,
+      "sha256": "6955d2a53a2f07687b532a451c28e27f19f37c20361bd55da79ff7bdf0f8f32d"
+    }
+  ],
+  "allocation_public_record_verification": {
+    "state": "passed",
+    "records": 240,
+    "parents": 4,
+    "original_payload_sha256": "996a8bf80aa746c9aa53d9cf359e244f0b6c8fa2c2efdd93ab84a0930daea93b",
+    "public_payload_sha256": "acff8e4269d36f78873a2beac2846c5ba0af5abfabd7ccd144015f44f8ebc5c3",
+    "displayed_mean_cells_checked": 48,
+    "max_effective_scale_error": 6.291282828030376e-09,
+    "new_model_evaluations": 0,
+    "new_checkpoint_audit": false,
+    "original_hashes_modified": false,
+    "scope": "Anonymous public-byte integrity plus original-provenance links and numerical reconstruction from retained nine-decimal values; not a new original-snapshot/tensor audit."
+  },
+  "pdf_figures_generated": [
+    "source/figures/asq_operation_crossover.pdf",
+    "source/figures/bct_budget_transfer.pdf"
+  ],
+  "plotting_adjustment": "New wrapper sets savefig.bbox=tight and0.3-inch padding to prevent clipping; no data/style-color changes or edits to archived figure scripts.",
+  "editorial_input_manifests": "New anonymous local input manifests; original native source and endpoint hashes are not forged or rewritten.",
+  "scope": "Four selected original manuscript display/check scripts plus a new anonymous-record allocation verifier, fourteen regenerated table fragments and retained-record geometry. Not regeneration of all42 tables or all historical raw logs. The extra AOT1 author-only DEV plot remains labelled descriptive and is not promoted to a new REPORT result."
+}

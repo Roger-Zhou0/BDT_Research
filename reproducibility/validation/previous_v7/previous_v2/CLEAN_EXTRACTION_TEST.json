@@ -1,0 +1,39 @@
+{
+  "state": "passed_clean_extraction_v2",
+  "tested_source_identity": "2e7c5006274e7ed460d35363730d9ea14958ecc7d63aca009d011fd507ca5f0e",
+  "source_files": 45,
+  "external_project_import_path_cleared": true,
+  "commands": [
+    {
+      "command": "python scripts/check_package.py",
+      "exit_code": 0
+    },
+    {
+      "command": "python -m unittest discover -s tests -v",
+      "exit_code": 0
+    },
+    {
+      "command": "python scripts/reproduce_report.py --out build/clean_report",
+      "exit_code": 0
+    },
+    {
+      "command": "python scripts/reproduce_cms1.py",
+      "exit_code": 0
+    },
+    {
+      "command": "python scripts/check_data_environment.py",
+      "exit_code": 0
+    },
+    {
+      "command": "python scripts/smoke_training.py --out build/clean_smoke",
+      "exit_code": 0
+    }
+  ],
+  "unit_tests": 71,
+  "unit_test_failures": 0,
+  "unit_test_errors": 0,
+  "both_arms_exact_resume": true,
+  "clean_smoke_same_model_optimizer_endpoints_as_working_tree": true,
+  "no_real_data_or_checkpoints_downloaded": true,
+  "scope": "Same source payload; final validation records and final manifest are sealed after this clean extraction test. No scientific GPU reproduction."
+}

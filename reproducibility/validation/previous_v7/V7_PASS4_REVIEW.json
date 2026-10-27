@@ -1,0 +1,30 @@
+{
+  "release": "v7",
+  "pass": "final_morning_review",
+  "finding": "Four studies/ORIGIN.json rows described derivative source-manifest rebindings with an ambiguous byte-identical prefix although their original/public hashes intentionally differ.",
+  "fix": "Changed only those four transformation labels and added a unit test that rejects byte-identical labels for differing hashes.",
+  "affected_public_members": [
+    "studies/gct2/SOURCE_MANIFEST.json",
+    "studies/bac1/SOURCE_MANIFEST.json",
+    "studies/cms1/correspondence_matched_s1_v1/FROZEN_BACKEND.json",
+    "studies/cms1/correspondence_matched_s1_v1/SOURCE_MANIFEST.json"
+  ],
+  "hash_values_changed": false,
+  "scientific_source_changed": false,
+  "scientific_values_or_timestamps_changed": false,
+  "unit_tests": 118,
+  "offline_recompute": "passed",
+  "appendix_replay": "passed",
+  "plan_job_counts": {
+    "CMS1": 24,
+    "GCT2": 36,
+    "BAC1": 42
+  },
+  "mapped_study_source_files_compared_to_v6": 171,
+  "mapped_study_source_files_changed": 0,
+  "native_kernel_files_compared_to_v6": 19,
+  "native_kernel_files_changed": 0,
+  "full_size_CUDA_validation": false,
+  "scientific_efficacy_rerun": false,
+  "boundary": "Provenance wording/package validation only; external caches, missing raw historical records, CUDA parity and licensing remain unresolved author-side boundaries."
+}

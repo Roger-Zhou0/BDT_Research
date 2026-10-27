@@ -1,0 +1,6 @@
+{
+  "reference_sha256": "d1bd72d9ccd18019aea83551b838d5915f727a0a7b6a0a2fd1006fb1c47969f1",
+  "instrumented_sha256": "9d2942070c49fabf3bf27430fd94446e8aeaa23c9f26561e2fb21a7c466e2ea3",
+  "stripped_ast_identical": true,
+  "scope": "Profiler regions only; exact execution must also pass"
+}

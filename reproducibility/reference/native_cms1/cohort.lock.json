@@ -1,0 +1,50 @@
+{
+  "protocol_sha": "d138b67a854c5750c0782ff1ffa85b3ad1f98f702ee486beb7d134a24f52c899",
+  "results": {
+    "147/adamw": "34f3d5f237f45018a8492e95944bc2a02f0686243c27d2e9bf97414b3f624aac",
+    "147/bdt": "f9fe1531149cf2c8504aa33da252a6ea090da699916a25b26ed73bfd2b472e40",
+    "147/scrambled_matched": "acd8fff5c06b8b0edc4c08579aa2bf30e8db1281e6b709db7e0b8c3f37e30a8c",
+    "148/adamw": "feb2c1a569f85f20d4ec5b62616781942d3de04a6250bc99b274343d13292069",
+    "148/bdt": "c600c69d7d5691ff07db74492578ce028d394e1c0c2ea01366f59a5ff148b146",
+    "148/scrambled_matched": "22272994ae3b78b3335b642e253674bfe9c7ef4cb786820f4b26a3591ae1b36c",
+    "149/adamw": "f41043b23387be2790461354647fcf886b5a7bd08d1a1281b5f0a9b160a33c63",
+    "149/bdt": "cae012cae4f262d96972e7b4cd6f12171903b87c63c921c9c47e2be39a603199",
+    "149/scrambled_matched": "8f9b1f087870c81bb09793ed60a820482a61509aaa8f6287a63e2c2d5a8f754a",
+    "150/adamw": "eea898653071eb87986d5c4fb1aaee9928dbbc0ec2e334147841a4d2152b3cc7",
+    "150/bdt": "714500834ab1cae13668dfa5b92e1623c6bbda44056707a9f9b98151cce6e2d9",
+    "150/scrambled_matched": "b254488ad080ddd6fe17d363b261aa1edf4d7979d0f86448b1ef2ea4fb4ad968",
+    "151/adamw": "35a52567230c3a767fb09684a9f95b6768c8cfe9a1e4f7605ab162adc398ca6a",
+    "151/bdt": "24be4516061636d7e9f680aebaac2f86e7063c2e99c8b361142de43f476462b9",
+    "151/scrambled_matched": "a5f2b12d62d903c47d0f59e7c1cb024dd3e08c7ded93d85a95ac0995c7bafda8",
+    "152/adamw": "98cdd954a39f563ef4f34071d2c640c08b7e3b961383ef9093922857c768d2ad",
+    "152/bdt": "31eebf115c19f20da7e3782cbfdb956db27e5f0c041a1a1b01dabfe4e39547fa",
+    "152/scrambled_matched": "71029f677a79562c94e286d578523955de4a9e52313fa98e385926a4ce784551"
+  },
+  "runtime": {
+    "capability": [
+      9,
+      0
+    ],
+    "cpu_threads": 4,
+    "cuda_runtime": "12.8",
+    "cudnn": 91900,
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": true,
+    "cudnn_sdp": true,
+    "deterministic": true,
+    "device_type": "cuda",
+    "efficient_sdp": true,
+    "flash_sdp": true,
+    "gpu_model": "NVIDIA H200 NVL",
+    "math_sdp": true,
+    "matmul_tf32": false,
+    "numpy": "2.4.6",
+    "python": "3.13.14",
+    "torch": "2.11.0+cu128",
+    "total_memory": 150120759296,
+    "warn_only": false,
+    "workspace": ":4096:8"
+  },
+  "scope": "All 18 training endpoints frozen before the first REPORT evaluation",
+  "source_sha": "2644b80c17f1f587d337545c986aeb0a68839f730857c44a39bc0b5658b4955f"
+}

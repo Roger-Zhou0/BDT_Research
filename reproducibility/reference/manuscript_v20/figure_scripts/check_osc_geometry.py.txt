@@ -1,0 +1,25 @@
+"""Synthetic float64 tests for the new explanatory algebra; not model science."""
+import numpy as np
+
+def main():
+    rng=np.random.default_rng(16);errors=[]
+    for _ in range(20):
+        # Q columns supply the raw direction and two orthogonal residual axes.
+        Q,_=np.linalg.qr(rng.normal(size=(23,3)));u=Q[:,0]*2.5
+        phi=float(rng.uniform(.0001,.8));theta=float(rng.uniform(.01,.6))
+        d=Q[:,1];k=np.cos(phi)*Q[:,1]+np.sin(phi)*Q[:,2]
+        t=np.cos(theta)*u+np.linalg.norm(u)*np.sin(theta)*d
+        a=np.cos(theta)*u+np.linalg.norm(u)*np.sin(theta)*k
+        c=float(d@k)
+        actual=np.linalg.norm(a-t)/np.linalg.norm(t-u)
+        expected=np.cos(theta/2)*np.sqrt(2*(1-c))
+        errors.append(abs(actual-expected));assert abs(actual-expected)<1e-11
+        Z=rng.normal(size=(11,11));G=Z@Z.T
+        def operator(C):
+            ev,V=np.linalg.eigh(C);g=(1+8*ev/ev.max())**-.5
+            return (V*g)@V.T
+        s=float(rng.uniform(.05,2));n=float(rng.uniform(.05,2))
+        assert np.max(np.abs(operator(s*G)-operator(n*G)))<1e-13
+        assert np.max(np.abs(operator(s*G)-operator((s+n)*G)))<1e-13
+    print({'state':'passed','matched_geometry_cases':20,'positive_scaling_operator_cases':20,'max_distance_formula_error':max(errors),'training_gradients':0})
+if __name__=='__main__':main()

@@ -1,0 +1,8 @@
+{
+  "errors": 0,
+  "failures": 0,
+  "new_tests_since_v1": 38,
+  "scope": "Includes existing 33 geometry/optimizer/record tests, 12 data/source tests, 3 original CMS1-record tests and 23 log-export tests. No real corpus download or GPU run.",
+  "synthetic_or_archived_inputs_only": true,
+  "tests": 71
+}

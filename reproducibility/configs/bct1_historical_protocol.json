@@ -1,0 +1,164 @@
+{
+  "accumulation": 4,
+  "adam_offset": 7630,
+  "ancestor_map": [
+    0,
+    0,
+    1,
+    1,
+    2,
+    2,
+    3,
+    3,
+    4,
+    4,
+    5,
+    5
+  ],
+  "arm_order": {
+    "946201": [
+      "bdt_budget_gs",
+      "structured_budget_gs"
+    ],
+    "946202": [
+      "structured_budget_gs",
+      "bdt_budget_gs"
+    ],
+    "946203": [
+      "structured_budget_gs",
+      "bdt_budget_gs"
+    ],
+    "946204": [
+      "bdt_budget_gs",
+      "structured_budget_gs"
+    ]
+  },
+  "arms": [
+    "bdt_budget_gs",
+    "structured_budget_gs"
+  ],
+  "attempts": 3,
+  "batch": 64,
+  "betas": [
+    0.9,
+    0.95
+  ],
+  "cache": "S1-B",
+  "cache_sha256": {
+    "metadata.json": "64d9e563d8b12517cfe123560d39ab4f579ef9c4ec5482e215c20cb4f4108feb",
+    "train.bin": "760fe8d0a55959dc322643fa4ac856e542e11bd59ac84c2f48f6e00a3d587ce6",
+    "val.bin": "5dd2caeb46e3c237e6c9291d5964c548ae004cd87b3c29f01188b444af2aff0f"
+  },
+  "cap": 3.0,
+  "carrier": {
+    "alpha": 0.1,
+    "equation": "S=I-alpha/2*L_path; self-neighbor endpoint convention",
+    "name": "standard_window_GS_direction_only",
+    "ramp": true,
+    "reference": "arXiv:2606.30813v1 Eq.2",
+    "smoothing_is_not_assumed_to_suppress_relative_difference_energy": true
+  },
+  "chart_namespace": "Inherited warm legacy charts are retained for exact source-state restoration; BCT1 introduces no chart assignment and uses four reused adjacent-copy parents.",
+  "checkpoint_every": 100,
+  "claims": "Prospective transfer of full-BDT versus structured sector-budget ordering to fixed GS-derived FFN directions; identical inherited attention rule.",
+  "clip": 1.0,
+  "context": 512,
+  "covariance_beta": 0.9,
+  "cpu_build_accounting": "Separate BCT1 engineering ledger; prior AOT/OSC costs remain in their original ledgers. Every failed/replayed attempt is retained.",
+  "cublas_workspace": ":4096:8",
+  "cutoff": "2026-09-23T18:00:00-05:00",
+  "d_model": 768,
+  "date": "2026-09-22",
+  "depth": 12,
+  "deterministic": true,
+  "discovery_data": {
+    "all_BCT_outcomes_unobserved_at_specification": true,
+    "score_sha256": "97d411de8a1208fe439336c2a3977463fe98fb5a835724f15370dfaa4585676c",
+    "source": "Complete four-parent AOT DEV audit at 2026-09-22T20:36:40Z"
+  },
+  "engineering_updates": 1000,
+  "eps": 1e-08,
+  "evaluation_ceiling_per_lane": 360,
+  "ffn_hidden": 2048,
+  "gate": {
+    "full_phases": [
+      199,
+      399
+    ],
+    "required_before_science": true,
+    "tiny_end": 420,
+    "tiny_parent": 200
+  },
+  "gate_end": 420,
+  "gate_interrupt": 310,
+  "gate_seed": 127,
+  "groups": [
+    "gate",
+    "up",
+    "down"
+  ],
+  "inference": "Four reused adjacent-copy families; prediction specified after complete AOT DEV. New trajectories only, not fresh-parent confirmation. Not a comparison against standalone GS, not an equal-angle test, no equivalence or mediation claim.",
+  "intermediate_scientific_DEV": false,
+  "kind": "fixed_four_LH1_upstream_families",
+  "learning_rate": 0.0006,
+  "microbatch": 16,
+  "minimum_lr_ratio": 0.1,
+  "n_heads": 12,
+  "new_launch_deadline": "2026-09-23T06:00:00-05:00",
+  "no_auto_extension": true,
+  "observation_every": 10,
+  "observations": [
+    400,
+    1000,
+    2000,
+    3000
+  ],
+  "onset": 200,
+  "oom_failure_limit": 3,
+  "parameters": 123551232,
+  "parent_lr": 0.0008,
+  "parent_updates": 7630,
+  "physical_updates_per_lane": 13200,
+  "post_lr": 0.0006,
+  "post_updates": 3000,
+  "precision": "bf16",
+  "prefix_updates": 200,
+  "primary": [
+    "bdt_budget_gs - structured_budget_gs < 0"
+  ],
+  "ramp": 200,
+  "replay_updates": 1000,
+  "report": {
+    "linked_endpoints": 8,
+    "new_endpoints": 8,
+    "offset": 2500000,
+    "required_endpoints": 16,
+    "sequences": 2048,
+    "targets": 1048576
+  },
+  "report_policy": "Primary is complete REPORT after global16 seal and original ART1 REPORT closure. No early REPORT or outcome-dependent change.",
+  "retained": [
+    0,
+    200,
+    3000
+  ],
+  "science_per_lane": 11200,
+  "science_updates": 22400,
+  "seeds": [
+    946201,
+    946202,
+    946203,
+    946204
+  ],
+  "short": "bct1",
+  "storage": "fp32",
+  "temporal_windows": [],
+  "terminal_DEV_policy": "Compute each fixed endpoint only; do not inspect efficacy until all eight new endpoints complete. Global16 seal required for aggregate analysis.",
+  "tf32": false,
+  "upstream_protocol_sha256": "26c55e39789e445e1f4f19640561547f8581a39dfecbe0bdb03771dcd8d3a9f3",
+  "upstream_source": "b49100583f7f9ad980997144367a505dcd610c2a7ce5d8e41a6c3798711ae43b",
+  "version": "bct1",
+  "vocab_size": 50257,
+  "warmup": 200,
+  "weight_decay": 0.1
+}

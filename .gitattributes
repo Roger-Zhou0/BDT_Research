@@ -1,0 +1,9 @@
+# Keep archived source hashes stable on every checkout platform.
+/reproducibility/** -text
+
+# Normalize only the maintained repository entry points.
+/*.md text eol=lf
+/Makefile text eol=lf
+/docs/** text eol=lf
+/examples/*.py text eol=lf
+/.github/** text eol=lf

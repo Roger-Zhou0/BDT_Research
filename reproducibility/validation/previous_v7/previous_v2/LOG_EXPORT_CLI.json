@@ -1,0 +1,35 @@
+{
+  "attempts_separate": true,
+  "export": {
+    "input_files": 2,
+    "run_completion_verified": false,
+    "source_modified": false,
+    "state": "DERIVATIVE_EXPORT_COMPLETE",
+    "total_export_bytes": 3385,
+    "total_source_bytes": 124
+  },
+  "fixture_kind": "synthetic only; no original experiment logs exported",
+  "malformed_tail_retained": true,
+  "metadata_only_plan": {
+    "content_read": false,
+    "files": [
+      {
+        "input_bytes": 72,
+        "source_id": "source_01"
+      },
+      {
+        "input_bytes": 52,
+        "source_id": "source_02"
+      }
+    ],
+    "files_written": 0,
+    "maximum_output_bytes": 104857600,
+    "minimum_free_bytes": 10737418240,
+    "mode": "METADATA_ONLY_PLAN",
+    "no_recursive_collection": true,
+    "total_input_bytes": 124
+  },
+  "originals_unchanged": true,
+  "private_source_paths_in_view": false,
+  "run_completion_inferred": false
+}
