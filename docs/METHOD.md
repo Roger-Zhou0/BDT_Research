@@ -6,13 +6,15 @@ proposals, before separate decoupled weight decay.
 
 ## Shared movement and differences
 
-Let $U$ be an $L \times P$ matrix: $L$ layers, with $P$ flattened parameter
-coordinates per layer. The mean row is $\mu$, and the centered updates are $C$:
+Let $`U`$ be an $`L \times P`$ matrix: $`L`$ layers, with $`P`$ flattened parameter
+coordinates per layer. The mean row is $`\mu`$, and the centered updates are $`C`$:
 
-$$
-\mu = \frac{1}{L}\sum_{\ell=1}^{L} U_{\ell,:},
-\qquad C = U - \mathbf{1}\mu.
-$$
+```math
+\begin{aligned}
+\mu &= \frac{1}{L}\sum_{\ell=1}^{L} U_{\ell,:} \\
+C &= U - \mathbf{1}\mu
+\end{aligned}
+```
 
 For example, take three layers with two update coordinates each:
 
@@ -30,18 +32,20 @@ update norm to stay fixed.
 
 ## A small covariance across layers
 
-The implementation uses a fixed orthonormal Helmert basis $H$ for the subspace
+The implementation uses a fixed orthonormal Helmert basis $`H`$ for the subspace
 orthogonal to the all-ones vector. It represents the centered proposal as
-$Z = H^T C$, with $L-1$ rows. At an observation step with nonzero $Z$, it updates:
+$`Z = H^T C`$, with $`L-1`$ rows. At an observation step with nonzero $`Z`$, it updates:
 
-$$
-\widehat Z = Z / \lVert Z\rVert_F,
-\qquad S_t = \beta S_{t-1} + (1-\beta)\widehat Z\widehat Z^T.
-$$
+```math
+\begin{aligned}
+\widehat{Z} &= \frac{Z}{\lVert Z\rVert_F} \\
+S_t &= \beta S_{t-1} + (1-\beta)\widehat{Z}\widehat{Z}^{T}
+\end{aligned}
+```
 
-This covariance is $(L-1) \times (L-1)$, rather than a covariance over all $P$
+This covariance is $`(L-1) \times (L-1)`$, rather than a covariance over all $`P`$
 parameters. Normalizing each observation separates its cross-layer pattern from
-its overall magnitude. The averaging factor $\beta$ applies per observation,
+its overall magnitude. The averaging factor $`\beta`$ applies per observation,
 which need not occur at every optimizer step.
 
 The estimator observes raw proposals before tempering, including during warmup.
@@ -50,25 +54,26 @@ back into the covariance estimate at the same step.
 
 ## Bounded directional scaling
 
-Write $S = V\operatorname{diag}(\lambda)V^T$. For condition cap $\kappa \geq 1$
-and ramp strength $a \in [0,1]$, the reference operator uses gains
+Write $`S = V\operatorname{diag}(\lambda)V^T`$. For condition cap $`\kappa \geq 1`$
+and ramp strength $`a \in [0,1]`$, the reference operator uses gains
 
-$$
-g_i = \left(1 + (\kappa^2-1)a\frac{\lambda_i}{\lambda_{\max}}\right)^{-1/2}.
-$$
+```math
+g_i = \left(1 + (\kappa^2-1)a\frac{\lambda_i}{\lambda_{\max}}\right)^{-1/2}
+```
 
 Larger-eigenvalue directions receive smaller gains. Their relative scaling is
-bounded by $\kappa$. This bounds the operator's gain ratio, not each layer's
+bounded by $`\kappa`$. This bounds the operator's gain ratio, not each layer's
 individual update ratio or the final training effect.
 
 The transformed differences and final proposal are
 
-$$
-\widetilde C = H V\operatorname{diag}(g)V^T Z,
-\qquad
-C' = \widetilde C\frac{\lVert C\rVert_F}{\lVert\widetilde C\rVert_F},
-\qquad U' = \mathbf{1}\mu + C'.
-$$
+```math
+\begin{aligned}
+\widetilde{C} &= H V\operatorname{diag}(g)V^T Z \\
+C' &= \widetilde{C}\frac{\lVert C\rVert_F}{\lVert\widetilde{C}\rVert_F} \\
+U' &= \mathbf{1}\mu + C'
+\end{aligned}
+```
 
 The implementation recenters the transformed differences to control numerical
 drift. During warmup, for zero centered updates, or before a nonzero covariance
@@ -95,7 +100,7 @@ checks sequential step numbers and configuration compatibility.
 
 ## Why matching coordinates is an assumption
 
-The column pairing in $U$ determines the inner products used to estimate
+The column pairing in $`U`$ determines the inner products used to estimate
 cross-layer covariance. Independently permuting feature coordinates in each
 layer generally changes those statistics, even when each layer's own norm is
 unchanged. Applying the same permutation to every layer would preserve those
