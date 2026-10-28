@@ -12,11 +12,33 @@ and uses their covariance across layers to change how they differ across depth. 
 and the total size of the differences. The model's forward architecture stays
 the same.
 
-This project contains the method, a runnable demonstration, and experiments that
+This project contains an animated explanation, the implementation, and experiments that
 ask **whether the correspondence between parameters matters**, beyond
 changing the size of an optimizer step.
 
-[Try it](#try-it) · [How it works](#how-it-works) · [The experiments](#experiments) · [Inside the code](docs/CODE_GUIDE.md)
+[Watch the animation](#see-the-updates-change) · [How it works](#how-it-works) · [The experiments](#experiments) · [Inside the code](docs/CODE_GUIDE.md)
+
+## See the updates change
+
+![Animation of six layer updates: separate the shared mean, temper the differences, and recombine. The original arrows remain visible, while the mean and total difference norm stay fixed.](docs/assets/bdt-updates.gif)
+
+Each panel is one layer, with two parameter coordinates. Orange shows the shared
+mean; blue shows the update's difference from that mean. The dashed arrow keeps
+the original update visible for comparison. Follow the blue tips as BDT changes
+the updates, and the two measurements below as they stay fixed.
+
+<details>
+<summary>View the still image</summary>
+
+![Final BDT updates compared with their original arrows. The shared mean is [0.55, 0.35] and the total difference norm remains 3.447.](docs/assets/bdt-updates-static.png)
+
+</details>
+
+The animation uses the actual reference operator on synthetic updates. The same
+input is repeated while tempering ramps up, so you can see the operator's effect
+without changes from a training run. It illustrates the geometry, not a change
+in model quality. [Animation source](examples/animate_depth_updates.py) ·
+[Run the numerical demo](#try-it)
 
 ## The intuition
 
@@ -101,7 +123,7 @@ make demo
 ```
 
 The [demo](examples/depth_update_demo.py) calls the BDT reference
-operator to synthetic updates from six layers. It prints the transition from
+operator with synthetic updates from six layers. It prints the transition from
 warmup to active tempering, the change in update direction, and checks on the
 preserved mean and norm. It runs on CPU without downloading a model or dataset.
 
@@ -136,6 +158,7 @@ original receipts, compact score records, or values transcribed at their display
 
 | Start with | What you will find |
 | --- | --- |
+| [Animation](examples/animate_depth_updates.py) | Source for the animation and its numerical checks |
 | [Demo](examples/depth_update_demo.py) | A short, executable introduction to the transformation |
 | [Method guide](docs/METHOD.md) | Equations and the choices behind the operator |
 | [Code guide](docs/CODE_GUIDE.md) | A path from the operator to the optimizer and training drivers |
