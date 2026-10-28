@@ -12,33 +12,11 @@ and uses their covariance across layers to change how they differ across depth. 
 and the total size of the differences. The model's forward architecture stays
 the same.
 
-This project contains an animated explanation, the implementation, and experiments that
+This project contains three animated explanations, the implementation, and experiments that
 ask **whether the correspondence between parameters matters**, beyond
 changing the size of an optimizer step.
 
-[Watch the animation](#see-the-updates-change) · [How it works](#how-it-works) · [The experiments](#experiments) · [Inside the code](docs/CODE_GUIDE.md)
-
-## See the updates change
-
-![Animation of six layer updates: separate the shared mean, temper the differences, and recombine. The original arrows remain visible, while the mean and total difference norm stay fixed.](docs/assets/bdt-updates.gif)
-
-Each panel is one layer, with two parameter coordinates. Orange shows the shared
-mean; blue shows the update's difference from that mean. The dashed arrow keeps
-the original update visible for comparison. Follow the blue tips as BDT changes
-the updates, and the two measurements below as they stay fixed.
-
-<details>
-<summary>View the still image</summary>
-
-![Final BDT updates compared with their original arrows. The shared mean is [0.55, 0.35] and the total difference norm remains 3.447.](docs/assets/bdt-updates-static.png)
-
-</details>
-
-The animation uses the actual reference operator on synthetic updates. The same
-input is repeated while tempering ramps up, so you can see the operator's effect
-without changes from a training run. It illustrates the geometry, not a change
-in model quality. [Animation source](examples/animate_depth_updates.py) ·
-[Run the numerical demo](#try-it)
+[Shared movement](#the-intuition) · [How it works](#how-it-works) · [Parameter pairing](#why-correspondence-matters) · [Experiments](#experiments) · [Inside the code](docs/CODE_GUIDE.md)
 
 ## The intuition
 
@@ -55,7 +33,38 @@ A direction has more energy when it accounts for more squared update magnitude.
 That alone does not make it harmful. The experiments test whether changing the
 relative sizes of these directions helps learning.
 
+![Three updates, 1, 3, and 5, split into a shared mean of 3 and differences of minus 2, zero, and plus 2.](docs/assets/bdt-mean.gif)
+
+<details>
+<summary>View the still image</summary>
+
+![Three updates, 1, 3, and 5, split into a shared mean of 3 and differences of minus 2, zero, and plus 2.](docs/assets/bdt-mean-static.png)
+
+</details>
+
+This first animation shows one parameter coordinate across three layers. Orange
+is the mean; green is each layer's difference from it. The blue endpoint stays
+fixed because separating the components does not change the update.
+
 ## How it works
+
+![BDT reduces energy in a dominant covariance pattern more than in a weaker pattern, then restores the original total difference norm.](docs/assets/bdt-tempering.gif)
+
+<details>
+<summary>View the still image</summary>
+
+![BDT reduces energy in a dominant covariance pattern more than in a weaker pattern, then restores the original total difference norm.](docs/assets/bdt-tempering-static.png)
+
+</details>
+
+The bars show energy in two patterns of differences across layers. The dashed
+outlines mark their original sizes. First, BDT reduces the dominant pattern more.
+Then it scales both together until the total difference norm is restored. The
+weaker pattern can end up larger than it started.
+
+The example uses a covariance estimate from the reference operator. The frames
+separate its gain and normalization steps for explanation; they are not a
+sequence of training results.
 
 For one group of corresponding projections:
 
@@ -112,6 +121,27 @@ experiments compare three choices:
 These comparisons test whether the original pairing helps when the size of the
 intervention is controlled.
 
+![Coordinate cards move into different pairings across layers. Every layer keeps its values and norm, while centered covariance across layers changes.](docs/assets/bdt-correspondence.gif)
+
+<details>
+<summary>View the still image</summary>
+
+![Coordinate cards move into different pairings across layers. Every layer keeps its values and norm, while centered covariance across layers changes.](docs/assets/bdt-correspondence-static.png)
+
+</details>
+
+Each shaded column defines a pairing. Reordering the cards changes which values
+are compared across layers, while each row keeps the same values and norm.
+The small matrices show the resulting centered, normalized covariance across
+layers on a shared color scale. This illustrates why pairing affects BDT's
+statistics. It does not reproduce the full CMS1 matched control or establish
+which pairing trains better.
+
+All three animations use synthetic examples. Their
+[generation script](examples/animate_depth_updates.py) checks the decomposition,
+the operator calculation, and the permutation invariants. The
+[numerical demo](#try-it) is available for readers who want to run the code.
+
 ## Try it
 
 Use Python 3.13 on macOS or Linux. From the repository root:
@@ -158,7 +188,7 @@ original receipts, compact score records, or values transcribed at their display
 
 | Start with | What you will find |
 | --- | --- |
-| [Animation](examples/animate_depth_updates.py) | Source for the animation and its numerical checks |
+| [Animation](examples/animate_depth_updates.py) | Source for all three animations and their numerical checks |
 | [Demo](examples/depth_update_demo.py) | A short, executable introduction to the transformation |
 | [Method guide](docs/METHOD.md) | Equations and the choices behind the operator |
 | [Code guide](docs/CODE_GUIDE.md) | A path from the operator to the optimizer and training drivers |
