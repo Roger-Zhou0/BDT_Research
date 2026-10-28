@@ -19,6 +19,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyArrowPatch, FancyBboxPatch, Rectangle
+from matplotlib.lines import Line2D
 import numpy as np
 from PIL import Image
 import torch
@@ -27,33 +28,34 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "reproducibility/studies/cms1/fair_depth_lr_bracketing_v2"))
 from tempering_reference import OnlineDepthTemper, TemperConfig  # noqa: E402
 
-BG, INK, MUTED = "#f6f7fb", "#192b43", "#53677f"
-BLUE, ORANGE, TEAL = "#276eb0", "#bf651d", "#168078"
+BG, INK, MUTED = "none", "#718096", "#78869a"
+BLUE, ORANGE, TEAL = "#3983c5", "#bd792c", "#268e84"
 COLORS = [BLUE, ORANGE, TEAL]
 ASSETS = ROOT / "docs/assets"
 
 
 def canvas(title, subtitle, stage, labels):
     fig = plt.figure(figsize=(11, 6.4), dpi=100, facecolor=BG)
-    fig.text(.05, .925, title, fontsize=25, weight="bold", color=INK)
+    fig.text(.05, .925, title, fontsize=24, weight="medium", color=INK)
     fig.text(.05, .868, subtitle, fontsize=12, color=MUTED)
     for index, label in enumerate(labels):
         x = .05 + index * .31
-        fig.add_artist(FancyBboxPatch(
-            (x, .775), .28, .048, boxstyle="round,pad=0.01,rounding_size=0.01",
-            transform=fig.transFigure, facecolor=INK if index == stage else "#e7ecf3",
-            edgecolor="none", zorder=0,
+        fig.add_artist(Line2D(
+            [x, x + .28], [.772, .772], transform=fig.transFigure,
+            color=BLUE if index == stage else MUTED,
+            linewidth=2.2 if index == stage else .5,
         ))
-        fig.text(x + .012, .79, label, fontsize=11, weight="bold",
-                 color="white" if index == stage else MUTED)
+        fig.text(x, .795, label, fontsize=11,
+                 weight="medium" if index == stage else "normal",
+                 color=BLUE if index == stage else MUTED)
     return fig
 
 
 def finish(fig, caption, note):
-    fig.text(.05, .112, caption, fontsize=15, color=INK, weight="bold")
+    fig.text(.05, .112, caption, fontsize=15, color=INK, weight="medium")
     fig.text(.05, .059, note, fontsize=10.5, color=MUTED)
     fig.canvas.draw()
-    image = Image.fromarray(np.asarray(fig.canvas.buffer_rgba())[:, :, :3].copy())
+    image = Image.fromarray(np.asarray(fig.canvas.buffer_rgba()).copy())
     plt.close(fig)
     return image
 
@@ -70,12 +72,21 @@ def save(name, frames, durations):
     # Build a palette from every stage, not only from the final image.
     palette_source = Image.new("RGB", (220, 128 * len(frames)))
     for index, frame in enumerate(frames):
-        palette_source.paste(frame.resize((220, 128)), (0, 128 * index))
-    palette = palette_source.quantize(colors=160)
-    indexed = [f.quantize(palette=palette, dither=Image.Dither.NONE) for f in frames]
+        palette_source.paste(frame.convert("RGB").resize((220, 128)), (0, 128 * index))
+    palette = palette_source.quantize(colors=255)
+    indexed = []
+    for frame in frames:
+        converted = frame.convert("RGB").quantize(palette=palette, dither=Image.Dither.NONE)
+        # GIF supports one transparent palette entry, unlike PNG's full alpha.
+        # Reserve index 255 and clear the canvas between frames to avoid trails.
+        transparent = frame.getchannel("A").point(lambda alpha: 255 if alpha < 128 else 0)
+        converted.paste(255, mask=transparent)
+        converted.info["transparency"] = 255
+        indexed.append(converted)
     indexed[0].save(
         ASSETS / f"{name}.gif", save_all=True, append_images=indexed[1:],
-        duration=durations, loop=0, disposal=2, optimize=True,
+        duration=durations, loop=0, disposal=2, optimize=False,
+        transparency=255, background=255,
     )
     frames[-1].save(ASSETS / f"{name}-static.png", optimize=True)
     with Image.open(ASSETS / f"{name}.gif") as gif:
@@ -83,6 +94,10 @@ def save(name, frames, durations):
         for index in range(gif.n_frames):
             gif.seek(index)
             gif.load()
+            alpha = np.asarray(gif.convert("RGBA"))[:, :, 3]
+            assert alpha[0, 0] == 0 and np.mean(alpha == 0) > .7
+        expected_mask = np.asarray(frames[-1])[:, :, 3] >= 128
+        np.testing.assert_array_equal(alpha > 0, expected_mask)
     print(f"{name}: {len(frames)} frames, {sum(durations) / 1000:.1f} seconds")
 
 
@@ -109,7 +124,7 @@ def draw_mean(stage, reveal=1):
         spine.set_visible(False)
     ax.set_facecolor(BG)
     for x in range(6):
-        ax.axvline(x, color="#e1e6ee", linewidth=.8, zorder=0)
+        ax.axvline(x, color=MUTED, linewidth=.35, zorder=0)
     if stage:
         ax.axvline(mean, color=ORANGE, linewidth=2, linestyle="--", alpha=reveal)
         ax.text(mean, 2.48, "shared mean = 3", ha="center", color=ORANGE,
@@ -197,7 +212,7 @@ def draw_tempering(stage, amount, energies, gains):
     for spine in ax.spines.values():
         spine.set_visible(False)
     for x in [0, 4, 8, 12, 16]:
-        ax.axvline(x, color="#e2e7ef", zorder=0)
+        ax.axvline(x, color=MUTED, linewidth=.35, zorder=0)
     for index, (before, now, color) in enumerate(zip(energies, current, [BLUE, TEAL])):
         y = 1-index
         ax.barh(y, before, height=.40, facecolor="none", edgecolor="#a1adbd", linestyle="--", linewidth=1.5)
@@ -244,13 +259,13 @@ def draw_pairing(stage, amount=1):
     np.testing.assert_allclose(np.linalg.norm(RAW, axis=1), np.linalg.norm(scrambled, axis=1))
     assert not np.allclose(covariance(RAW), covariance(scrambled))
     for panel, left in enumerate([.06, .54]):
-        fig.text(left, .705, "Original pairing" if panel == 0 else "Reassigned pairing", fontsize=15, weight="bold", color=INK)
+        fig.text(left, .705, "Original pairing" if panel == 0 else "Reassigned pairing", fontsize=15, weight="medium", color=INK)
         ax = fig.add_axes([left, .38, .40, .28])
         ax.set_xlim(-.75, 2.65)
         ax.set_ylim(-.55, 2.55)
         ax.axis("off")
         for column in range(3):
-            ax.add_patch(Rectangle((column-.42, -.45), .84, 2.9, color="#e7ecf3", zorder=0))
+            ax.add_patch(Rectangle((column-.42, -.45), .84, 2.9, facecolor="none", edgecolor=MUTED, linewidth=.45, zorder=0))
         for row in range(3):
             ax.text(-.58, 2-row, f"L{row+1}", ha="right", va="center", fontsize=11, color=MUTED)
             for original in range(3):
@@ -261,8 +276,8 @@ def draw_pairing(stage, amount=1):
                 # Curved travel keeps moving cards distinguishable during a swap.
                 y += .23*np.sin(np.pi*t)*(original-1)
                 ax.add_patch(FancyBboxPatch((x-.35,y-.27),.70,.54,
-                    boxstyle="round,pad=0.015,rounding_size=0.055",facecolor=COLORS[original],edgecolor="white",linewidth=1.5))
-                ax.text(x,y,f"{'ABC'[original]}  {RAW[row,original]:g}",ha="center",va="center",fontsize=11,color="white",weight="bold")
+                    boxstyle="round,pad=0.015,rounding_size=0.055",facecolor="none",edgecolor=COLORS[original],linewidth=1.2))
+                ax.text(x,y,f"{'ABC'[original]}  {RAW[row,original]:g}",ha="center",va="center",fontsize=11,color=COLORS[original],weight="medium")
         if stage == 2:
             cov = covariance(RAW if panel == 0 else scrambled)
             ca = fig.add_axes([left+.06, .18, .12, .15])

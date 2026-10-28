@@ -83,7 +83,11 @@ After installing the CPU dependencies, run this from the repository root:
 .venv/bin/python examples/animate_depth_updates.py
 ```
 
-The script writes three looping GIFs and three static PNGs to `docs/assets/`:
+The script writes three looping GIFs and three static PNGs to `docs/assets/`.
+All six use transparent backgrounds. GIF frames clear between steps so moving
+objects do not leave trails; the exporter checks transparency in every frame.
+
+The examples cover:
 
 | Animation | Calculation |
 | --- | --- |
