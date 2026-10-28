@@ -7,3 +7,7 @@
 /docs/** text eol=lf
 /examples/*.py text eol=lf
 /.github/** text eol=lf
+
+# Preserve binary illustration bytes under the documentation tree.
+/docs/assets/*.gif binary
+/docs/assets/*.png binary
