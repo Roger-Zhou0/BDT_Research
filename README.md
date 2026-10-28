@@ -33,7 +33,7 @@ A direction has more energy when it accounts for more squared update magnitude.
 That alone does not make it harmful. The experiments test whether changing the
 relative sizes of these directions helps learning.
 
-![Three updates, 1, 3, and 5, split into a shared mean of 3 and differences of minus 2, zero, and plus 2.](docs/assets/bdt-mean.gif)
+![Three updates, 1, 3, and 5, split into a shared mean of 3 and differences of minus 2, zero, and plus 2.](docs/assets/bdt-mean.png)
 
 <details>
 <summary>View the still image</summary>
@@ -48,7 +48,7 @@ fixed because separating the components does not change the update.
 
 ## How it works
 
-![BDT reduces energy in a dominant covariance pattern more than in a weaker pattern, then restores the original total difference norm.](docs/assets/bdt-tempering.gif)
+![BDT reduces energy in a dominant covariance pattern more than in a weaker pattern, then restores the original total difference norm.](docs/assets/bdt-tempering.png)
 
 <details>
 <summary>View the still image</summary>
@@ -121,7 +121,7 @@ experiments compare three choices:
 These comparisons test whether the original pairing helps when the size of the
 intervention is controlled.
 
-![Coordinate cards move into different pairings across layers. Every layer keeps its values and norm, while centered covariance across layers changes.](docs/assets/bdt-correspondence.gif)
+![Coordinate cards move into different pairings across layers. Every layer keeps its values and norm, while centered covariance across layers changes.](docs/assets/bdt-correspondence.png)
 
 <details>
 <summary>View the still image</summary>

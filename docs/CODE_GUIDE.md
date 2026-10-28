@@ -83,9 +83,11 @@ After installing the CPU dependencies, run this from the repository root:
 .venv/bin/python examples/animate_depth_updates.py
 ```
 
-The script writes three looping GIFs and three static PNGs to `docs/assets/`.
-All six use transparent backgrounds. GIF frames clear between steps so moving
-objects do not leave trails; the exporter checks transparency in every frame.
+The script writes three looping animated PNGs and three static PNGs to `docs/assets/`.
+All six use transparent backgrounds and render at twice the display resolution.
+Animated PNG preserves smooth text edges through full alpha transparency. The
+exporter checks every decoded frame against the original pixels, including alpha,
+to catch rendering errors or trails.
 
 The examples cover:
 

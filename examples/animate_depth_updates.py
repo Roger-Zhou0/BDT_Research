@@ -1,4 +1,4 @@
-"""Build three explanatory GIFs and still images for the README.
+"""Build three explanatory animated PNGs and still images for the README.
 
 Run: .venv/bin/python examples/animate_depth_updates.py
 
@@ -35,7 +35,7 @@ ASSETS = ROOT / "docs/assets"
 
 
 def canvas(title, subtitle, stage, labels):
-    fig = plt.figure(figsize=(11, 6.4), dpi=100, facecolor=BG)
+    fig = plt.figure(figsize=(11, 6.4), dpi=200, facecolor=BG)
     fig.text(.05, .925, title, fontsize=24, weight="medium", color=INK)
     fig.text(.05, .868, subtitle, fontsize=12, color=MUTED)
     for index, label in enumerate(labels):
@@ -69,35 +69,25 @@ def arrow(ax, start, end, color, alpha=1):
 
 def save(name, frames, durations):
     ASSETS.mkdir(parents=True, exist_ok=True)
-    # Build a palette from every stage, not only from the final image.
-    palette_source = Image.new("RGB", (220, 128 * len(frames)))
-    for index, frame in enumerate(frames):
-        palette_source.paste(frame.convert("RGB").resize((220, 128)), (0, 128 * index))
-    palette = palette_source.quantize(colors=255)
-    indexed = []
-    for frame in frames:
-        converted = frame.convert("RGB").quantize(palette=palette, dither=Image.Dither.NONE)
-        # GIF supports one transparent palette entry, unlike PNG's full alpha.
-        # Reserve index 255 and clear the canvas between frames to avoid trails.
-        transparent = frame.getchannel("A").point(lambda alpha: 255 if alpha < 128 else 0)
-        converted.paste(255, mask=transparent)
-        converted.info["transparency"] = 255
-        indexed.append(converted)
-    indexed[0].save(
-        ASSETS / f"{name}.gif", save_all=True, append_images=indexed[1:],
-        duration=durations, loop=0, disposal=2, optimize=False,
-        transparency=255, background=255,
+    # Keep full RGBA pixels: palette quantization and binary transparency make
+    # small text ragged. APNG preserves antialiasing on any page background.
+    frames[0].save(
+        ASSETS / f"{name}.png", save_all=True, append_images=frames[1:],
+        duration=durations, loop=0, disposal=0, blend=0, optimize=True,
     )
     frames[-1].save(ASSETS / f"{name}-static.png", optimize=True)
-    with Image.open(ASSETS / f"{name}.gif") as gif:
-        assert gif.info["loop"] == 0 and gif.n_frames > 10
-        for index in range(gif.n_frames):
-            gif.seek(index)
-            gif.load()
-            alpha = np.asarray(gif.convert("RGBA"))[:, :, 3]
+    with Image.open(ASSETS / f"{name}.png") as animation:
+        assert animation.info["loop"] == 0
+        assert animation.n_frames == len(frames)
+        for index, expected in enumerate(frames):
+            animation.seek(index)
+            decoded = np.asarray(animation.convert("RGBA"))
+            # Exact pixels also catch stale pixels or trails from frame blending.
+            np.testing.assert_array_equal(decoded, np.asarray(expected))
+            alpha = decoded[:, :, 3]
             assert alpha[0, 0] == 0 and np.mean(alpha == 0) > .7
-        expected_mask = np.asarray(frames[-1])[:, :, 3] >= 128
-        np.testing.assert_array_equal(alpha > 0, expected_mask)
+            assert np.any((alpha > 0) & (alpha < 255))
+
     print(f"{name}: {len(frames)} frames, {sum(durations) / 1000:.1f} seconds")
 
 
